@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="app.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/fontawesome.min.css">
+        <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/solid.min.css">
+        <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/brands.min.css">
+        <style>
+            
+        </style>
+    </head>
+    <body ng-controller="mainCtrl">
+        <div class="header container-fluid fixed-top">
+            <div class="row">
+                <div class="col col-lg-1 col-md-2 col-3 text-center"><img class="logo" src="Images/image 8-logo.png"></div>
+                <div class="col"></div>
+                <div class="col col-lg-3 col-md-4 col-6 text-center dropdown">
+                    <div class="row">
+                    <div class="col text-end d-flex align-items-center justify-content-end"><button class="btn btn-custom dropdown-toggle me-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="fa-solid fa-user"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <span class="d-flex align-items-center" ng-if="!isAuthenticated">
+                            <a class="dropdown-item" onclick="openSignIn()">Login</a> or <a class="dropdown-item" onclick="openSignInRegister()">Register</a>
+                        </span>
+                        <span class="" ng-if="isAuthenticated">
+                            <p class="ms-3 mb-1">Hi <span ng-bind="userName"></span></p>
+                            <a class="dropdown-item">Logout</a>
+                        </span>
+                    </li>
+                  </ul>
+                  <div class="text-end">
+                    <a class="btn btn-custom-red">Pre-book Now!</a>
+                </div>
+                </div>
+                
+            </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="slide container-fluid d-flex align-items-center" id="slide-1">
+            <div class="row w-100">
+                <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 d-flex align-items-end" ng-controller="jerseyStory">
+                    <div class="intro-text w-100">
+                        <div class="story-grid">
+                            <div class="story" ng-repeat="story in stories">
+                                <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{story.name}}</p><img class='story-img' src='{{story.url}}'><p>{{story.message}}</p>"><span></span></a>
+                            </div>
+                            <div class="jersey-wrapper">
+                                <img class="jersey-img jersey-center floating-animation" id="jerseyImage" src="Images/Jerseyjersey.png">
+                            </div>
+                            
+                        </div>
+                        <div class="landing-main-text animate__animated" id="landingMainText">
+                            <img src="Images/Har Fan Ki Jersey.png">
+                        </div>
+                    </div>
+                    <div class="animate__animated" id="landingSubtitle">
+                        <p class="big-text landing-subtitle color-dblue">CALLING EVERY <span class="color-lblue">DIE-HARD</span> FAN TO BE A PART OF THE NEW TEAM INDIA JERSEY</p>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 d-flex align-items-center text-end">
+                    <div class="w-100 animate__animated" id="slide-t-1">
+                        <div class="text-wrapper text-end first__animate animate__animated animate__delay-1s">
+                            <h2 class="big-text color-dblue mb-4">SHOW YOUR <span class="color-lblue">FANDOM</span><br>BRING THE ALL NEW T-20 JERSEY TO LIFE</h2>
+                            <p class="normal-text mb-3">Tell us why you are a fan of the game and be a part of the official Team India T-20 digital jersey.</p>
+                        </div>
+                        <div class="card-container text-end first__animate animate__animated animate__delay-2s mb-3">
+                            <div class="s-1-card">
+                                <p class="s1-card-text">Stand a chance to unveil the new T20 World Cup jersey</p>
+                            </div>
+                            <div class="s-1-card">
+                                <p class="s1-card-text">Receive a certificate of appreciation from BCCI & MPL Sports</p>
+                            </div>
+                            <div class="s-1-card">
+                                <p class="s1-card-text">Win India vs Australia  match tickets, and more</p>
+                            </div>
+                        </div>
+                        <div class="text-end first__animate animate__animated animate__delay-3s">
+                            <button class="btn btn-custom" onclick="secondAnimation()">Find Out How</button>
+                        </div>                        
+                    </div>
+                    <div class="w-100 animate__animated" id="slide-t-2">
+                        <div class="text-end">
+                            <div class="text-wrapper second__animate animate__animated animate__delay-1s">
+                                <h2 class="color-dblue big-text2 mb-4">“I am a quiet guy, but when it comes to cricket, I will be the <span class="color-lblue">loudest person in the room</span>, cheering Indiaaa-Indiaaa. I love this game.”</h2>
+                                    <p class="text-end normal-text mb-5">Click on the jersey to check out some unheard fan stories<br>Yours could be next!</p>
+                            </div>
+                            <button class="btn btn-custom second__animate animate__animated animate__delay-2s" onclick="openUploadForm()">Upload your story</button>
+                            <!--<div class="steps-wrapper row text-center">
+                                <div class="col"><p>Step 1</p></div>
+                                <div class="col"><p>Step 2</p></div>
+                                <div class="col"><p>Step 3</p></div>
+                                <div class="col"><p>Step 4</p></div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="w-100 animate__animated" id="slide-t-3">
+                        <div>
+                            <div class="text-wrapper text-end third__animate animate__animated animate__delay-1s">
+                                <h2 class="big-text mb-4">SHARE. LEAD. <span class="color-lblue">WIN</span>.</h2>
+                                <p class="normal-text mb-4">Refer this code and get more entries to win exciting prizes</p>
+                            </div>
+                            <div class="text-end mb-3 third__animate animate__animated animate__delay-2s mb-5">
+                                <div class="row">
+                                    <div class="col"><p class="code-txt normal-text">{{Code}}</p></div>
+                                    <div class="col"><button class="btn btn-custom" onclick="">Copy</button></div>
+                                </div>
+                                
+                            </div>
+                            <div class="mb-3 third__animate animate__animated animate__delay-3s mb-3">
+                                <button class="btn btn-custom">Here is your verified certificate</button>
+                            </div>
+                            <div class="mb-3 mt-3 third__animate animate__animated animate__delay-3s mb-5">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="share-button-container d-flex align-items-center justify-content-end">
+                                            <p class="mb-0 me-4">Share via</p>
+                                            <a class="share-icon"><span class="fa-brands fa-facebook"></span></a>
+                                            <a class="share-icon"><span class="fa-brands fa-twitter"></span></a>
+                                            <a class="share-icon"><span class="fa-brands fa-instagram"></span></a>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="text-end mt-3 third__animate animate__animated animate__delay-3s">
+                                <div class="row">
+                                    <div class="col"><div class="d-flex align-items-center text-end justify-content-end"><button class="btn btn-custom me-1" onclick="openLeaderboard()">leaderboard</button><button class="btn btn-custom" onclick="">Spin the wheel</button></div></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        <!--<div class="slide container d-flex align-items-center" id="slide-2">
+            <div class="slide-align row w-100">
+                <div class="slide-left-align col" ng-controller="jerseyStory">
+                    
+                </div>
+                <div class="slide-right-align col">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="slide container d-flex align-items-center" id="slide-3">
+            <div class="slide-align row w-100" ng-controller="userStoryMode">
+                <div class="slide-left-align col">
+                    <div></div>
+                </div>
+                <div class="slide-right-align col">
+                    
+                </div>
+            </div>
+        </div>-->
+        <div class="form-popup popup" id="uploadFormPopup">
+            <div class="container d-flex align-items-center h-100">
+            <div class="row w-100 justify-content-center">
+                <div class="col popup-inner">
+                    <div>
+                        <h2 class="color-dblue big-text2">Upload your story</h2>
+                    </div>
+                    <form ng-submit="uploadStory()" class="needs-validation" novalidate>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="" id="firstNameInput" type="text" placeholder="First Name" ng-bind="user.firstName" readonly>
+                            <label for="firstNameInput">First Name</label>
+                            
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="" id="lastNameInput" placeholder="Last Name" ng-bind="user.lastName" readonly>
+                            <label for="lastNameInput">Last Name</label>
+                            
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                            
+                            <textarea class="form-control" name="" placeholder="Message" id="messageText" required></textarea>
+                            <label for="messageText">Type in your message</label>
+                            <div class="invalid-feedback">We're going to need your support!</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Upload your story</label>
+                            <input class="form-control" type="file">
+                            <div><p class="form-text">File details & restrictions</p></div>
+                            <div class="invalid-feedback">Please upload a valid format image</div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" onclick="thirdAnimation()" ng-click="">Upload Story</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="signin-popup popup" id="signInPopup">
+            <div class="container d-flex align-items-center h-100">
+                <div class="row w-100 justify-content-center">
+                    <div class="col popup-inner">
+                        <h2 class="mb-5">Sign in</h2>
+                        <form class="needs-validate" novalidate>
+                            <div class="form-floating mb-3">
+                                
+                                <input class="form-control" name="" placeholder="userNameLoginInput" id="messageText">
+                                <label for="userNameLoginInput">Username</label>
+                            </div>
+                            
+                            <div class="form-floating mb-3">
+                                
+                                <input class="form-control" name="" placeholder="PasswordLoginInput" id="messageText">
+                                <label for="PasswordLoginInput">Enter a password</label>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-custom">Sign In</button>
+                            </div>
+                        </form>
+                        <div class="mt-5">
+                            <hr>
+                            <p>Or create an account using</p>
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn-social btn-custom-fb" ng-click="socialAuthenticate('facebook')"><span class="fa-brands fa-facebook"></span> Sign in with Facebook</button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn-social btn-custom-google" ng-click="socialAuthenticate('google')"><span class="fa-brands fa-google"></span> Sign in with Google</button>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="signin-register-popup popup" id="signinRegisterPopup">
+            <div class="container d-flex align-items-center h-100">
+            <div class="row w-100 popup-inner">
+                <div class="col" ng-controller="socialLoginCtrl">
+                    <div>
+                        <h2 class="big-text2">Register</h2>
+                    </div>
+                    <form class="needs-validation" ng-controller="registerCtrl" novalidate>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="" id="firstNameInput" placeholder="First Name" ng-model="registerFirstName" required>
+                            <label for="firstNameInput">First Name</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="" id="lastNameInput" placeholder="Last Name" ng-model="registerLastName" required>
+                            <label for="lastNameInput">Last Name</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            
+                            <input class="form-control" name="" type="email" placeholder="Email" id="emailInput" ng-model="registerEmail" required>
+                            <label for="emailInput">Email</label>
+                            <div class="invalid-feedback">Please type out a valid email format</div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            
+                            <input class="form-control" name="" placeholder="Username" id="userNameInput" ng-model="registerUserName" required>
+                            <label for="userNameInput">Username</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            
+                            <input class="form-control" name="" placeholder="Password" id="Password" ng-model="registerCode" required>
+                            <label for="Password">Enter a password</label>
+                            <div class="invalid-feedback">Required</div>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn-custom" ng-click="registerUser()">Register</button>
+                        </div>
+                        
+                    </form>
+                </div>              
+            </div>
+        </div>
+        </div>
+        <div class="leaderboard popup popup-wide" id="leaderboardPopup" ng-controller="leaderboardCtrl">
+            <div class="container d-flex align-items-center h-100">
+            <div class="row w-100 popup-inner">                
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+                    <div class="text-center mb-5">
+                        <h2 class="big-text2">SUPERFAN LEADERBOARD</h2>
+                    </div>
+                    <div class="row text-center podium mb-4">
+                        <div class="col" ng-model="podium[0]">
+                            <div >
+                                <p>{{podium[0].position}}</p>
+                                <span class="podium-profilepicture-wrapper">
+                                    <img class="podium-profilepicture" src="{{podium[0].picture}}">
+                                </span>
+                            <p class="podium-name">{{podium[0].name}}</p>
+                            </div>
+                        </div>
+                        <div class="col" ng-model="podium[1]">
+                            <div >
+                                <img class="podium-pic" src="Images/Vector 8-crown.png">
+                                <span class="podium-profilepicture-wrapper">
+                                    <img class="podium-profilepicture" src="{{podium[1].picture}}">
+                                </span>
+                            <p class="podium-name">{{podium[1].name}}</p>
+                            </div>
+                        </div>
+                        <div class="col" ng-model="podium[2]">
+                            <div >
+                                <p>{{podium[2].position}}</p>
+                                <span class="podium-profilepicture-wrapper">
+                                    <img class="podium-profilepicture" src="{{podium[0].picture}}">
+                                </span>
+                            <p class="podium-name">{{podium[0].name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-repeat="(key,position) in leaderBoard" class="row text-center ret-of-best">
+                        <div class="col"><p>{{key + 4}}</p></div>
+                        <div class="col lb-mid-col"><p>{{position.name}}</p></div>
+                        <div class="col"><p>{{position.score}}</p></div>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+                    Spinning Wheel
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js"></script>
+    <script src="main-app.start.js"></script>
+    <script src="jerseyStory.js"></script>
+    <script src="leaderboardCtrl.js"></script>
+    <script src="socialLoginCtrl.js"></script>
+    <script src="formSubmitCtrl.js"></script>
+    <script src="page-script.js"></script>
+    <script src="CryptoJS v3.1.2\rollups\aes.js"></script>
+</html>
