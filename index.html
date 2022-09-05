@@ -62,7 +62,7 @@
                                 <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{story.name}}</p><img class='story-img' src='{{story.url}}'><p>{{story.message}}</p>"><span><img class="btn-profilepic" ng-src="{{story.profilepic}}"></span></a>
                             </div>
                             <div class="user-story" ng-model="userStory">
-                                <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{user.firstName}} {{user.lastName}}</p><img class='story-img' src='{{user.url}}'><p>{{user.message}}</p>"><span><img class="btn-profilepic" ng-src="{{user.profilepic}}"></span></a>
+                                <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{user.firstName}} {{user.lastName}}</p><img class='story-img' ng-src='{{user.url}}'><p>{{user.message}}</p>"><span><img class="btn-profilepic" ng-src="{{user.profilepic}}"></span></a>
                             </div>
                             <div class="jersey-wrapper">
                                 <img class="jersey-img jersey-center floating-animation" id="jerseyImage" src="Images/Jerseyjersey.png">
@@ -348,7 +348,7 @@
                             <div>
                                 <img class="podium-pic-small" src="Images/Vector 8-crown.png">
                                 <span class="podium-profilepicture-wrapper">
-                                    <img class="podium-profilepicture" src="{{podium[0].picture}}">
+                                    <img class="podium-profilepicture" ng-src="{{podium[0].picture}}">
                                 </span>
                             <p class="podium-name">{{podium[0].name}}</p>
                             </div>
@@ -357,7 +357,7 @@
                             <div >
                                 <img class="podium-pic" src="Images/Vector 8-crown.png">
                                 <span class="podium-profilepicture-wrapper">
-                                    <img class="podium-profilepicture" src="{{podium[1].picture}}">
+                                    <img class="podium-profilepicture" ng-src="{{podium[1].picture}}">
                                 </span>
                             <p class="podium-name">{{podium[1].name}}</p>
                             </div>
@@ -366,7 +366,7 @@
                             <div >
                                 <img class="podium-pic-small" src="Images/Vector 8-crown.png">
                                 <span class="podium-profilepicture-wrapper">
-                                    <img class="podium-profilepicture" src="{{podium[0].picture}}">
+                                    <img class="podium-profilepicture" ng-src="{{podium[0].picture}}">
                                 </span>
                             <p class="podium-name">{{podium[0].name}}</p>
                             </div>
