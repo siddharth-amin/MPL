@@ -11,6 +11,9 @@ $(document).ready(function (){
               }
         })
       })
+
+
+
 });
 
 function openSignInRegister(){
@@ -42,7 +45,6 @@ $(document).scroll(function() {
     else {
         // scroll down
         if(scrollFlag){
-            console.log("Moved");
             firstAnimation();
             scrollFlag = false;
         }
@@ -130,5 +132,5 @@ function copyToClipboard() {
     navigator.clipboard.writeText( 'test-url?refcode=' + copyText.innerHTML);
   
     /* Alert the copied text */
-    copyText.tooltip('show');
+    $('#ctc-btn').tooltip('show');
   }

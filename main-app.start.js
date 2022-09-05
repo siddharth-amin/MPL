@@ -54,4 +54,10 @@ app.controller('mainCtrl',function($rootScope,$scope){
       $scope.user.hasuploaded = true;
       thirdAnimation();
     }
+    $scope.gotosecondAnimation = function(){
+      secondAnimation();
+    }
+    $scope.trycopyToClipboard = function(){
+      copyToClipboard();
+    }
 });

@@ -62,7 +62,7 @@
                                 <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{story.name}}</p><img class='story-img' src='{{story.url}}'><p>{{story.message}}</p>"><span><img class="btn-profilepic" ng-src="{{story.profilepic}}"></span></a>
                             </div>
                             <div class="user-story" ng-model="userStory">
-                                <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{user.firstName}} {{user.lastName}}</p><img class='story-img' ng-src='{{user.url}}'><p>{{user.message}}</p>"><span><img class="btn-profilepic" ng-src="{{user.profilepic}}"></span></a>
+                                <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{user.firstName}} {{user.lastName}}</p><img class='story-img' src='{{user.url}}'><p>{{user.message}}</p>"><span><img class="btn-profilepic" ng-src="{{user.profilepic}}"></span></a>
                             </div>
                             <div class="jersey-wrapper">
                                 <img class="jersey-img jersey-center floating-animation" id="jerseyImage" src="Images/Jerseyjersey.png">
@@ -118,7 +118,7 @@
                             </div>
                         </div>
                         <div class="text-end first__animate animate__animated animate__delay-3s">
-                            <button class="btn-custom" onclick="secondAnimation()">Find Out How</button>
+                            <button class="btn-custom" ng-click="gotosecondAnimation()">Find Out How</button>
                         </div>                        
                     </div>
                     <div class="w-100 animate__animated" id="slide-t-2" ng-if="!storyUploaded">
@@ -145,7 +145,7 @@
                             <div class="text-end mb-3 third__animate animate__animated animate__delay-2s mb-5">
                                 <div class="d-flex align-items-center justify-content-end">
                                     <div class="me-3"><p class="code-txt normal-text mb-0" id="referralcode">{{user.referralCode}}</p></div>
-                                    <div class=""><button class="btn-custom" data-bs-toggle="tooltip" data-bs-trigger="click" title="Copied to clipboard!" onclick="copyToClipboard()">Copy</button></div>
+                                    <div class=""><button id="ctc-btn" class="btn-custom" data-bs-toggle="tooltip" data-bs-trigger="click" title="Copied to clipboard!" ng-click="trycopyToClipboard()">Copy</button></div>
                                 </div>
                                 
                             </div>
@@ -206,14 +206,14 @@
                     </div>
                     <form ng-submit="uploadStory()" class="needs-validation" novalidate>
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" id="firstNameInput" type="text" placeholder="First Name" value="{{user.firstName}}" readonly/>
-                            <label for="firstNameInput">First Name</label>
+                            <input class="form-control" type="text" id="toryfirstNameInput" type="text" placeholder="First Name" value="{{user.firstName}}" readonly/>
+                            <label for="storyfirstNameInput">First Name</label>
                             
                         </div>
                         
                         <div class="form-floating mb-3">
-                            <input class="form-control" type="text" id="lastNameInput" placeholder="Last Name" value="{{user.lastName}}" readonly/>
-                            <label for="lastNameInput">Last Name</label>
+                            <input class="form-control" type="text" id="storylastNameInput" placeholder="Last Name" value="{{user.lastName}}" readonly/>
+                            <label for="storylastNameInput">Last Name</label>
                             
                         </div>
                         
@@ -246,13 +246,13 @@
                         <form class="needs-validate" novalidate>
                             <div class="form-floating mb-3">
                                 
-                                <input class="form-control" name="" placeholder="userNameLoginInput" id="messageText" ng-model="loginuserName" required>
+                                <input class="form-control" name="" placeholder="userNameLoginInput" id="userNameLoginInput" ng-model="loginuserName" required>
                                 <label for="userNameLoginInput">Username</label>
                             </div>
                             
                             <div class="form-floating mb-3">
                                 
-                                <input class="form-control" type="password" placeholder="PasswordLoginInput" id="messageText" ng-model="loginpassword" required>
+                                <input class="form-control" type="password" placeholder="Password" id="PasswordLoginInput" ng-model="loginpassword" required>
                                 <label for="PasswordLoginInput">Enter a password</label>
                             </div>
                             <div>
@@ -441,8 +441,6 @@
     <script src="leaderboardCtrl.js"></script>
     <script src="socialLoginCtrl.js"></script>
     <script src="formSubmitCtrl.js"></script>
-    
-    <script src="CryptoJS v3.1.2\rollups\aes.js"></script>
     <script src="background-animate.js"></script>
     <script src=""></script>
 </html>

@@ -4,7 +4,6 @@ ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 let shapeArray;
 const imgsrcArray = [document.getElementById("bg-img1"),document.getElementById("bg-img2"),document.getElementById("bg-img3"),document.getElementById("bg-img4"),document.getElementById("bg-img5"),document.getElementById("bg-img6"),document.getElementById("bg-img7"),document.getElementById("bg-img8"),document.getElementById("bg-img9")]; //Images/Vector Smart Object 10.png
-console.log(imgsrcArray[2])
 function Shape1(imgIndex,x,y,directionX,directionY,size,imgAngle,imgRotRate){
     this.x = x;
     this.y = y;
