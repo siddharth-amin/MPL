@@ -11,14 +11,24 @@
             
         </style>
     </head>
-    <body ng-controller="mainCtrl">
+    <body ng-controller="mainCtrl" ng-init="status.storyUploaded = false">
+        <canvas id="background-canvas"></canvas>
+        <img id="bg-img1" src="Images/Vector Smart Object 10.png" hidden>
+        <img id="bg-img2" src="Images/Vector Smart Object 2.png" hidden>
+        <img id="bg-img3" src="Images/Vector Smart Object 3.png" hidden>
+        <img id="bg-img4" src="Images/Vector Smart Object 4.png" hidden>
+        <img id="bg-img5" src="Images/Vector Smart Object 7.png" hidden>
+        <img id="bg-img6" src="Images/Vector Smart Object 8.png" hidden>
+        <img id="bg-img7" src="Images/Vector Smart Object 9.png" hidden>
+        <img id="bg-img8" src="Images/Vector Smart Object 5.png" hidden>
+        <img id="bg-img9" src="Images/Vector Smart Object 6.png" hidden>
         <div class="header container-fluid fixed-top">
             <div class="row">
                 <div class="col col-lg-1 col-md-2 col-3 text-center"><img class="logo" src="Images/image 8-logo.png"></div>
                 <div class="col"></div>
                 <div class="col col-lg-3 col-md-4 col-6 text-center dropdown">
                     <div class="row">
-                    <div class="col text-end d-flex align-items-center justify-content-end"><button class="btn btn-custom dropdown-toggle me-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="col text-end d-flex align-items-center justify-content-end"><button class="btn-custom dropdown-toggle me-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="fa-solid fa-user"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -27,13 +37,13 @@
                             <a class="dropdown-item" onclick="openSignIn()">Login</a> or <a class="dropdown-item" onclick="openSignInRegister()">Register</a>
                         </span>
                         <span class="" ng-if="isAuthenticated">
-                            <p class="ms-3 mb-1">Hi <span ng-bind="userName"></span></p>
+                            <p class="ms-3 mb-1">Hi <span ng-bind="user.firstName"></span></p>
                             <a class="dropdown-item">Logout</a>
                         </span>
                     </li>
                   </ul>
                   <div class="text-end">
-                    <a class="btn btn-custom-red">Pre-book Now!</a>
+                    <a class="btn-custom-red">Pre-book Now!</a>
                 </div>
                 </div>
                 
@@ -47,26 +57,53 @@
                 <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 d-flex align-items-end" ng-controller="jerseyStory">
                     <div class="intro-text w-100">
                         <div class="story-grid">
+                            <div class="jersey-story-container">
                             <div class="story" ng-repeat="story in stories">
-                                <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{story.name}}</p><img class='story-img' src='{{story.url}}'><p>{{story.message}}</p>"><span></span></a>
+                                <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{story.name}}</p><img class='story-img' src='{{story.url}}'><p>{{story.message}}</p>"><span><img class="btn-profilepic" src="{{story.profilepic}}"></span></a>
+                            </div>
+                            <div class="user-story" ng-model="userStory">
+                                <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{user.firstName}} {{user.lastName}}</p><img class='story-img' src='{{user.url}}'><p>{{user.message}}</p>"><span><img class="btn-profilepic" src="{{user.profilepic}}"></span></a>
                             </div>
                             <div class="jersey-wrapper">
                                 <img class="jersey-img jersey-center floating-animation" id="jerseyImage" src="Images/Jerseyjersey.png">
                             </div>
-                            
+                            <div class="story-arrow-message">
+                                <div class="text-end">
+                                    <p>Thank you for<br>your contribution</p>
+                                </div>
+                                <div>
+                                    <img class="message-arrow" src="Images/Group 3-arrow.png">
+                                </div>
+                            </div>
                         </div>
+                            <div class="progress-container animate__animated">
+                            <span class="progress-tracker" style="left:40%">
+                                40%
+                            </span>
+                            <div class="progress">
+                                
+                                <span class="progress-overlay" style="width:40%"></span>
+                                
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        
+                          
                         <div class="landing-main-text animate__animated" id="landingMainText">
                             <img src="Images/Har Fan Ki Jersey.png">
                         </div>
                     </div>
                     <div class="animate__animated" id="landingSubtitle">
-                        <p class="big-text landing-subtitle color-dblue">CALLING EVERY <span class="color-lblue">DIE-HARD</span> FAN TO BE A PART OF THE NEW TEAM INDIA JERSEY</p>
+                        <p class="big-text landing-subtitle color-dblue">CALLING EVERY <span class="color-lblue">DIE-HARD</span> FAN<br><span class="big-text2">TO BE A PART OF THE NEW TEAM INDIA JERSEY</span></p>
                     </div>
                 </div>
                 <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 d-flex align-items-center text-end">
-                    <div class="w-100 animate__animated" id="slide-t-1">
+                    <div class="w-100 animate__animated" id="slide-t-1" ng-if="!storyUploaded">
                         <div class="text-wrapper text-end first__animate animate__animated animate__delay-1s">
-                            <h2 class="big-text color-dblue mb-4">SHOW YOUR <span class="color-lblue">FANDOM</span><br>BRING THE ALL NEW T-20 JERSEY TO LIFE</h2>
+                            <h2 class="big-text color-dblue mb-4">SHOW YOUR <span class="color-lblue">FANDOM</span><br><span class="big-text2">BRING THE ALL NEW T-20 JERSEY TO LIFE</span></h2>
                             <p class="normal-text mb-3">Tell us why you are a fan of the game and be a part of the official Team India T-20 digital jersey.</p>
                         </div>
                         <div class="card-container text-end first__animate animate__animated animate__delay-2s mb-3">
@@ -81,16 +118,16 @@
                             </div>
                         </div>
                         <div class="text-end first__animate animate__animated animate__delay-3s">
-                            <button class="btn btn-custom" onclick="secondAnimation()">Find Out How</button>
+                            <button class="btn-custom" onclick="secondAnimation()">Find Out How</button>
                         </div>                        
                     </div>
-                    <div class="w-100 animate__animated" id="slide-t-2">
+                    <div class="w-100 animate__animated" id="slide-t-2" ng-if="!storyUploaded">
                         <div class="text-end">
                             <div class="text-wrapper second__animate animate__animated animate__delay-1s">
                                 <h2 class="color-dblue big-text2 mb-4">“I am a quiet guy, but when it comes to cricket, I will be the <span class="color-lblue">loudest person in the room</span>, cheering Indiaaa-Indiaaa. I love this game.”</h2>
                                     <p class="text-end normal-text mb-5">Click on the jersey to check out some unheard fan stories<br>Yours could be next!</p>
                             </div>
-                            <button class="btn btn-custom second__animate animate__animated animate__delay-2s" onclick="openUploadForm()">Upload your story</button>
+                            <button class="btn-custom second__animate animate__animated animate__delay-2s" ng-click="checkForUploadForm()">Upload your story</button>
                             <!--<div class="steps-wrapper row text-center">
                                 <div class="col"><p>Step 1</p></div>
                                 <div class="col"><p>Step 2</p></div>
@@ -99,21 +136,21 @@
                             </div>-->
                         </div>
                     </div>
-                    <div class="w-100 animate__animated" id="slide-t-3">
+                    <div class="w-100 animate__animated" id="slide-t-3" ng-if="isAuthenticated && storyUploaded">
                         <div>
                             <div class="text-wrapper text-end third__animate animate__animated animate__delay-1s">
                                 <h2 class="big-text mb-4">SHARE. LEAD. <span class="color-lblue">WIN</span>.</h2>
                                 <p class="normal-text mb-4">Refer this code and get more entries to win exciting prizes</p>
                             </div>
                             <div class="text-end mb-3 third__animate animate__animated animate__delay-2s mb-5">
-                                <div class="row">
-                                    <div class="col"><p class="code-txt normal-text">{{Code}}</p></div>
-                                    <div class="col"><button class="btn btn-custom" onclick="">Copy</button></div>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <div class="me-3"><p class="code-txt normal-text mb-0">{{user.referralCode}}</p></div>
+                                    <div class=""><button class="btn-custom" onclick="">Copy</button></div>
                                 </div>
                                 
                             </div>
                             <div class="mb-3 third__animate animate__animated animate__delay-3s mb-3">
-                                <button class="btn btn-custom">Here is your verified certificate</button>
+                                <button class="btn-custom">Here is your verified certificate</button>
                             </div>
                             <div class="mb-3 mt-3 third__animate animate__animated animate__delay-3s mb-5">
                                 <div class="row">
@@ -129,7 +166,7 @@
                             </div>
                             <div class="text-end mt-3 third__animate animate__animated animate__delay-3s">
                                 <div class="row">
-                                    <div class="col"><div class="d-flex align-items-center text-end justify-content-end"><button class="btn btn-custom me-1" onclick="openLeaderboard()">leaderboard</button><button class="btn btn-custom" onclick="">Spin the wheel</button></div></div>
+                                    <div class="col"><div class="d-flex align-items-center text-end justify-content-end"><button class="btn-custom me-1" onclick="openLeaderboard()">Leaderboard</button><button class="btn-custom" onclick="openRewards()">Spin the wheel</button></div></div>
                                 </div>
                             </div>
                             
@@ -169,32 +206,32 @@
                     </div>
                     <form ng-submit="uploadStory()" class="needs-validation" novalidate>
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="" id="firstNameInput" type="text" placeholder="First Name" ng-bind="user.firstName" readonly>
+                            <input class="form-control" type="text" id="firstNameInput" type="text" placeholder="First Name" value="{{user.firstName}}" readonly/>
                             <label for="firstNameInput">First Name</label>
                             
                         </div>
                         
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="" id="lastNameInput" placeholder="Last Name" ng-bind="user.lastName" readonly>
+                            <input class="form-control" type="text" id="lastNameInput" placeholder="Last Name" value="{{user.lastName}}" readonly/>
                             <label for="lastNameInput">Last Name</label>
                             
                         </div>
                         
                         <div class="form-floating mb-3">
                             
-                            <textarea class="form-control" name="" placeholder="Message" id="messageText" required></textarea>
+                            <textarea class="form-control" name="" placeholder="Message" id="messageText" ng-model="user.message" required></textarea>
                             <label for="messageText">Type in your message</label>
                             <div class="invalid-feedback">We're going to need your support!</div>
                         </div>
                         
                         <div class="mb-3">
                             <label class="form-label">Upload your story</label>
-                            <input class="form-control" type="file">
+                            <input class="form-control" type="file" required>
                             <div><p class="form-text">File details & restrictions</p></div>
                             <div class="invalid-feedback">Please upload a valid format image</div>
                         </div>
                         <div>
-                            <button class="btn btn-primary" onclick="thirdAnimation()" ng-click="">Upload Story</button>
+                            <button class="btn-custom" ng-click="storyUp()">Upload Story</button>
                         </div>
                     </form>
                 </div>
@@ -209,17 +246,17 @@
                         <form class="needs-validate" novalidate>
                             <div class="form-floating mb-3">
                                 
-                                <input class="form-control" name="" placeholder="userNameLoginInput" id="messageText">
+                                <input class="form-control" name="" placeholder="userNameLoginInput" id="messageText" ng-model="loginuserName" required>
                                 <label for="userNameLoginInput">Username</label>
                             </div>
                             
                             <div class="form-floating mb-3">
                                 
-                                <input class="form-control" name="" placeholder="PasswordLoginInput" id="messageText">
+                                <input class="form-control" type="password" placeholder="PasswordLoginInput" id="messageText" ng-model="loginpassword" required>
                                 <label for="PasswordLoginInput">Enter a password</label>
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-custom">Sign In</button>
+                                <button type="submit" class="btn-custom" ng-click="authenticate()">Sign In</button>
                             </div>
                         </form>
                         <div class="mt-5">
@@ -270,6 +307,12 @@
                         </div>
                         <div class="form-floating mb-3">
                             
+                            <input class="form-control" name="" type="tel" placeholder="Number" id="numberInput" ng-model="registerNumber" value="+91" required>
+                            <label for="numberInput">Number</label>
+                            <div class="invalid-feedback">Please type out a valid phone number</div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            
                             <input class="form-control" name="" placeholder="Username" id="userNameInput" ng-model="registerUserName" required>
                             <label for="userNameInput">Username</label>
                             <div class="invalid-feedback">Required</div>
@@ -289,17 +332,21 @@
             </div>
         </div>
         </div>
-        <div class="leaderboard popup popup-wide" id="leaderboardPopup" ng-controller="leaderboardCtrl">
+        <div class="leaderboard popup" id="leaderboardPopup" ng-controller="leaderboardCtrl">
             <div class="container d-flex align-items-center h-100">
-            <div class="row w-100 popup-inner">                
-                <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
-                    <div class="text-center mb-5">
-                        <h2 class="big-text2">SUPERFAN LEADERBOARD</h2>
+            <div class="row w-100 popup-inner align-items-center d-flex">
+                <div class="col col-12">
+                    <div class="w-100">
+                        <div class="text-center mb-5">
+                            <h2 class="big-text2">SUPERFAN LEADERBOARD</h2>
+                        </div>
                     </div>
-                    <div class="row text-center podium mb-4">
+                </div>                
+                <div class="col col-12 needs-scroll">
+                    <div class="row text-center podium mb-4 align-items-center">
                         <div class="col" ng-model="podium[0]">
-                            <div >
-                                <p>{{podium[0].position}}</p>
+                            <div>
+                                <img class="podium-pic-small" src="Images/Vector 8-crown.png">
                                 <span class="podium-profilepicture-wrapper">
                                     <img class="podium-profilepicture" src="{{podium[0].picture}}">
                                 </span>
@@ -317,7 +364,7 @@
                         </div>
                         <div class="col" ng-model="podium[2]">
                             <div >
-                                <p>{{podium[2].position}}</p>
+                                <img class="podium-pic-small" src="Images/Vector 8-crown.png">
                                 <span class="podium-profilepicture-wrapper">
                                     <img class="podium-profilepicture" src="{{podium[0].picture}}">
                                 </span>
@@ -325,17 +372,61 @@
                             </div>
                         </div>
                     </div>
-                    <div ng-repeat="(key,position) in leaderBoard" class="row text-center ret-of-best">
+                    <div class="row text-center score-titles">
+                        <div class="col"><p class="bold-text">Position</p></div>
+                        <div class="col"><p class="bold-text">Name</p></div>
+                        <div class="col"><p class="bold-text">Score</p></div>
+                    </div>
+                    <div class="">
+                    
+                    <div ng-repeat="(key,position) in leaderBoard" class="row text-center rest-of-best">
                         <div class="col"><p>{{key + 4}}</p></div>
                         <div class="col lb-mid-col"><p>{{position.name}}</p></div>
                         <div class="col"><p>{{position.score}}</p></div>
                     </div>
+                    <div class="row text-center user-best">
+                        <div class="col"><p>{{user.position}}</p></div>
+                        <div class="col"><p>{{user.firstName}} {{user.lastName}}</p></div>
+                        <div class="col"><p>{{user.storyShares}}</p></div>
+                    </div>
                 </div>
-                <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
-                    Spinning Wheel
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="rewards popup" id="spinWheelPopup">
+            <div class="container d-flex align-items-center h-100">
+                <div class="row w-100 popup-inner">
+                    <div class="row">
+                        <div class="text-center mb-3">
+                            <h2 class="big-text2">FANDOM SPINNER</h2>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="wheel-container mb-3">
+                            <div class="wheel-arrow"></div>
+                            <div id="wheel" class="wheel">
+                            <div class="slice"><p>REWARD #1</p></div>
+                            <div class="slice"><p>REWARD #2</p></div>
+                            <div class="slice"><p>REWARD #3</p></div>
+                            <div class="slice"><p>REWARD #4</p></div>
+                            <div class="slice"><p>REWARD #1</p></div>
+                            <div class="slice"><p>REWARD #2</p></div>
+                            <div class="slice"><p>REWARD #3</p></div>
+                            <div class="slice"><p>REWARD #4</p></div>
+                            <div class="slice"><p>REWARD #1</p></div>
+                            <div class="slice"><p>REWARD #2</p></div>
+                            <div class="slice"><p>REWARD #3</p></div>
+                            <div class="slice"><p>REWARD #4</p></div>
+                        </div>
+                        <div class="wheel-rim"></div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn-custom" onclick="spinTheWheel()">Spin the wheel</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -344,11 +435,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js"></script>
+    <script src="page-script.js"></script>
     <script src="main-app.start.js"></script>
     <script src="jerseyStory.js"></script>
     <script src="leaderboardCtrl.js"></script>
     <script src="socialLoginCtrl.js"></script>
     <script src="formSubmitCtrl.js"></script>
-    <script src="page-script.js"></script>
+    
     <script src="CryptoJS v3.1.2\rollups\aes.js"></script>
+    <script src="background-animate.js"></script>
+    <script src=""></script>
 </html>

@@ -15,29 +15,22 @@ $(document).ready(function (){
 
 function openSignInRegister(){
     $('#signinRegisterPopup').fadeIn();
-    console.log("This triggered");
 }
 function openSignIn(){
     $('#signInPopup').fadeIn();
-    console.log("This triggered");
 }
 function openUploadForm(){
     $('#uploadFormPopup').fadeIn();
-    console.log("This triggered");
 }
 function openLeaderboard(){
     $('#leaderboardPopup').fadeIn();
-    console.log("This triggered");
 }
-
+function openRewards(){
+    $('#spinWheelPopup').fadeIn();
+}
 $(document).scroll(function() {
-    if ($document.scrollTop() >= 50) {
-        console.log("Moved");
-      // user scrolled 50 pixels or more;
-      // do stuff
-      //$element.addClass(className);
+    if ($document.scrollTop() >= 5) {
     } else {
-        console.log("Nothing")
       //$element.removeClass(className);
     }
   });
@@ -69,7 +62,7 @@ function firstAnimation(){
     $("#landingSubtitle").addClass('animate__fadeOutUp');
     $("#jerseyImage").removeClass("jersey-center floating-animation");
     $("#slide-t-1").addClass('display-block');
-    $('.first__animate').addClass('animate__fadeInRight');
+    $('.first__animate').addClass('animate__fadeInUp');
 }
 
 function secondAnimation(){
@@ -83,6 +76,7 @@ function secondAnimation(){
         $('.second__animate').addClass('animate__fadeInUp');
         $("#slide-t-1").removeClass('display-block animate__fadeInUp');
         $('.story').fadeIn();
+        $('.progress-container').addClass('animate__fadeIn');
     }, 800);
     
 }
@@ -95,7 +89,8 @@ function thirdAnimation(){
         $("#slide-t-3").addClass('display-block');
         $('.third__animate').addClass('animate__fadeInUp');
         $("#slide-t-2").removeClass('display-block animate__fadeInUp');
-            
+        $('.user-story').fadeIn();
+        $('.story-arrow-message').fadeIn();
     }, 500);
 }
 
@@ -118,3 +113,7 @@ function thirdAnimation(){
         }, false)
       })
   })()
+
+  function spinTheWheel(){
+    $('#wheel').addClass('spin-the-wheel');
+}
