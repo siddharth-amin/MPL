@@ -117,3 +117,18 @@ function thirdAnimation(){
   function spinTheWheel(){
     $('#wheel').addClass('spin-the-wheel');
 }
+
+function copyToClipboard() {
+    /* Get the text field */
+    var copyText = document.getElementById("referralcode");
+    
+    /* Select the text field */
+    //copyText.select();
+    //copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+     /* Copy the text inside the text field */
+    navigator.clipboard.writeText( 'test-url?refcode=' + copyText.innerHTML);
+  
+    /* Alert the copied text */
+    copyText.tooltip('show');
+  }

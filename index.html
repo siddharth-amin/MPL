@@ -144,8 +144,8 @@
                             </div>
                             <div class="text-end mb-3 third__animate animate__animated animate__delay-2s mb-5">
                                 <div class="d-flex align-items-center justify-content-end">
-                                    <div class="me-3"><p class="code-txt normal-text mb-0">{{user.referralCode}}</p></div>
-                                    <div class=""><button class="btn-custom" onclick="">Copy</button></div>
+                                    <div class="me-3"><p class="code-txt normal-text mb-0" id="referralcode">{{user.referralCode}}</p></div>
+                                    <div class=""><button class="btn-custom" data-bs-toggle="tooltip" data-bs-trigger="click" title="Copied to clipboard!" onclick="copyToClipboard()">Copy</button></div>
                                 </div>
                                 
                             </div>
