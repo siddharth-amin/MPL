@@ -12,7 +12,16 @@ $(document).ready(function (){
         })
       })
 
+      const video = document.querySelector('video');
 
+      video.addEventListener('ended', (event) => {
+          $('.video-container').fadeOut();
+          introAnimation();
+      })
+
+      if (window.innerHeight > window.innerWidth){
+        video.src="https://thinktreemedia.in/MPL-Certificate/videos/Scroll%20down_5%20sec_vertical_without_text.mp4";
+      }
 
 });
 
@@ -203,12 +212,6 @@ function change() {
   }
 }
 
-const video = document.querySelector('video');
-
-video.addEventListener('ended', (event) => {
-    $('.video-container').fadeOut();
-    introAnimation();
-})
 
 //Run when certificate received:
 function addMeta(){
@@ -236,3 +239,4 @@ Reference: https://developer.twitter.com/en/docs/twitter-for-websites/tweet-butt
 
 Reference: https://developers.facebook.com/docs/sharing/webmasters
 */
+
