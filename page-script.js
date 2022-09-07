@@ -113,7 +113,7 @@ function introAnimation(){
 function firstAnimation(){
     $("#landingMainText").addClass('animate__fadeOutUp');
     $("#landingSubtitle").addClass('animate__fadeOutLeft');
-    $("#jerseyImage").removeClass("jersey-center floating-animation");
+    $("#jersey").removeClass("jersey-center floating-animation");
     $("#slide-t-1").addClass('display-block');
     $('.first__animate').addClass('animate__fadeInUp');
 }
