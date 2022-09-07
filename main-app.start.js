@@ -33,7 +33,7 @@ app.controller('mainCtrl',function($rootScope,$scope){
     $scope.authenticate = function(){
       if($scope.loginuserName == $scope.user.userName && $scope.loginpassword == $scope.user.reviseCode){
         $scope.isAuthenticated = true;
-        if($scope.user.hasuploaded){
+        if($scope.user.hasuploaded){ 
           $scope.storyUploaded = true;
           thirdAnimation();
         }
@@ -52,10 +52,19 @@ app.controller('mainCtrl',function($rootScope,$scope){
     $scope.storyUp = function(){
       $scope.storyUploaded = true;
       $scope.user.hasuploaded = true;
+      secondToThirdAnim();
+    }
+    $scope.firstToSecondAnim = function(){
+      firstOut();
+      secondAnimation();
+    }
+    $scope.firstToThirdAnim = function(){
+      firstOut();
       thirdAnimation();
     }
-    $scope.gotosecondAnimation = function(){
-      secondAnimation();
+    $scope.secondToThirdAnim = function(){
+      secondOut();
+      thirdAnimation();
     }
     $scope.trycopyToClipboard = function(){
       copyToClipboard();

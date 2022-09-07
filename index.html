@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="mainApp">
     <head>
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <link rel="stylesheet" href="app.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -10,9 +11,44 @@
         <style>
             
         </style>
+
+
+
     </head>
     <body ng-controller="mainCtrl" ng-init="status.storyUploaded = false">
         <canvas id="background-canvas"></canvas>
+        <div id="backgroundContainer">
+            <div class="layer" id="layer1">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </div>
+            <div class="layer" id="layer2">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </div>
+            <div class="layer" id="layer3">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </div>
+        </div>
         <img id="bg-img1" src="Images/Vector Smart Object 10.png" hidden>
         <img id="bg-img2" src="Images/Vector Smart Object 2.png" hidden>
         <img id="bg-img3" src="Images/Vector Smart Object 3.png" hidden>
@@ -22,6 +58,13 @@
         <img id="bg-img7" src="Images/Vector Smart Object 9.png" hidden>
         <img id="bg-img8" src="Images/Vector Smart Object 5.png" hidden>
         <img id="bg-img9" src="Images/Vector Smart Object 6.png" hidden>
+
+
+        <div class="video-container">
+            <video autoplay muted>
+                <source src="https://thinktreemedia.in/MPL-Certificate/videos/Scroll%20down_5%20sec_wide_without_text.mp4">
+            </video>
+        </div>
         <div class="header container-fluid fixed-top">
             <div class="row">
                 <div class="col col-lg-1 col-md-2 col-3 text-center"><img class="logo" src="Images/image 8-logo.png"></div>
@@ -43,7 +86,7 @@
                     </li>
                   </ul>
                   <div class="text-end">
-                    <a class="btn-custom-red">Pre-book Now!</a>
+                    <a class="btn-custom-red">Pre-order your Jersey</a>
                 </div>
                 </div>
                 
@@ -65,7 +108,7 @@
                                 <a tabindex="0" class="story-btn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<p class='normal-text'>{{user.firstName}} {{user.lastName}}</p><img class='story-img' src='{{user.url}}'><p>{{user.message}}</p>"><span><img class="btn-profilepic" ng-src="{{user.profilepic}}"></span></a>
                             </div>
                             <div class="jersey-wrapper">
-                                <img class="jersey-img jersey-center floating-animation" id="jerseyImage" src="Images/Jerseyjersey.png">
+                                <img class="jersey-img jersey-center" id="jerseyImage" src="Images/Jerseyjersey.png">
                             </div>
                             <div class="story-arrow-message">
                                 <div class="text-end">
@@ -77,56 +120,85 @@
                             </div>
                         </div>
                             <div class="progress-container animate__animated">
-                            <span class="progress-tracker" style="left:40%">
-                                40%
+                            <span class="progress-tracker" style="left:60%">
+                                60%
                             </span>
                             <div class="progress">
                                 
-                                <span class="progress-overlay" style="width:40%"></span>
+                                <span class="progress-overlay" style="width:60%"></span>
                                 
                                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                                aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
                                 </div>
                               </div>
+                              <p class="normal-text">Lorem ipsum sit det something</p>
                             </div>
+                            
                         </div>
                         
-                          
+               
                         <div class="landing-main-text animate__animated" id="landingMainText">
                             <img src="Images/Har Fan Ki Jersey.png">
                         </div>
                     </div>
                     <div class="animate__animated" id="landingSubtitle">
-                        <p class="big-text landing-subtitle color-dblue">CALLING EVERY <span class="color-lblue">DIE-HARD</span> FAN<br><span class="big-text2">TO BE A PART OF THE NEW TEAM INDIA JERSEY</span></p>
+                        <p class="big-text landing-subtitle color-dblue">CALLING EVERY <span class="color-lblue" id="changeText">DIE-HARD</span> CRICKET FAN<br><span class="big-text2">TO BE A PART OF THE NEW TEAM INDIA JERSEY.</span></p>
                     </div>
                 </div>
-                <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 d-flex align-items-center text-end">
+                <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 d-flex align-items-center text-center">
                     <div class="w-100 animate__animated" id="slide-t-1" ng-if="!storyUploaded">
-                        <div class="text-wrapper text-end first__animate animate__animated animate__delay-1s">
-                            <h2 class="big-text color-dblue mb-4">SHOW YOUR <span class="color-lblue">FANDOM</span><br><span class="big-text2">BRING THE ALL NEW T-20 JERSEY TO LIFE</span></h2>
-                            <p class="normal-text mb-3">Tell us why you are a fan of the game and be a part of the official Team India T-20 digital jersey.</p>
+                        <div class="text-wrapper text-center first__animate animate__animated animate__delay-1s">
+                            <h2 class="big-text color-dblue">SHOW YOUR <span class="color-lblue">FANDOM</span></h2>
                         </div>
-                        <div class="card-container text-end first__animate animate__animated animate__delay-2s mb-3">
-                            <div class="s-1-card">
-                                <p class="s1-card-text">Stand a chance to unveil the new T20 World Cup jersey</p>
-                            </div>
-                            <div class="s-1-card">
-                                <p class="s1-card-text">Receive a certificate of appreciation from BCCI & MPL Sports</p>
-                            </div>
-                            <div class="s-1-card">
-                                <p class="s1-card-text">Win India vs Australia  match tickets, and more</p>
-                            </div>
+
+                        <div class="text-wrapper text-center first__animate animate__animated animate__delay-2s">
+
+                            <h2><span class="normal-text">Bring the jersey to life with your story.</span></h2><br>
+                            <p class="normal-text mb-3">Tell us why you are a fan of the game and be a part of the official team India T20 digital jersey. <br><br>Every 1,000th entry will unveil a part of the jersey.
+
+                             
                         </div>
-                        <div class="text-end first__animate animate__animated animate__delay-3s">
-                            <button class="btn-custom" ng-click="gotosecondAnimation()">Find Out How</button>
+                        
+                   
+                        <div class="text-center first__animate animate__animated animate__delay-3s">
+                            <button class="btn-custom" ng-click="firstToSecondAnim()">Find Out How</button>
                         </div>                        
                     </div>
                     <div class="w-100 animate__animated" id="slide-t-2" ng-if="!storyUploaded">
-                        <div class="text-end">
+                        <div class="text-center">
+                            <div class="text-wrapper first__animate animate__animated animate__delay-1s">
+                                <h2 class="color-dblue big-text">CLICK ON THE <span class="color-lblue">JERSEY</span></h2>
+                                    <p class="text-center normal-text mb-2">to check out some unheard fan stories.</p>
+                            </div> <br>
+
                             <div class="text-wrapper second__animate animate__animated animate__delay-1s">
-                                <h2 class="color-dblue big-text2 mb-4">“I am a quiet guy, but when it comes to cricket, I will be the <span class="color-lblue">loudest person in the room</span>, cheering Indiaaa-Indiaaa. I love this game.”</h2>
-                                    <p class="text-end normal-text mb-5">Click on the jersey to check out some unheard fan stories<br>Yours could be next!</p>
+                                <h2 class="color-dblue big-text2">SHARE & <span class="color-lblue">WIN</span></h2>
                             </div>
+
+
+                            <div class="card-container text-end second__animate animate__animated animate__delay-1s mb-4">
+                                <div class="s-1-card">
+                                    <img style="width: 25%;" src="images/output-onlinegiftools.gif">
+                                    <p class="s1-card-text">Certificate of appreciation from BCCI & MPL Sports</p> </div>
+                                <div class="s-1-card">
+                                    <img style="width: 25%;" src="images/output-onlinegiftools (4).gif">
+                                    <p class="s1-card-text">2 India vs Australia match tickets </p>
+                                </div>
+                               
+                                <div class="s-1-card">
+                                    <img style="width: 25%;" src="images/output-onlinegiftools (3).gif">
+                                    <p class="s1-card-text">Invitation to jersey launch event</p>
+                                </div>
+
+                                <div class="s-1-card">
+                                    <img style="width: 25%;" src="images/output-onlinegiftools (2).gif">
+                                    <p class="s1-card-text">Discount coupons & vouchers</p>
+                                </div>
+
+                            </div>
+
+
+
                             <button class="btn-custom second__animate animate__animated animate__delay-2s" ng-click="checkForUploadForm()">Upload your story</button>
                             <!--<div class="steps-wrapper row text-center">
                                 <div class="col"><p>Step 1</p></div>
@@ -138,35 +210,38 @@
                     </div>
                     <div class="w-100 animate__animated" id="slide-t-3" ng-if="isAuthenticated && storyUploaded">
                         <div>
-                            <div class="text-wrapper text-end third__animate animate__animated animate__delay-1s">
-                                <h2 class="big-text mb-4">SHARE. LEAD. <span class="color-lblue">WIN</span>.</h2>
-                                <p class="normal-text mb-4">Refer this code and get more entries to win exciting prizes</p>
+                            <div class="text-wrapper text-center third__animate animate__animated animate__delay-1s">
+                                <h2 class="big-text mb-4">SHARE. PLAY. <span class="color-lblue">WIN</span>.</h2>
+                                <p class="normal-text mb-2">Refer code, get more entries and win rewards
+                                </p>
                             </div>
-                            <div class="text-end mb-3 third__animate animate__animated animate__delay-2s mb-5">
-                                <div class="d-flex align-items-center justify-content-end">
+                            <!--<div class="text-end mb-3 third__animate animate__animated animate__delay-2s mb-5">
+                                <div class="d-flex align-items-center justify-content-center">
                                     <div class="me-3"><p class="code-txt normal-text mb-0" id="referralcode">{{user.referralCode}}</p></div>
                                     <div class=""><button id="ctc-btn" class="btn-custom" data-bs-toggle="tooltip" data-bs-trigger="click" title="Copied to clipboard!" ng-click="trycopyToClipboard()">Copy</button></div>
                                 </div>
                                 
-                            </div>
-                            <div class="mb-3 third__animate animate__animated animate__delay-3s mb-3">
-                                <button class="btn-custom">Here is your verified certificate</button>
-                            </div>
+                            </div>-->
                             <div class="mb-3 mt-3 third__animate animate__animated animate__delay-3s mb-5">
                                 <div class="row">
                                     <div class="col">
-                                        <div class="share-button-container d-flex align-items-center justify-content-end">
+                                        <div class="share-button-container d-flex align-items-center justify-content-center">
                                             <p class="mb-0 me-4">Share via</p>
                                             <a class="share-icon"><span class="fa-brands fa-facebook"></span></a>
                                             <a class="share-icon"><span class="fa-brands fa-twitter"></span></a>
-                                            <a class="share-icon"><span class="fa-brands fa-instagram"></span></a>
+                                            <a class="share-icon"><span class="fa-brands fa-whatsapp"></span></a>
                                         </div>
                                     </div>
                                 </div> 
                             </div>
-                            <div class="text-end mt-3 third__animate animate__animated animate__delay-3s">
+                            <div class="text-center mt-3 third__animate animate__animated animate__delay-3s">
                                 <div class="row">
-                                    <div class="col"><div class="d-flex align-items-center text-end justify-content-end"><button class="btn-custom me-1" onclick="openLeaderboard()">Leaderboard</button><button class="btn-custom" onclick="openRewards()">Spin the wheel</button></div></div>
+                                    <div class="col">
+                                        <p class="normal-text mb-3">Check your score on the Superfan Leaderboard
+                                        </p>
+                         
+                                        
+                                        <div class="d-flex align-items-center text-center justify-content-center"><button class="btn-custom me-1" onclick="openLeaderboard()">Leaderboard</button></div></div>
                                 </div>
                             </div>
                             
@@ -220,12 +295,12 @@
                         <div class="form-floating mb-3">
                             
                             <textarea class="form-control" name="" placeholder="Message" id="messageText" ng-model="user.message" required></textarea>
-                            <label for="messageText">Type in your message</label>
+                            <label for="messageText">Type your message</label>
                             <div class="invalid-feedback">We're going to need your support!</div>
                         </div>
                         
                         <div class="mb-3">
-                            <label class="form-label">Upload your story</label>
+                            <label class="form-label">Upload image</label>
                             <input class="form-control" type="file" required>
                             <div><p class="form-text">File details & restrictions</p></div>
                             <div class="invalid-feedback">Please upload a valid format image</div>
@@ -332,43 +407,60 @@
             </div>
         </div>
         </div>
-        <div class="leaderboard popup" id="leaderboardPopup" ng-controller="leaderboardCtrl">
+        <div class="leaderboard popup popup-wide" id="leaderboardPopup" ng-controller="leaderboardCtrl">
             <div class="container d-flex align-items-center h-100">
             <div class="row w-100 popup-inner align-items-center d-flex">
-                <div class="col col-12">
-                    <div class="w-100">
-                        <div class="text-center mb-5">
-                            <h2 class="big-text2">SUPERFAN LEADERBOARD</h2>
+                <div class="col col-12 mb-5">
+                    <div class="row w-100 align-items-center">
+                        <div class="col">
+                            <div class="user-best d-flex align-items-center">
+                                <div class="me-1">
+                                    <span class="podium-profilepicture-wrapper">
+                                        <img class="podium-profilepicture" ng-src="{{user.profilepic}}">
+                                    </span></div>
+                                <div class="ms-1"><p>Your points</p><p class="text-bold">{{user.firstName}} {{user.lastName}}</p><p>{{user.storyShares}}</p><p>#{{user.position}}</p></div>
+                            </div>
+                        </div>
+                        <div class="col text-center">
+                            <h2 class="big-text2 text-end">SUPERFAN<br>LEADERBOARD</h2>
                         </div>
                     </div>
                 </div>                
                 <div class="col col-12 needs-scroll">
-                    <div class="row text-center podium mb-4 align-items-center">
-                        <div class="col" ng-model="podium[0]">
-                            <div>
-                                <img class="podium-pic-small" src="Images/Vector 8-crown.png">
+                    <div class="row text-center podium mb-4 align-items-center justify-content-center">
+                        <div class="col col-12" ng-model="podium[0]">
+                            <div class="podium-wrapper mw-50">
+                                <p class="podium-position">1</p>
                                 <span class="podium-profilepicture-wrapper">
                                     <img class="podium-profilepicture" ng-src="{{podium[0].picture}}">
                                 </span>
                             <p class="podium-name">{{podium[0].name}}</p>
+
+                            <p class="podium-score">{{podium[0].score}}</p>
+
+                            
                             </div>
                         </div>
-                        <div class="col" ng-model="podium[1]">
-                            <div >
-                                <img class="podium-pic" src="Images/Vector 8-crown.png">
+                        <div class="col col-6" ng-model="podium[1]">
+                            <div class="podium-wrapper">
+                                <p class="podium-position">2</p>
                                 <span class="podium-profilepicture-wrapper">
                                     <img class="podium-profilepicture" ng-src="{{podium[1].picture}}">
                                 </span>
                             <p class="podium-name">{{podium[1].name}}</p>
+
+                            <p class="podium-score">{{podium[1].score}}</p>
                             </div>
                         </div>
-                        <div class="col" ng-model="podium[2]">
-                            <div >
-                                <img class="podium-pic-small" src="Images/Vector 8-crown.png">
+                        <div class="col col-6" ng-model="podium[2]">
+                            <div class="podium-wrapper">
+                                <p class="podium-position">3</p>
                                 <span class="podium-profilepicture-wrapper">
-                                    <img class="podium-profilepicture" ng-src="{{podium[0].picture}}">
+                                    <img class="podium-profilepicture" ng-src="{{podium[2].picture}}">
                                 </span>
-                            <p class="podium-name">{{podium[0].name}}</p>
+                            <p class="podium-name">{{podium[2].name}}</p>
+
+                            <p class="podium-score">{{podium[2].score}}</p>
                             </div>
                         </div>
                     </div>
@@ -381,14 +473,10 @@
                     
                     <div ng-repeat="(key,position) in leaderBoard" class="row text-center rest-of-best">
                         <div class="col"><p>{{key + 4}}</p></div>
-                        <div class="col lb-mid-col"><p>{{position.name}}</p></div>
+                        <div class="col"><p>{{position.name}}</p></div>
                         <div class="col"><p>{{position.score}}</p></div>
                     </div>
-                    <div class="row text-center user-best">
-                        <div class="col"><p>{{user.position}}</p></div>
-                        <div class="col"><p>{{user.firstName}} {{user.lastName}}</p></div>
-                        <div class="col"><p>{{user.storyShares}}</p></div>
-                    </div>
+                    
                 </div>
                 </div>
                 </div>
@@ -424,6 +512,25 @@
                         <div class="text-center">
                             <button class="btn-custom" onclick="spinTheWheel()">Spin the wheel</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="certificatepopup popup" id="certificatePopup">
+            <div class="container d-flex align-items-center h-100">
+                <div class="row w-100 popup-inner">
+                    <div class="row">
+                        <div class="text-center mb-3">
+                            <h2 class="big-text2">Congratulations!</h2>
+                            <h2 class="normal-text">You are now part of this journey</h2>
+                        </div>
+                    </div>
+                    <div class="col col-12">
+                        <img class="cert-img mb-3" src="Images/MPL cert.jpg">
+                        <div class="text-center ms-3">
+                            <button class="btn-custom">Download Certificate</button>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
