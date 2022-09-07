@@ -255,10 +255,10 @@ modelViewerVariants.addEventListener('load', () => {
   }
   modelViewerVariants.variantName = 'White';
   // Adds a default option.
-  const option = document.createElement('option');
+  /*const option = document.createElement('option');
     option.value = 'default';
     option.textContent = 'Default';
-    select.appendChild(option);
+    select.appendChild(option);*/
 });
 
 //select.addEventListener('input', (event) => {
