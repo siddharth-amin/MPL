@@ -242,7 +242,8 @@ Reference: https://developers.facebook.com/docs/sharing/webmasters
 
 const modelViewerVariants = document.querySelector("model-viewer#jersey");
 const storyGrid = document.querySelector('.story-grid');
-$('#jersey').css({'height': storyGrid.height,'width': storyGrid.width});
+conso
+$('#jersey').css({'height': storyGrid.height(),'width': storyGrid.width}());
 modelViewerVariants.addEventListener('load', () => {
   const names = modelViewerVariants.availableVariants;
   for (const name of names) {
