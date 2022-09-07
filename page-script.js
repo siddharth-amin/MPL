@@ -241,7 +241,6 @@ Reference: https://developers.facebook.com/docs/sharing/webmasters
 */
 
 const modelViewerVariants = document.querySelector("model-viewer#jersey");
-const select = document.querySelector('#variant');
 
 modelViewerVariants.addEventListener('load', () => {
   const names = modelViewerVariants.availableVariants;
@@ -251,7 +250,9 @@ modelViewerVariants.addEventListener('load', () => {
     //option.textContent = name;
     //select.appendChild(option);
     console.log(name);
+    
   }
+  modelViewerVariants.variantName = 'White';
   // Adds a default option.
   const option = document.createElement('option');
     option.value = 'default';
