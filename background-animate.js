@@ -45,7 +45,7 @@ function init(){
         let y = Math.random() * (innerHeight - size * 2);
         let directionX = (Math.random() * .4) - .2;
         let directionY = (Math.random() * .4) - .2;
-        let imgIndex = Math.floor((Math.random() * 9));
+        let imgIndex = Math.floor((Math.random() * 7));
         let imgRotRate = Math.random() * 1;
         let imgAngle = Math.floor((Math.random() * 360));
         if (imgIndex > 6){
