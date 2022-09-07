@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 let shapeArray;
-const imgsrcArray = [document.getElementById("bg-img1"),document.getElementById("bg-img2"),document.getElementById("bg-img3"),document.getElementById("bg-img4"),document.getElementById("bg-img5"),document.getElementById("bg-img6"),document.getElementById("bg-img7"),document.getElementById("bg-img8"),document.getElementById("bg-img9")]; //Images/Vector Smart Object 10.png
+const imgsrcArray = [document.getElementById("bg-img1"),document.getElementById("bg-img2"),document.getElementById("bg-img3"),document.getElementById("bg-img4"),document.getElementById("bg-img5"),document.getElementById("bg-img6"),document.getElementById("bg-img7")];//,document.getElementById("bg-img8"),document.getElementById("bg-img9")]; //Images/Vector Smart Object 10.png
 function Shape1(imgIndex,x,y,directionX,directionY,size,imgAngle,imgRotRate){
     this.x = x;
     this.y = y;
@@ -40,7 +40,7 @@ Shape1.prototype.update = function(){
 function init(){
     shapeArray = [];
     for (let i = 0;i<40;i++){
-        let size = (Math.random() * 20) + 50;
+        let size = (Math.random() * 20) + 10;
         let x = Math.random() * (innerWidth - size * 2);
         let y = Math.random() * (innerHeight - size * 2);
         let directionX = (Math.random() * .4) - .2;
@@ -49,7 +49,7 @@ function init(){
         let imgRotRate = Math.random() * 1;
         let imgAngle = Math.floor((Math.random() * 360));
         if (imgIndex > 6){
-            size += ((Math.random() * 100) + 20);
+            size += ((Math.random() * 50) + 20);
         }
         shapeArray.push(new Shape1(imgIndex,x,y,directionX,directionY,size,imgAngle, imgRotRate));
     }
