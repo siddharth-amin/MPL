@@ -559,7 +559,7 @@ padding: 2px 0;
     transition: all 0.5s ease-out;
   }
   .progress{
-    height:25px;
+    height:8px;
     position: relative;
     border-radius: 25px;
     transition: all 0.3s linear;
@@ -910,7 +910,7 @@ transform:rotate(30deg);
  /* Medium devices (tablets, less than 992px)*/
  @media only screen and (max-width: 991.98px) { 
     .jersey-center{
-        margin:0 0 0 10%;
+        margin:0 0 0 0%;
     }
     .landing-main-text{
         width:90%;
@@ -918,22 +918,27 @@ transform:rotate(30deg);
     }
     #landingSubtitle{
         width:70%;
+        bottom:15%;
     }
     .big-text{
-        font-size:2rem;
+        font-size:6rem;
+        line-height: normal;
     }
     .big-text2{
         font-size:1.5rem;
     }
     .normal-text{
-        font-size: 1rem;
+        font-size: 2rem;
     }
     .story-grid{
-        width:100%;
+        width:60%;
         margin:auto;
     }
     .popup{
         padding:10% 5%;
+    }
+    .btn-custom{
+        font-size:3rem;
     }
   }
  
