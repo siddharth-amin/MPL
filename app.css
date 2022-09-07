@@ -284,6 +284,7 @@ padding: 2px 0;
 model-viewer{
     width:400px;
 height:400px;
+transition:all 1s ease-in-out;
 }
 .jersey-wrapper img{
     position:relative;
