@@ -8,7 +8,7 @@ $(document).ready(function() {
 	//methods
 	$.fn.fullpage.setAllowScrolling(false);*/
     const modelViewerVariants = document.querySelector("model-viewer#jersey");
-$('#jersey').css({'height': $('#slide-1').height(),'width': $('.jersey-container').width()});
+$('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
 modelViewerVariants.addEventListener('load', () => {
   const names = modelViewerVariants.availableVariants;
   for (const name of names) {

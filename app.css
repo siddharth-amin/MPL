@@ -87,8 +87,9 @@ font-size:48px;
     width:30%;
     position:fixed;
     left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
+    top:0%;
+    transform: translate(-50%,0%);
+    height:100%;
 }
 
 .jersey-img{
