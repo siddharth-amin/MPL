@@ -1,0 +1,228 @@
+@font-face {
+    font-family: Trim-Bold;
+    src: url(fonts/Trim-Bold.otf);
+}
+@font-face {
+    font-family: Trim-Medium;
+    src: url(fonts/Trim-Medium.otf);
+}
+@font-face {
+    font-family: Trim-Regular;
+    src: url(fonts/Trim-Regular.otf);
+}
+body{
+    background:#D9D9D9;
+}
+.background{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    z-index:-1;
+}
+.bg-square{
+    height:150vh;
+    width:150vh;
+    border-radius:10px;
+    position:absolute;
+    background: #f0f0f0;
+    box-shadow: 0 0 99px #FFF;
+    transition: all 0.55s ease-in-out;
+}
+.left-square{
+    top:-10%;
+    left:-50%;
+    transform:rotate(45deg);
+    animation: moveup 2s ease-in-out 2s forwards;
+}
+.right-square{
+    top:-50%;
+    left:80%;
+    transform:rotate(-45deg);
+    animation: movedown 2s ease-in-out 2s forwards;
+}
+@keyframes moveup{
+    to{
+        top:-50%;
+        transform: rotate(-45deg);
+    }
+}
+@keyframes movedown{
+    to{
+        top:0%;
+        transform: rotate(45deg);
+    }
+}
+.big-text{
+margin-bottom:0;
+font-family:Trim-Bold;
+color:#004564;
+font-size:48px;
+}
+.normal-text{
+    margin-bottom:0;
+    font-family: Trim-Regular;
+    color:#004564;
+    font-size:24px;
+}
+.small-text{
+    margin-bottom:0;
+    font-family: Trim-Regular;
+    color:#004564;
+    font-size:16px;
+}
+.bold-text{
+    margin-bottom:0;
+    font-family: Trim-Medium;
+}
+.bolder-text{
+    font-family: Trim-Bold;
+}
+.text-upper{
+    text-transform: uppercase;
+}
+.jersey-container{
+    margin:auto;
+    width:fit-content;
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.jersey-img{
+    width:100%;
+    max-height:70vh;
+    width:auto;
+}
+
+.section{
+    height:100vh;
+}
+  .progress-container{
+    position: relative;
+    opacity:1;
+    max-width:80%;
+  }
+  .progress-tracker{
+    display: block;
+    position:absolute;
+    top:-30px;
+    font-size:20px;
+    text-align: center;
+    line-height:1;
+    color:#183457;
+    z-index:2;
+    transform: translateX(-50%);
+  }
+  .progress-bar{
+    background-color: transparent;
+    z-index:1;
+    background:#7DA2D3;
+    border-radius: 25px;
+    transition: all 0.5s ease-out;
+  }
+  .progress{
+    background: #CBCBCB;
+    height:8px;
+    position: relative;
+    border-radius: 25px;
+    transition: all 0.3s linear;
+  }
+  .btn-custom{
+    border:2px solid #183457;
+    background:transparent;
+    border-radius: 100px;
+    padding:7px 25px;
+    font-family: Trim-Regular;
+    overflow:hidden;
+    position:relative;
+    transition:all 0.3s ease-in-out;
+  }
+
+  .btn-custom::after{
+    display:block;
+    content:'';
+    position:absolute;
+    z-index:-1;
+    background: #D9D9D9;
+    width:40px;
+    height:100%;
+    transform: skew(-30deg);
+    opacity:0.7;
+    left:-10%;
+    top:0;
+    transition:all 0.5s ease-in-out;
+  }
+  .btn-custom::before{
+    content:'';
+    display:block;
+    position:absolute;
+    height:calc(100% + 20px);
+    width:calc(100% + 20px);
+    z-index:-2;
+    opacity:0;
+    background: #183457;
+    transition:all 0.3s ease-in-out;
+    top:-10px;
+    left:-10px;
+    border-radius:100px;
+    border:2px solid #183457;
+  }
+  .btn-custom:hover{
+    color:white;
+    box-shadow: -4px 4px 11px rgba(0, 0, 0, 0.25);
+  }
+  .btn-custom:hover::before{
+    opacity:1;
+  }
+  .btn-custom:hover::after{
+    left:110%;
+  }
+  .btn-custom-red{
+    padding:13px 20px;
+    background-color:#FF1E46;
+    border-radius: 50px 0 0 50px;
+    color:#f9f9f9;
+    font-size:15px;
+    border:none;
+  }
+  .btn-custom:hover,.btn-custom-red:hover{
+    background-color: #183457;
+    color:#f9f9f9;
+  }
+  .header{
+    padding: 10px 0px 10px 20px;
+  }
+  .story-popup{
+    padding:20px;
+    background: #EFEFEF;
+    backdrop-filter: blur(20px);
+    box-shadow: -4px 4px 11px rgba(0, 0, 0, 0.25);
+    border-radius: 44px;
+  }
+  .sp-profilepic{
+    border-radius:50%;
+    width:50px;
+    height:50px;
+  }
+  .sp-storyimg-container{
+    margin:10px 0;
+  }
+  .sp-storyimg{
+    width:100%;
+  }
+  .left-col{
+    transform:translateX(15%);
+  }
+  .right-col{
+    transform:translateX(-15%);
+  }
+  .share-icon span{
+    font-size:16px;
+    padding:12px;
+    margin-left:20px;
+    color:#fff;
+    background:linear-gradient(180deg, #286884 0%, #003F62 100%);
+    border-radius: 50%;
+}
