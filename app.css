@@ -84,12 +84,13 @@ font-size:48px;
 }
 .jersey-container{
     margin:auto;
-    width:fit-content;
+    width:30%;
     position:fixed;
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
 }
+
 .jersey-img{
     width:100%;
     max-height:70vh;
