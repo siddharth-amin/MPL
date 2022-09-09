@@ -43,11 +43,12 @@ $(document).ready(() => {
                 $('.first_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
             }
             if(origin.index == 2){
-                $('.second_animate').removeClass('animate__fadeInUp');
-                $('.second_hold_animate').removeClass('animate__fadeInUp');
+                $('.second_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
+                $('.second_hold_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
+                $('.second_animate-down').removeClass('animate__fadeInDownShort');
             }
             if(origin.index == 3){
-                $('.third_animate').removeClass('animate__fadeInUp');
+                $('.third_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
             }
         }
 	});
