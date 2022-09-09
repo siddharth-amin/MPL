@@ -68,7 +68,8 @@ modelViewerVariants.addEventListener('load', () => {
     select.appendChild(option);*/
 });
 });
-turnJersey = () =>{
+turnJersey = (modelViewerVariants) =>{
+    const modelViewerVariants = document.querySelector("model-viewer#jersey");
     modelViewerVariants.resetTurntableRotation(0);
 }
 progressBar = (progVal) => {
