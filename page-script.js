@@ -69,6 +69,7 @@ $(document).ready(() => {
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     modelViewerVariants.addEventListener('load', () => {
     $('.jersey-container').css({opacity:1});
+    $('.bg-square').removeClass('animate-move-left animate-move-right');
     const names = modelViewerVariants.availableVariants;
     for (const name of names) {
     //const option = document.createElement('option');
