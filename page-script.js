@@ -28,14 +28,12 @@ modelViewerVariants.addEventListener('load', () => {
 });
 });
 
-function progressBar(){
+function progressBar(progVal){
     progress = 0;
-    progCount = setInterval(() => {
-        $('.progress-tracker').html(progress >= 40 ? 40 + '%' : progress++ + '%');
-    }, 45);
-    $('.progress-bar-blue').animate({width: '40%'},2000, () =>{});
-    $('.progress-tracker').animate({left: '40%'},2000, () =>{
-        clearInterval(progCount);
+    $('.progress-bar-blue').animate({width: progVal + '%'}, {duration:2000, step: (now) =>{
+        $('.progress-tracker').html(Math.ceil(now) + '%');
+    }});
+    $('.progress-tracker').animate({left: progVal + '%'},2000, () =>{
         openStoryPopup()
     });
 }
