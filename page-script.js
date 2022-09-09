@@ -69,7 +69,7 @@ modelViewerVariants.addEventListener('load', () => {
 });
 });
 turnJersey = () =>{
-    model.modelViewerVariants.resetTurntableRotation(0);
+    modelViewerVariants.resetTurntableRotation(0);
 }
 progressBar = (progVal) => {
     progress = 0;
