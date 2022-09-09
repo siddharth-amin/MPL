@@ -11,15 +11,18 @@ $(document).ready(() => {
             var origin = this;
             if(destination.index == 1){
                 $('.first_animate').addClass('animate__fadeInUp');
+                turnJersey();
             }
             if(destination.index == 2){
                 $('.second_animate').addClass('animate__fadeInUp');
                 $.when(progressBar(60)).then(() => {
                     $('.second_hold_animate').addClass('animate__fadeInUp');
                 });
+                turnJersey();
             }
             if(destination.index == 3){
                 $('.third_animate').addClass('animate__fadeInUp');
+                turnJersey();
             }
             /*if(direction == 'down'){
                 console.log(destination.index);
@@ -65,7 +68,9 @@ modelViewerVariants.addEventListener('load', () => {
     select.appendChild(option);*/
 });
 });
-
+turnJersey = () =>{
+    model.modelViewerVariants.resetTurntableRotation(0);
+}
 progressBar = (progVal) => {
     progress = 0;
     $('.progress-bar-blue').animate({width: progVal + '%'}, {duration:2000, step: (now) =>{
