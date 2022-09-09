@@ -51,6 +51,7 @@ $(document).ready(() => {
                 $('.third_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
             }
         }
+        
 	});
 
 	//methods
@@ -73,6 +74,13 @@ modelViewerVariants.addEventListener('load', () => {
     option.value = 'default';
     option.textContent = 'Default';
     select.appendChild(option);*/
+});
+
+$('.popup').on('click', function(e) {
+    $(this).fadeOut();
+}).on('click', '.popup-inner', function(e) {
+    // clicked on descendant div
+    e.stopPropagation();
 });
 });
 turnJersey = (modelViewerVariants) =>{
@@ -106,4 +114,7 @@ animateSquares = (direction, steps) => {
         });
     
     
+}
+function openLeaderboard(){
+    $('#leaderboardPopup').fadeIn();
 }

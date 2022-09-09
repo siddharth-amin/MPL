@@ -142,14 +142,95 @@
                 <div class="col right-col">
                     <div>
                         <h2 class="big-text text-uppercase third_animate animate__animated">Keep an eye on the Leaderboard</h2>
-                        <button class="btn-custom text-uppercase mt-3 third_animate animate__animated animate__delay-0_3s">Check Your Score</button>
+                        <button class="btn-custom text-uppercase mt-3 third_animate animate__animated animate__delay-0_3s" onclick="openLeaderboard()">Check Your Score</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <div class="section"></div>
+<div class="leaderboard popup popup-wide" id="leaderboardPopup" ng-controller="leaderboardCtrl">
+    <div class="container d-flex align-items-center h-100">
+    <div class="row w-100 popup-inner align-items-center d-flex">
+        <div class="col col-12 mb-5">
+            <div class="row w-100 align-items-center">
+                <div class="col">
+                    <div class="user-best d-flex align-items-center">
+                        <div class="me-1">
+                            <span class="podium-profilepicture-wrapper">
+                                <img class="podium-profilepicture" ng-src="{{user.profilepic}}">
+                            </span></div>
+                        <div class="ms-1"><p>Your points</p><p class="text-bold">John Doe</p><div class="d-flex align-items-center"><p class="me-3">4</p><p>#143</p></div></div>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <h2 class="big-text text-center"><span class="normal-text-lb">SUPERFAN</span><br>LEADERBOARD</h2>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>                
+        <div class="col col-12 needs-scroll">
+            <div class="row text-center podium mb-4 align-items-center justify-content-center">
+                <div class="col col-12 pod-col" ng-model="podium[0]">
+                    <div class="podium-wrapper mw-50">
+                        <p class="podium-position">1</p>
+                        <span class="podium-profilepicture-wrapper">
+                            <span class="p-pic-halo"></span>
+                            <img class="podium-profilepicture" ng-src="{{podium[0].picture}}">
+                        </span>
+                    <p class="podium-name">John Doe</p>
+
+                    <p class="podium-score">14930</p>
+
+                    
+                    </div>
+                </div>
+                <div class="col col-6 pod-col" ng-model="podium[1]">
+                    <div class="podium-wrapper">
+                        <p class="podium-position">2</p>
+                        <span class="podium-profilepicture-wrapper">
+                            <span class="p-pic-halo"></span>
+                            <img class="podium-profilepicture" ng-src="{{podium[1].picture}}">
+                        </span>
+                    <p class="podium-name">John Deux</p>
+
+                    <p class="podium-score">7892</p>
+                    </div>
+                </div>
+                <div class="col col-6 pod-col" ng-model="podium[2]">
+                    <div class="podium-wrapper">
+                        <p class="podium-position">3</p>
+                        <span class="podium-profilepicture-wrapper">
+                            <span class="p-pic-halo"></span>
+                            <img class="podium-profilepicture" ng-src="{{podium[2].picture}}">
+                        </span>
+                    <p class="podium-name">Ralph</p>
+
+                    <p class="podium-score">2343</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center score-titles">
+                <div class="col"><p class="bold-text">Position</p></div>
+                <div class="col"><p class="bold-text">Name</p></div>
+                <div class="col"><p class="bold-text">Score</p></div>
+                <div class="col"><p class="bold-text">Position</p></div>
+                <div class="col"><p class="bold-text">Name</p></div>
+                <div class="col"><p class="bold-text">Score</p></div>
+            </div>
+            <div class="split-view">
+            
+            <div ng-repeat="(key,position) in leaderBoard" class="row text-center rest-of-best">
+                <div class="col"><p>{{key + 4}}</p></div>
+                <div class="col"><p>{{position.name}}</p></div>
+                <div class="col"><p>{{position.score}}</p></div>
+            </div>
+            
+        </div>
+        </div>
+        </div>
+</div>
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
