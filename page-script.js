@@ -19,6 +19,7 @@ $(document).ready(() => {
                 $('.left-col .first_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col .first_animate').addClass('animate__fadeInRightShort');
                 turnJersey();
+                resizeJerseySize();
             }
             if(destination.index == 2){
                 $('.left-col .second_animate').addClass('animate__fadeInLeftShort');
@@ -150,4 +151,10 @@ function increaseJerseySize(){
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     $('.left-square').css({'left':'-60%'});
     $('.right-square').css({'left':'90%'});
+}
+function resizeJerseySize(){
+    $('.jersey-container').css({'width':'30%'});
+    $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
+    $('.left-square').css({'left':'-50%'});
+    $('.right-square').css({'left':'80%'});
 }
