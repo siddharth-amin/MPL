@@ -78,7 +78,7 @@ font-size:48px;
   line-height: 1;
 }
 #jersey{
-  opacity: 0;
+  
   transition:all 1s linear;
 }
 .small-text{
