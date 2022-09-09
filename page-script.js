@@ -5,23 +5,29 @@ $(document).ready(() => {
 		autoScrolling:true,
 		scrollHorizontally: true,
         scrollingSpeed: 1000,
+        scrollOverflow: false,
         fade : true,
         cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
         afterLoad : (origin, destination, direction, trigger) => {
             var origin = this;
             if(destination.index == 1){
-                $('.first_animate').addClass('animate__fadeInUp');
+                $('.left-col .first_animate').addClass('animate__fadeInLeftShort');
+                $('.right-col .first_animate').addClass('animate__fadeInRightShort');
                 turnJersey();
             }
             if(destination.index == 2){
-                $('.second_animate').addClass('animate__fadeInUp');
+                $('.left-col .second_animate').addClass('animate__fadeInLeftShort');
+                $('.right-col .second_animate').addClass('animate__fadeInRightShort');
+                $('.right-col .second_animate-down').addClass('animate__fadeInDownShort');
                 $.when(progressBar(60)).then(() => {
-                    $('.second_hold_animate').addClass('animate__fadeInUp');
+                    $('.left-col .second_hold_animate').addClass('animate__fadeInLeftShort');
+                    $('.right-col .second_hold_animate').addClass('animate__fadeInRightShort');
                 });
                 turnJersey();
             }
             if(destination.index == 3){
-                $('.third_animate').addClass('animate__fadeInUp');
+                $('.left-col .third_animate').addClass('animate__fadeInLeftShort');
+                $('.right-col .third_animate').addClass('animate__fadeInRightShort');
                 turnJersey();
             }
             /*if(direction == 'down'){
@@ -34,7 +40,7 @@ $(document).ready(() => {
             animateSquares(direction, destination.index);
             console.log(origin.index)
             if(origin.index == 1){
-                $('.first_animate').removeClass('animate__fadeInUp');
+                $('.first_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
             }
             if(origin.index == 2){
                 $('.second_animate').removeClass('animate__fadeInUp');

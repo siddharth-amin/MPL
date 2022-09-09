@@ -32,32 +32,30 @@ body{
 }
 .left-square{
     top:0%;
-    left:-50%;
+    left:-25%;
     transform:rotate(45deg);
-    
+    animation: moveleft 2s ease-in-out forwards;
 }
 .right-square{
     top:-50%;
-    left:80%;
+    left:60%;
     transform:rotate(-45deg);
-    
+    animation: moveright 2s ease-in-out forwards;
 }
-.animate-move-down{
+.animate-move-left{
   animation: movedown 2s ease-in-out forwards;
 }
-.animate-move-up{
+.animate-move-right{
   animation: moveup 2s ease-in-out forwards;
 }
-@keyframes moveup{
+@keyframes moveleft{
     to{
-        top:-50%;
-        transform: rotate(-45deg);
+        left:-50%;
     }
 }
-@keyframes movedown{
+@keyframes moveright{
     to{
-        top:0%;
-        transform: rotate(45deg);
+        left:80%;
     }
 }
 .big-text{
@@ -106,6 +104,11 @@ font-size:48px;
 
 .section{
     height:100vh;
+}
+.progress-message-container{
+  overflow:hidden;
+  position:relative;
+  height:fit-content;
 }
   .progress-container{
     position: relative;
@@ -268,7 +271,7 @@ font-size:48px;
   opacity:0;
   transition:opacity 0.3s linear;
 }
-.second_animate,.second_hold_animate{
+.second_animate,.second_hold_animate,.second_animate-down{
   opacity:0;
 }
 .third_animate{
@@ -277,12 +280,45 @@ font-size:48px;
 .animate__fadeInLeftShort{
   animation: fadeInLeftShort 1s both;
 }
+.animate__fadeInRightShort{
+  animation: fadeInRightShort 1s both;
+}
+.animate__fadeInDownShort{
+  animation: fadeInDownShort 1s both;
+}
 
 @keyframes fadeInLeftShort {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(-20%,0,0);
     transform: translate3d(-20%,0,0);
+}
+
+100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+}
+
+@keyframes fadeInRightShort {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(20%,0,0);
+    transform: translate3d(20%,0,0);
+}
+
+100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+}
+@keyframes fadeInDownShort {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0%,-20%,0);
+    transform: translate3d(0%,-20%,0);
 }
 
 100% {
