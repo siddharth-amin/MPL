@@ -293,6 +293,9 @@ font-size:48px;
 .third_animate{
   opacity:0;
 }
+.zero_animate{
+  opacity:0;
+}
 .animate__fadeInLeftShort{
   animation: fadeInLeftShort 1s both;
 }
@@ -552,12 +555,12 @@ font-size:48px;
 
 .start-1-img{
   width:100%;
-  margin-bottom:20%;
+  margin-bottom:15%;
   transform: rotate(-12deg);
 }
 .start-2-img{
   width:100%;
-  margin-top:20%;
+  margin-top:15%;
   transform: rotate(-12deg);
 }
 .left-col-wide{

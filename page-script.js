@@ -10,6 +10,11 @@ $(document).ready(() => {
         cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
         afterLoad : (origin, destination, direction, trigger) => {
             var origin = this;
+            if(destination.index == 0){
+                $('.left-col-wide .zero_animate').addClass('animate__fadeInLeftShort');
+                $('.right-col-wide .zero_animate').addClass('animate__fadeInRightShort');
+                turnJersey();
+            }
             if(destination.index == 1){
                 $('.left-col .first_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col .first_animate').addClass('animate__fadeInRightShort');
@@ -40,6 +45,9 @@ $(document).ready(() => {
         onLeave : (origin, destination, direction, trigger) => {
             animateSquares(direction, destination.index);
             console.log(origin.index)
+            if(origin.index == 0){
+                $('.zero_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
+            }
             if(origin.index == 1){
                 $('.first_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
             }
