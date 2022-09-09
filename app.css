@@ -77,8 +77,9 @@ font-size:48px;
   font-size:36px;
   line-height: 1;
 }
-model-viewer#jersey{
+#jersey{
   opacity: 0;
+  transition:all 1s linear;
 }
 .small-text{
     margin-bottom:0;

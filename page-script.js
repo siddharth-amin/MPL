@@ -59,7 +59,7 @@ $(document).ready(() => {
     const modelViewerVariants = document.querySelector("model-viewer#jersey");
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     modelViewerVariants.addEventListener('load', () => {
-        modelViewerVariants.css({opacity:1});
+        $('#jersey').css({opacity:1});
     const names = modelViewerVariants.availableVariants;
     for (const name of names) {
     //const option = document.createElement('option');
