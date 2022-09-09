@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 	//methods
 	$.fn.fullpage.setAllowScrolling(false);*/
-    /*const modelViewerVariants = document.querySelector("model-viewer#jersey");
+    const modelViewerVariants = document.querySelector("model-viewer#jersey");
 $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
 modelViewerVariants.addEventListener('load', () => {
   const names = modelViewerVariants.availableVariants;
@@ -24,8 +24,8 @@ modelViewerVariants.addEventListener('load', () => {
   /*const option = document.createElement('option');
     option.value = 'default';
     option.textContent = 'Default';
-    select.appendChild(option);*+/
-});*/
+    select.appendChild(option);*/
+});
 });
 
 function progressBar(){
