@@ -57,10 +57,11 @@ $(document).ready(() => {
 	//methods
 	//$.fn.fullpage.setAllowScrolling(false);
     const modelViewerVariants = document.querySelector("model-viewer#jersey");
-$('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
-modelViewerVariants.addEventListener('load', () => {
-  const names = modelViewerVariants.availableVariants;
-  for (const name of names) {
+    $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
+    modelViewerVariants.addEventListener('load', () => {
+        modelViewerVariants.fadeIn();
+    const names = modelViewerVariants.availableVariants;
+    for (const name of names) {
     //const option = document.createElement('option');
     //option.value = name;
     //option.textContent = name;

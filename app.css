@@ -77,6 +77,9 @@ font-size:48px;
   font-size:36px;
   line-height: 1;
 }
+#jersey{
+  display:none;
+}
 .small-text{
     margin-bottom:0;
     font-family: Trim-Regular;
