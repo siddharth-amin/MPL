@@ -69,8 +69,8 @@ modelViewerVariants.addEventListener('load', () => {
 });
 });
 turnJersey = (modelViewerVariants) =>{
-    const modelViewerVariants = document.querySelector("model-viewer#jersey");
-    modelViewerVariants.resetTurntableRotation(0);
+    modelViewerVariants2 = document.querySelector("model-viewer#jersey");
+    modelViewerVariants2.resetTurntableRotation(0);
 }
 progressBar = (progVal) => {
     progress = 0;
