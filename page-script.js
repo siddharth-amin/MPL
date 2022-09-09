@@ -24,6 +24,7 @@ $(document).ready(() => {
                     $('.right-col .second_hold_animate').addClass('animate__fadeInRightShort');
                 });
                 turnJersey();
+                increaseJerseySize();
             }
             if(destination.index == 3){
                 $('.left-col .third_animate').addClass('animate__fadeInLeftShort');
@@ -59,6 +60,7 @@ $(document).ready(() => {
     const modelViewerVariants = document.querySelector("model-viewer#jersey");
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     modelViewerVariants.addEventListener('load', () => {
+    $('.jersey-container').css({opacity:1});
     const names = modelViewerVariants.availableVariants;
     for (const name of names) {
     //const option = document.createElement('option');
@@ -82,6 +84,20 @@ $('.popup').on('click', function(e) {
     // clicked on descendant div
     e.stopPropagation();
 });
+
+$('.slider-container').slick({
+    infinite:true,
+    vertical:true,
+    autoplay:true,
+    pauseOnFocus: true,
+    arrows:false
+  });
+  $('.up-arrow').on('click',() => {
+    $('.slider-container').slick("slickPrev");
+  });
+  $('.down-arrow').on('click',() => {
+    $('.slider-container').slick("slickNext");
+  });
 });
 turnJersey = (modelViewerVariants) =>{
     modelViewerVariants2 = document.querySelector("model-viewer#jersey");
@@ -115,6 +131,14 @@ animateSquares = (direction, steps) => {
     
     
 }
+
 function openLeaderboard(){
     $('#leaderboardPopup').fadeIn();
+}
+
+function increaseJerseySize(){
+    $('.jersey-container').css({'width':'40%'});
+    $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
+    $('.left-square').css({'left':'-60%'});
+    $('.right-square').css({'left':'90%'});
 }

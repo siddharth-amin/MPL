@@ -32,31 +32,35 @@ body{
 }
 .left-square{
     top:0%;
-    left:-25%;
+    left:-50%;
     transform:rotate(45deg);
-    animation: moveleft 2s ease-in-out forwards;
 }
 .right-square{
     top:-50%;
-    left:60%;
+    left:80%;
     transform:rotate(-45deg);
-    animation: moveright 2s ease-in-out forwards;
 }
 .animate-move-left{
-  animation: movedown 2s ease-in-out forwards;
+  animation: moveleft 2s ease-in-out forwards;
 }
 .animate-move-right{
-  animation: moveup 2s ease-in-out forwards;
+  animation: moveright 2s ease-in-out forwards;
 }
 @keyframes moveleft{
     to{
-        left:-50%;
+        left:-25%;
     }
 }
 @keyframes moveright{
     to{
-        left:80%;
+        left:60%;
     }
+}
+.animate-move-leftShort{
+  left:-60%;
+}
+.animate-move-rightShort{
+  left:90%;
 }
 .big-text{
 margin-bottom:0;
@@ -69,6 +73,10 @@ font-size:48px;
     font-family: Trim-Regular;
     color:#004564;
     font-size:24px;
+    line-height: 1.2;
+}
+.medium-text{
+  font-size:22px;
 }
 .normal-text-lb{
   margin-bottom:0;
@@ -78,8 +86,6 @@ font-size:48px;
   line-height: 1;
 }
 #jersey{
-  
-  transition:all 1s linear;
 }
 .small-text{
     margin-bottom:0;
@@ -102,6 +108,7 @@ font-size:48px;
     top:0%;
     transform: translate(-50%,0%);
     height:100%;
+    opacity:0;
 }
 
 .jersey-img{
@@ -121,7 +128,7 @@ font-size:48px;
   .progress-container{
     position: relative;
     opacity:1;
-    max-width:80%;
+    max-width:58%;
   }
   .progress-tracker{
     display: block;
@@ -516,4 +523,38 @@ font-size:48px;
   border-bottom:2px solid #183457;
   border-right:2px solid #183457;
   border-radius: 0 0 40px 40px;
+}
+.icon-container{
+  height:100px;
+  width:100px;
+}
+.icon-container img{
+  width:100%;
+}
+.up-arrow,.down-arrow{
+  color:#6898B8;
+  text-decoration: none;
+  cursor: pointer;
+}
+.slider-container{
+  width:fit-content;
+
+}
+.tab-icon{
+  width:70px;
+  height:70px;
+  margin:10px;
+}
+.tab-icon img{
+  width:100%;
+}
+
+.start-1-img{
+  width:100%;
+  transform: rotate(-12deg);
+}
+.start-2-img{
+  width:100%;
+  margin-top:10%;
+  transform: rotate(-12deg);
 }
