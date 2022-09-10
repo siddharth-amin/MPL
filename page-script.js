@@ -76,6 +76,15 @@ $(document).ready(() => {
 
 	//methods
 	//$.fn.fullpage.setAllowScrolling(false);
+    function openUploadForm(){
+        $('#uploadFormPopup').fadeIn();
+    }
+    
+    function openCertificate(){
+        $fn.fullpage.moveSectionDown();
+        $('#uploadFormPopup').fadeOut();
+        $('#certificatePopup').fadeIn();
+    }
     const modelViewerVariants = document.querySelector("model-viewer#jersey");
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     modelViewerVariants.addEventListener('load', () => {
@@ -90,9 +99,6 @@ $(document).ready(() => {
     
   }
   modelViewerVariants.variantName = 'White';
-  const updateScale = (val) => {
-    modelViewerTransform.scale = ''+val+''+val+''+val+'';
-  };
   // Adds a default option.
   /*const option = document.createElement('option');
     option.value = 'default';
@@ -205,11 +211,9 @@ function resizeJerseySize(){
     $('.right-square').css({'left':'80%'});
 }
 
-function openUploadForm(){
-    $('#uploadFormPopup').fadeIn();
-}
 
-function openCertificate(){
-    $('#certificatePopup').fadeIn();
-}
 
+updateScale = (val) => {
+    const modelViewerTransform = document.querySelector("model-viewer#jersey");
+    modelViewerTransform.scale = ''+val+''+val+''+val+'';
+  };
