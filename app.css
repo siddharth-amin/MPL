@@ -217,6 +217,7 @@ font-size:48px;
     color:#f9f9f9;
     font-size:15px;
     border:none;
+    text-decoration: none;
   }
   .btn-custom:hover,.btn-custom-red:hover{
     background-color: #183457;
@@ -384,6 +385,7 @@ font-size:48px;
   border-radius:20px;
   margin:auto;
   padding:3em 3em;
+  height:inherit;
   background:#f9f9f9;
   box-shadow: 0px 0px 5px rgba(100,100,100,0.7);
   max-height:90vh;
@@ -563,13 +565,24 @@ font-size:48px;
   width:fit-content;
 
 }
+.arrow-containers{
+  position: absolute;
+  width:21px;
+
+}
+.slide-inner{
+  max-width:fit-content;
+}
 .tab-icon{
-  width:70px;
-  height:70px;
+  width:60px;
+  height:60px;
   margin:5px;
   cursor:pointer;
   border-radius: 50%;
   transition:all 0.3s linear;
+  padding:15px;
+  background: linear-gradient(180deg, #286884 0%, #003F62 100%);;
+  box-sizing:border-box;
 }
 .tab-icon img{
   width:100%;
@@ -608,7 +621,7 @@ font-size:48px;
   background:linear-gradient(to right, #297BBE 20%, #3B5998 40%, #3B5998 60%, #297BBE 80%);
   background-size: 200% auto;
   background-clip: text;
-  -webkit-text-fill-color:transparent;
+  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   animation:shine 1s linear infinite;
   color: #297BBE;
@@ -635,8 +648,7 @@ video{
 .cert-img{
   height:100%;
   width:auto;
-  max-height:58vh;
-  display: block;
+  max-height:50vh;
   margin:auto;
   box-shadow: 0 0 10px #000;
 }
