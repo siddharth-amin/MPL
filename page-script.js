@@ -29,6 +29,7 @@ $(document).ready(() => {
                 resizeJerseySize();
                 updateScale(1)
                 //$('.jersey-container').css({'z-index':'0'});
+                $('.story-popup').fadeOut();
                 $('.Hotspot').css({opacity:0});
             }
             if(destination.index == 2){
@@ -47,6 +48,7 @@ $(document).ready(() => {
                 $('.left-col .third_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col .third_animate').addClass('animate__fadeInRightShort');
                 turnJersey();
+                $('.story-popup').fadeOut();
                 $('.Hotspot').css({opacity:0});
             }
             /*if(direction == 'down'){
@@ -189,7 +191,7 @@ progressBar = (progVal) => {
 }
 
 openStoryPopup = () => {
-    $('.story-popup').addClass('animate__fadeInLeftShort');
+    $('.story-popup').css({'display':'block'}).addClass('animate__fadeInLeftShort');
     
 }
 
