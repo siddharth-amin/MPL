@@ -254,3 +254,8 @@ function openCertificateImage(){
   $('#jersey').on('onmouseleave',() => {
     $('#jersey').addAttribute('auto-rotate');
   });
+
+ function getCoordinates(){
+    let x = "c0.05421040709118641m 0.13846178555043182m 0.11483288825679787m"
+    return x;
+  }

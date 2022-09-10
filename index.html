@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="mainapp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
 		
 
 </head>
-<body>
+<body ng-controller="mainCtrl">
     <div class="header container-fluid fixed-top">
         <div class="row align-items-center">
             <div class="col col-lg-1 col-md-2 col-3 text-center"><img class="logo" src="Images/image 8-logo.png"></div>
@@ -43,44 +43,19 @@
         <div class="bg-square left-square animate-move-left"></div>
         <div class="bg-square right-square animate-move-right"></div>
     </div>
-    <div class="jersey-container">
+    <div class="jersey-container" ng-controller="jerseyStory">
         <div class="jersey-wrapper">
             <model-viewer id="jersey" class="jersey-center" src="Images/jersey.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" auto-rotate rotation-per-second="15deg">
                
-			   
-			      <button class="Hotspot" slot="hotspot-1" data-position="0.05421040709118641m 0.13846178555043182m 0.11483288825679787m" data-normal="0.07117410476028291m 0.3647820401904624m 0.9283686282754584m" data-visibility-attribute="visible" data-name="" data-profilepic="" data-story="" data-message="">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-2" data-position="0.09850393664801473m -0.019346323175682967m 0.12054673253507989m" data-normal="0.21336083531096203m -0.030998638862593127m 0.9764815606779654m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-3" data-position="-0.04259377235491084m 0.04620512862846099m 0.13036630184070286m" data-normal="-0.030438606716839994m 0.11694352223102922m 0.9926720021383391m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-5" data-position="0.01637513552723957m -0.0874222520263764m 0.1477154729966984m" data-normal="0.0913802014497781m 0.11162763976735533m 0.98953975605984m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-6" data-position="-0.0819203225592605m -0.13805806652571484m 0.13843531542396093m" data-normal="-0.5198609811662367m 0.06760922002335468m 0.8515712263978343m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-7" data-position="-0.0027185618894408348m -0.25675272409894645m 0.15149891033472246m" data-normal="-0.4211158475742747m -0.025146788697041796m 0.9066581946577368m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-8" data-position="-0.09270079112276212m -0.26913337743439136m 0.1352649398673806m" data-normal="-0.38376420381335485m -0.010419646469471489m 0.9233723338063325m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-9" data-position="0.08956651262387712m -0.09642581019239196m -0.1052194546356082m" data-normal="0.4973121202923307m -0.07702046440278207m -0.8641461121092464m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-10" data-position="-0.08979025511567161m -0.034822879913291915m -0.11666985157843365m" data-normal="-0.15621352770789515m -0.04303601172374984m -0.9867853036278803m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-11" data-position="0.006049882919767116m 0.010521602377882577m -0.11630229258254933m" data-normal="-0.01610932772980417m 0.0027352857291047944m -0.9998664949742411m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-12" data-position="0.10470193573565378m 0.06951880409853356m -0.11286663414754367m" data-normal="0.3033364611978837m -0.06417314547836078m -0.9507201474184493m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-13" data-position="-0.1603080710571682m 0.1705019528697274m -0.10855368987300963m" data-normal="-0.2868409417341345m 0.11531994691889516m -0.9510118737364419m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-14" data-position="0.12864996935603873m 0.16995165369341642m -0.10945751564084014m" data-normal="0.31315941098389055m 0.09586057392488999m -0.9448502175895467m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button><button class="Hotspot" slot="hotspot-15" data-position="-0.035788379581460444m -0.18217626672127274m -0.11605881213070822m" data-normal="-0.014305222539579575m -0.014489359913673897m -0.9997926880395682m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{story.profilepic}}"></div>
-    </button>
+
+                <button ng-repeat="dot in dots" class="Hotspot" slot="hotspot-{{$index}}" data-position="{{points[$index].point}}" data-normal="{{points[$index].norm}}" data-visibility-attribute="visible" data-name="{{dot.name}}" data-profilepic="{{dot.url}}" data-story="{{dot.url}}" data-message="{{dot.message}}">
+                    <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{dot.url}}"></div>
+            </button>
+            
 	
-    <button class="Hotspot" id="user-story" slot="hotspot-4" data-position="0.07335223837054108m -0.1922522802142988m 0.13274162067944037m" data-normal="0.4969427896203534m 0.04325288238091202m 0.8667047086580781m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{user-story.profilepic}}"></div>
-    </button>
+            <button class="Hotspot" id="user-story" ng-model="userStory" slot="hotspot" data-position="0.07335223837054108m -0.1922522802142988m 0.13274162067944037m" data-normal="0.4969427896203534m 0.04325288238091202m 0.8667047086580781m" data-visibility-attribute="visible" data-name="{{userStory.Message}}" data-profilepic="{{userStory.StoryURL}}" data-story="{{userStory.StoryURL}}" data-message="{{userStory.Message}}">
+                <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{userStory.StoryURL}}"></div>
+            </button>
 	
             </model-viewer>
 			
@@ -235,9 +210,9 @@
                         <!--<button class="btn-custom text-uppercase mt-3 third_animate animate__animated animate__delay-0_3s">Share Now</button>-->
                         <div class="share-container d-flex align-items-center justify-content-end mt-3 third_animate animate__animated animate__delay-0_5s">
                             <p class="small-text">Share Now</p>
-                            <a class="share-icon"><span class="fa-brands fa-instagram"></span></a>
-                            <a class="share-icon"><span class="fa-brands fa-twitter"></span></a>
-                            <a class="share-icon"><span class="fa-brands fa-facebook"></span></a>
+                            <a class="share-icon"><span class="fa-brands fa-instagram" id="facebookShare"></span></a>
+                            <a class="share-icon"><span class="fa-brands fa-twitter" id="twitterShare"></span></a>
+                            <a class="share-icon"><span class="fa-brands fa-facebook" id="whatsShare"></span></a>
                         </div>
                         <p class="small-text text-uppercase mt-3 third_animate animate__animated animate__delay-0_7s">Invite friends and win rewards</p>
                     </div>
@@ -282,9 +257,9 @@
                             <span class="p-pic-halo"></span>
                             <img class="podium-profilepicture" ng-src="{{podium[0].picture}}">
                         </span>
-                    <p class="podium-name">John Doe</p>
+                    <p class="podium-name">{{podium[0].name}}</p>
 
-                    <p class="podium-score">14930</p>
+                    <p class="podium-score">{{podium[0].score}}</p>
 
                     
                     </div>
@@ -296,9 +271,9 @@
                             <span class="p-pic-halo"></span>
                             <img class="podium-profilepicture" ng-src="{{podium[1].picture}}">
                         </span>
-                    <p class="podium-name">John Deux</p>
+                    <p class="podium-name">{{podium[1].name}}</p>
 
-                    <p class="podium-score">7892</p>
+                    <p class="podium-score">{{podium[1].score}}</p>
                     </div>
                 </div>
                 <div class="col col-6 pod-col" ng-model="podium[2]">
@@ -308,9 +283,9 @@
                             <span class="p-pic-halo"></span>
                             <img class="podium-profilepicture" ng-src="{{podium[2].picture}}">
                         </span>
-                    <p class="podium-name">Ralph</p>
+                    <p class="podium-name">{{podium[2].name}}</p>
 
-                    <p class="podium-score">2343</p>
+                    <p class="podium-score">{{podium[2].score}}</p>
                     </div>
                 </div>
             </div>
@@ -324,7 +299,7 @@
             </div>
             <div class="split-view">
             
-            <div ng-repeat="(key,position) in leaderBoard" class="row text-center rest-of-best">
+            <div ng-repeat="(key,position) in podium | limitTo:5:5"  class="row text-center rest-of-best">
                 <div class="col"><p>{{key + 4}}</p></div>
                 <div class="col"><p>{{position.name}}</p></div>
                 <div class="col"><p>{{position.score}}</p></div>
@@ -338,19 +313,19 @@
 <div class="form-popup popup" id="uploadFormPopup">
     <div class="container d-flex align-items-center h-100">
     <div class="row w-100 justify-content-center">
-        <div class="col popup-inner">
+        <div class="col popup-inner" ng-controller="storyCtrl">
             <div>
                 <h2 class="color-dblue big-text2">Upload your fan story</h2>
             </div>
-            <form ng-submit="uploadStory()" class="needs-validation" novalidate>
+            <form ng-submit="uploadStory(storyCtrl)" class="needs-validation" novalidate  id="requirement-form">
                 <div class="form-floating mb-3">
-                    <input class="form-control" type="text" id="toryfirstNameInput" type="text" placeholder="First Name" required>
+                    <input class="form-control" type="text" id="toryfirstNameInput" ng-model="storyCtrl.firstName" type="text" placeholder="First Name" required>
                     <label for="storyfirstNameInput">First Name</label>
                     
                 </div>
                 
                 <div class="form-floating mb-3">
-                    <input class="form-control" type="text" id="storylastNameInput" placeholder="Last Name"/>
+                    <input class="form-control" type="text" id="storylastNameInput" ng-model="storyCtrl.lastName" placeholder="Last Name"/>
                     <label for="storylastNameInput">Last Name</label>
                     
                 </div>
@@ -358,7 +333,7 @@
                     <div class="col">
                         <div class="form-floating mb-3">
                             
-                            <input class="form-control" name="" type="email" placeholder="Email" id="emailInput" ng-model="registerEmail" required>
+                            <input class="form-control" name="" type="email" placeholder="Email" id="emailInput" ng-model="storyCtrl.email" required>
                             <label for="emailInput">Email</label>
                             <div class="invalid-feedback">Please type out a valid email format</div>
                         </div>
@@ -366,24 +341,22 @@
                     <div class="col">
                         <div class="form-floating mb-3">
                     
-                            <input class="form-control" name="" type="tel" placeholder="Number" id="numberInput" ng-model="registerNumber" value="+91">
+                            <input class="form-control" name="" type="tel" placeholder="Number" id="numberInput" ng-model="storyCtrl.contactNumber" value="+91">
                             <label for="numberInput">Number</label>
                             <div class="invalid-feedback">Please type out a valid phone number</div>
                         </div>
                     </div>
                 </div>
-                
-                
                 <div class="form-floating mb-3">
                     
-                    <textarea class="form-control" name="" placeholder="Message" id="messageText" ng-model="user.message" required></textarea>
+                    <textarea class="form-control" name="" placeholder="Message" id="messageText" ng-model="storyCtrl.message" required></textarea>
                     <label for="messageText">Share your story</label>
                     <div class="invalid-feedback">We're going to need your support!</div>
                 </div>
                 
                 <div class="mb-3">
                     <label class="form-label">Upload image</label>
-                    <input class="form-control" type="file" required>
+                    <input class="form-control" type="file" name='file' id='file' required>
                     <div><p class="form-text">File details & restrictions</p></div>
                     <div class="invalid-feedback">Please upload a valid format image</div>
                 </div>
@@ -405,38 +378,42 @@
                 </div>
             </div>
             <div class="col col-12">
-                <img class="cert-img mb-3" src="Images/MPL cert.jpg">
-				
+                <img class="cert-img mb-3" src="#" id="certificateURl">
+                <!-- <canvas id="the-canvas" style="width: 100%"></canvas> -->
 				<p class="small-text text-center">Screenshot and share with your friends, don't forget to tag us</p>
                 <div class="row align-items-center">
                     <div class="col">
                         <div class="text-center mt-3">
-                            <button class="btn-custom">Download Certificate</button>
+                            <a href="#" id="certificatebutton" target="_blank"><button class="btn-custom">Download Certificate</button></a>
                         </div>
                     </div>
                     <div class="col">
                         <div class="share-container d-flex align-items-center justify-content-center mt-3">
                             <p class="small-text">Share Now</p>
-                                            <a class="share-icon"><span class="fa-brands fa-instagram"></span></a>
-                                            <a class="share-icon"><span class="fa-brands fa-twitter"></span></a>
-                                            <a class="share-icon"><span class="fa-brands fa-facebook"></span></a>
+                            <a class="share-icon" id="whatsShares"><span class="fa-brands fa-whatsapp"></span></a>
+                            <a class="share-icon" id="twitterShares"><span class="fa-brands fa-twitter"></span></a>
+                            <a class="share-icon" id="facebookShares"><span class="fa-brands fa-facebook" data-action="share/whatsapp/share"></span></a>
                         </div>
                     </div>
                 </div>
-                
-                
             </div>
         </div>
     </div>
 </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <script src="fullPage.js-master/vendors/easings.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script type="text/javascript" src="fullPage.js-master/dist/fullpage.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript" src="page-script.js"></script>
-
+    <script src="main-app.start.js"></script>
+    <script src="jerseyStory.js"></script>
+    <script src="leaderboardCtrl.js"></script>
+    <script src="socialLoginCtrl.js"></script>
 </body>
 </html>
