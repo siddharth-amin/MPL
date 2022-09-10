@@ -630,3 +630,11 @@ video{
   width:100%;
   height:auto;
 }
+.cert-img{
+  height:100%;
+  width:auto;
+  max-height:63vh;
+  display: block;
+  margin:auto;
+  box-shadow: 0 0 10px #000;
+}
