@@ -669,12 +669,12 @@ video{
   border:none;
   background-color: #7DA2D3;
   opacity:0.3;
+  border-radius:50%;
 }
 .Hotspot:hover{
   opacity:1;
   height:50px;
   width:50px;
-  transform:translate(-50%,-50%)
 }
 
 .Hotspot:hover .HotspotAnnotation{
