@@ -212,6 +212,7 @@ function openUploadForm(){
 }
 
 function openCertificateImage(){
+    fullpage_api.moveSectionDown();
     $('#uploadFormPopup').fadeOut();
     $('#certificatePopup').fadeIn();
 }
