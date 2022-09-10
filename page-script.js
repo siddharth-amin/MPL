@@ -236,3 +236,7 @@ function openCertificateImage(){
         }, false)
       })
   })()
+
+  $('.Hotspot').on('click',()=>{
+    openStoryPopup();
+  })
