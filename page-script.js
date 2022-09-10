@@ -1,6 +1,7 @@
 $(document).ready(() => {
-
+});
     startFlag = false;
+    
 	$('#fullpage').fullpage({
 		//options here
         licenseKey: 'K3HL6-Q63U6-H63C6-V4QG8-OMVJN',
@@ -39,7 +40,7 @@ $(document).ready(() => {
                 });
                 turnJersey();
                 increaseJerseySize();
-                updateScale(1.2)
+                updateScale(1.1)
             }
             if(destination.index == 3){
                 $('.left-col .third_animate').addClass('animate__fadeInLeftShort');
@@ -76,15 +77,6 @@ $(document).ready(() => {
 
 	//methods
 	//$.fn.fullpage.setAllowScrolling(false);
-    function openUploadForm(){
-        $('#uploadFormPopup').fadeIn();
-    }
-    
-    function openCertificate(){
-        $fn.fullpage.moveSectionDown();
-        $('#uploadFormPopup').fadeOut();
-        $('#certificatePopup').fadeIn();
-    }
     const modelViewerVariants = document.querySelector("model-viewer#jersey");
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     modelViewerVariants.addEventListener('load', () => {
@@ -159,8 +151,6 @@ $('.slider-container').slick({
 if (window.innerHeight > window.innerWidth){
   video.src="https://thinktreemedia.in/MPL-Certificate/videos/Scroll%20down_5%20sec_vertical_without_text.mp4";
 }
-
-});
 turnJersey = (modelViewerVariants) =>{
     modelViewerVariants2 = document.querySelector("model-viewer#jersey");
     modelViewerVariants2.resetTurntableRotation(0);
@@ -217,3 +207,31 @@ updateScale = (val) => {
     const modelViewerTransform = document.querySelector("model-viewer#jersey");
     modelViewerTransform.scale = ''+val+' '+val+' '+val+'';
   };
+function openUploadForm(){
+    $('#uploadFormPopup').fadeIn();
+}
+
+function openCertificateImage(){
+    $('#uploadFormPopup').fadeOut();
+    $('#certificatePopup').fadeIn();
+}
+
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
