@@ -23,7 +23,7 @@
             <div class="col"></div>
             <div class="col col-lg-3 col-md-4 col-3">
               <div class="text-end">
-                <a class="btn-custom-red">Pre-book Now!</a>
+                <a class="btn-custom-red">Pre-book the new jersey!</a>
               </div>
             </div>
             
@@ -160,7 +160,7 @@
                         <h2 class="big-text text-uppercase second_hold_animate animate__animated animate__delay-3s">UPLOAD & WIN</h2>
                     </div>
                     <div class="mt-1">
-                        <button class="btn-custom text-uppercase second_hold_animate animate__animated animate__delay-3s" onclick="openStoryPopup()">Upload Now</button>
+                        <button class="btn-custom text-uppercase second_hold_animate animate__animated animate__delay-3s" onclick="openUploadForm()">Upload Now</button>
                     </div>
                     <div class="tab-icon-container d-flex align-items-center second_hold_animate animate__animated animate__delay-4s mt-3">
                         <div class="tab-icon ms-0" data-content="Certificate of appreciation from BCCI & MPL Sports">
@@ -289,7 +289,86 @@
         </div>
         </div>
         </div>
+    </div>
 </div>
+<div class="form-popup popup" id="uploadFormPopup">
+    <div class="container d-flex align-items-center h-100">
+    <div class="row w-100 justify-content-center">
+        <div class="col popup-inner">
+            <div>
+                <h2 class="color-dblue big-text2">Upload your story</h2>
+            </div>
+            <form ng-submit="uploadStory()" class="needs-validation" novalidate>
+                <div class="form-floating mb-3">
+                    <input class="form-control" type="text" id="toryfirstNameInput" type="text" placeholder="First Name"/>
+                    <label for="storyfirstNameInput">First Name</label>
+                    
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input class="form-control" type="text" id="storylastNameInput" placeholder="Last Name"/>
+                    <label for="storylastNameInput">Last Name</label>
+                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            
+                            <input class="form-control" name="" type="email" placeholder="Email" id="emailInput" ng-model="registerEmail" required>
+                            <label for="emailInput">Email</label>
+                            <div class="invalid-feedback">Please type out a valid email format</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                    
+                            <input class="form-control" name="" type="tel" placeholder="Number" id="numberInput" ng-model="registerNumber" value="+91" required>
+                            <label for="numberInput">Number</label>
+                            <div class="invalid-feedback">Please type out a valid phone number</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="form-floating mb-3">
+                    
+                    <textarea class="form-control" name="" placeholder="Message" id="messageText" ng-model="user.message" required></textarea>
+                    <label for="messageText">Type your message</label>
+                    <div class="invalid-feedback">We're going to need your support!</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Upload image</label>
+                    <input class="form-control" type="file" required>
+                    <div><p class="form-text">File details & restrictions</p></div>
+                    <div class="invalid-feedback">Please upload a valid format image</div>
+                </div>
+                <div>
+                    <button class="btn-custom" ng-click="">Upload Story</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<div class="certificatepopup popup" id="certificatePopup">
+    <div class="container d-flex align-items-center h-100">
+        <div class="row w-100 popup-inner">
+            <div class="row">
+                <div class="text-center mb-3">
+                    <h2 class="big-text2">Congratulations!</h2>
+                    <h2 class="normal-text">You are now part of this journey</h2>
+                </div>
+            </div>
+            <div class="col col-12">
+                <img class="cert-img mb-3" src="Images/MPL cert.jpg">
+                <div class="text-center mt-3">
+                    <button class="btn-custom">Download Certificate</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>

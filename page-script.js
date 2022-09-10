@@ -107,7 +107,7 @@ $('.slider-container').slick({
     vertical:true,
     autoplay:true,
     pauseOnFocus: true,
-    arrows:false
+    arrows:false,
   });
   $('.up-arrow').on('click',() => {
     $('.slider-container').slick("slickPrev");
@@ -198,4 +198,12 @@ function resizeJerseySize(){
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     $('.left-square').css({'left':'-50%'});
     $('.right-square').css({'left':'80%'});
+}
+
+function openUploadForm(){
+    $('#uploadFormPopup').fadeIn();
+}
+
+function openCertificate(){
+    $('#certificatePopup').fadeIn();
 }

@@ -565,11 +565,15 @@ font-size:48px;
   height:70px;
   margin:5px;
   cursor:pointer;
+  border-radius: 50%;
+  transition:all 0.3s linear;
 }
 .tab-icon img{
   width:100%;
 }
-
+.tab-icon:hover,.tab-icon:focus{
+  transform:translateY(-5px);
+}
 .start-1-img{
   width:100%;
   margin-bottom:15%;
