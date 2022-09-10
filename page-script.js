@@ -29,6 +29,7 @@ $(document).ready(() => {
                 resizeJerseySize();
                 updateScale(1)
                 //$('.jersey-container').css({'z-index':'0'});
+                $('.Hotspot').css({opacity:0});
             }
             if(destination.index == 2){
                 $('.left-col .second_animate').addClass('animate__fadeInLeftShort');
@@ -40,12 +41,14 @@ $(document).ready(() => {
                 });
                 turnJersey();
                 increaseJerseySize();
-                updateScale(1.1)
+                updateScale(1.1);
+                $('.Hotspot').css({opacity:1});
             }
             if(destination.index == 3){
                 $('.left-col .third_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col .third_animate').addClass('animate__fadeInRightShort');
                 turnJersey();
+                $('.Hotspot').css({opacity:0});
             }
             /*if(direction == 'down'){
                 console.log(destination.index);
@@ -237,7 +240,11 @@ function openCertificateImage(){
       })
   })()
 
-  $('.Hotspot').on('click',()=>{
+  $('.Hotspot').on('click',(e)=>{
+    $('.sp-profilepic').attr('src','' + $(e.currentTarget).data('profilepic') + '') ;
+    $('.sp-storyimg').attr('src','' + $(e.currentTarget).data('story') + '') ;
+    $('.sp-name').text($(e.currentTarget).data('name'));
+    $('.sp-message').text($(e.currentTarget).data('message'));
     openStoryPopup();
   });
 

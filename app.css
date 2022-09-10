@@ -251,6 +251,8 @@ font-size:48px;
   }
   .sp-storyimg{
     width:100%;
+    max-width:350px;
+    max-height:350px;
   }
   .sp-message-container{
     transition: all 0.3s linear;
@@ -668,10 +670,10 @@ video{
   height:15px;
   border:none;
   background-color: #7DA2D3;
-  opacity:0.3;
   border-radius:50%;
+  opacity:0;
 }
-.Hotspot:hover{
+.Hotspot:hover,.Hotspot:focus{
   opacity:1;
   height:50px;
   width:50px;
@@ -681,7 +683,7 @@ video{
 
 
 }
-.Hotspot:hover .btn-profilepic{
+.Hotspot:hover .btn-profilepic,.Hotspot:focus .btn-profilepic{
   width:50px;
   height: 50px;
 }
