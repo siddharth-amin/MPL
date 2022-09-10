@@ -71,7 +71,6 @@ $(document).ready(() => {
     const modelViewerVariants = document.querySelector("model-viewer#jersey");
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     modelViewerVariants.addEventListener('load', () => {
-    $('.jersey-container').css({opacity:1});
     $('.bg-square').removeClass('animate-move-left animate-move-right');
     const names = modelViewerVariants.availableVariants;
     for (const name of names) {
@@ -128,6 +127,15 @@ $('.slider-container').slick({
       // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
     }
   }
+
+  video.addEventListener('ended', (event) => {
+    $('.video-container').fadeOut();
+    $('.jersey-container').css({opacity:1});
+})
+
+if (window.innerHeight > window.innerWidth){
+  video.src="https://thinktreemedia.in/MPL-Certificate/videos/Scroll%20down_5%20sec_vertical_without_text.mp4";
+}
 
 });
 turnJersey = (modelViewerVariants) =>{
