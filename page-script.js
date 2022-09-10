@@ -215,5 +215,5 @@ function resizeJerseySize(){
 
 updateScale = (val) => {
     const modelViewerTransform = document.querySelector("model-viewer#jersey");
-    modelViewerTransform.scale = ''+val+''+val+''+val+'';
+    modelViewerTransform.scale = ''+val+' '+val+' '+val+'';
   };
