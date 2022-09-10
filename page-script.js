@@ -26,6 +26,7 @@ $(document).ready(() => {
                 $('.right-col .first_animate').addClass('animate__fadeInRightShort');
                 turnJersey();
                 resizeJerseySize();
+                updateScale(1)
                 //$('.jersey-container').css({'z-index':'0'});
             }
             if(destination.index == 2){
@@ -38,6 +39,7 @@ $(document).ready(() => {
                 });
                 turnJersey();
                 increaseJerseySize();
+                updateScale(1.2)
             }
             if(destination.index == 3){
                 $('.left-col .third_animate').addClass('animate__fadeInLeftShort');
@@ -88,6 +90,9 @@ $(document).ready(() => {
     
   }
   modelViewerVariants.variantName = 'White';
+  const updateScale = (val) => {
+    modelViewerTransform.scale = ''+val+''+val+''+val+'';
+  };
   // Adds a default option.
   /*const option = document.createElement('option');
     option.value = 'default';
@@ -188,14 +193,14 @@ function openLeaderboard(){
 }
 
 function increaseJerseySize(){
-    $('.jersey-container').css({'width':'40%'});
-    $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
+    //$('.jersey-container').css({'width':'40%'});
+    //$('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     $('.left-square').css({'left':'-60%'});
     $('.right-square').css({'left':'90%'});
 }
 function resizeJerseySize(){
-    $('.jersey-container').css({'width':'30%'});
-    $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
+    //$('.jersey-container').css({'width':'30%'});
+    //$('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     $('.left-square').css({'left':'-50%'});
     $('.right-square').css({'left':'80%'});
 }
@@ -207,3 +212,4 @@ function openUploadForm(){
 function openCertificate(){
     $('#certificatePopup').fadeIn();
 }
+
