@@ -1,4 +1,6 @@
 $(document).ready(() => {
+
+    startFlag = false;
 	$('#fullpage').fullpage({
 		//options here
         licenseKey: 'K3HL6-Q63U6-H63C6-V4QG8-OMVJN',
@@ -11,10 +13,12 @@ $(document).ready(() => {
         afterLoad : (origin, destination, direction, trigger) => {
             var origin = this;
             if(destination.index == 0){
+                if(startFlag){
                 $('.left-col-wide .zero_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col-wide .zero_animate').addClass('animate__fadeInRightShort');
                 $('.zero_animate_bottom').addClass('animate__fadeInUpShort');
                 turnJersey();
+                }
             }
             if(destination.index == 1){
                 $('.left-col .first_animate').addClass('animate__fadeInLeftShort');
@@ -132,6 +136,10 @@ $('.slider-container').slick({
     $('.video-container').fadeOut();
     $('.jersey-container').css({opacity:1});
     $('.bg-square').removeClass('animate-move-left animate-move-right');
+    $('.left-col-wide .zero_animate').addClass('animate__fadeInLeftShort');
+    $('.right-col-wide .zero_animate').addClass('animate__fadeInRightShort');
+    $('.zero_animate_bottom').addClass('animate__fadeInUpShort');
+    startFlag = true;
 });
 
 if (window.innerHeight > window.innerWidth){
