@@ -17,6 +17,7 @@ $(document).ready(() => {
                 $('.left-col-wide .zero_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col-wide .zero_animate').addClass('animate__fadeInRightShort');
                 $('.zero_animate_bottom').addClass('animate__fadeInUpShort');
+                $('.jersey-container').css({'z-index':'1'});
                 turnJersey();
                 }
             }
@@ -25,6 +26,7 @@ $(document).ready(() => {
                 $('.right-col .first_animate').addClass('animate__fadeInRightShort');
                 turnJersey();
                 resizeJerseySize();
+                $('.jersey-container').css({'z-index':'0'});
             }
             if(destination.index == 2){
                 $('.left-col .second_animate').addClass('animate__fadeInLeftShort');
@@ -139,6 +141,7 @@ $('.slider-container').slick({
     $('.left-col-wide .zero_animate').addClass('animate__fadeInLeftShort');
     $('.right-col-wide .zero_animate').addClass('animate__fadeInRightShort');
     $('.zero_animate_bottom').addClass('animate__fadeInUpShort');
+    $('.jersey-container').css({'z-index':'1'});
     startFlag = true;
 });
 
