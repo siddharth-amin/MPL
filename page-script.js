@@ -13,6 +13,7 @@ $(document).ready(() => {
             if(destination.index == 0){
                 $('.left-col-wide .zero_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col-wide .zero_animate').addClass('animate__fadeInRightShort');
+                $('.zero_animate_bottom').addClass('animate__fadeInUpShort');
                 turnJersey();
             }
             if(destination.index == 1){
@@ -48,6 +49,7 @@ $(document).ready(() => {
             console.log(origin.index)
             if(origin.index == 0){
                 $('.zero_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
+                $('.zero_animate_bottom').removeClass('animate__fadeInUpShort');
             }
             if(origin.index == 1){
                 $('.first_animate').removeClass('animate__fadeInLeftShort animate__fadeInRightShort');
@@ -108,6 +110,25 @@ $('.slider-container').slick({
   $('.down-arrow').on('click',() => {
     $('.slider-container').slick("slickNext");
   });
+
+  $('.tab-icon').on('click',(e) => {
+    $('.for-tab-text').text($(e.currentTarget).data('content'));
+  })
+
+  var text = ["LOYAL", "PASSIONATE", "AGGRESSIVE", "HARDCORE"];
+  var counter = 0;
+  var elem = document.getElementById("changeText");
+  var inst = setInterval(change, 2000);
+  
+  function change() {
+    elem.innerHTML = text[counter];
+    counter++;
+    if (counter >= text.length) {
+      counter = 0;
+      // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+    }
+  }
+
 });
 turnJersey = (modelViewerVariants) =>{
     modelViewerVariants2 = document.querySelector("model-viewer#jersey");

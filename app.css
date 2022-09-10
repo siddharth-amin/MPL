@@ -129,7 +129,7 @@ font-size:48px;
   .progress-container{
     position: relative;
     opacity:1;
-    max-width:58%;
+    max-width:68%;
   }
   .progress-tracker{
     display: block;
@@ -281,7 +281,7 @@ font-size:48px;
   animation-delay: 0.3s;
 }
 .animate__delay-0_7s{
-  animation-delay: 0.7s;
+  animation-delay: 0.7s!important;
 }
 .first_animate{
   opacity:0;
@@ -293,7 +293,7 @@ font-size:48px;
 .third_animate{
   opacity:0;
 }
-.zero_animate{
+.zero_animate,.zero_animate_bottom{
   opacity:0;
 }
 .animate__fadeInLeftShort{
@@ -304,6 +304,9 @@ font-size:48px;
 }
 .animate__fadeInDownShort{
   animation: fadeInDownShort 1s both;
+}
+.animate__fadeInUpShort{
+  animation: fadeInUpShort 1s both;
 }
 
 @keyframes fadeInLeftShort {
@@ -338,6 +341,19 @@ font-size:48px;
     opacity: 0;
     -webkit-transform: translate3d(0%,-20%,0);
     transform: translate3d(0%,-20%,0);
+}
+
+100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+}
+@keyframes fadeInUpShort {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0%,20%,0);
+    transform: translate3d(0%,20%,0);
 }
 
 100% {
@@ -529,8 +545,8 @@ font-size:48px;
   border-radius: 0 0 40px 40px;
 }
 .icon-container{
-  height:100px;
-  width:100px;
+  height:70px;
+  width:70px;
 }
 .icon-container img{
   width:100%;
@@ -547,7 +563,8 @@ font-size:48px;
 .tab-icon{
   width:70px;
   height:70px;
-  margin:10px;
+  margin:5px;
+  cursor:pointer;
 }
 .tab-icon img{
   width:100%;
@@ -568,4 +585,29 @@ font-size:48px;
 }
 .right-col-wide{
   transform: translate(-34%);
+}
+.bottom-text-container{
+  position:absolute;
+  bottom:5%;
+  left:50%;
+  transform: translateX(-50%);
+  width:100%;
+}
+
+.color-lblue{
+  color:#297BBE;
+  transition: all 0.3s linear;
+
+  background:linear-gradient(to right, #297BBE 20%, #3B5998 40%, #3B5998 60%, #297BBE 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-text-fill-color:transparent;
+  -webkit-background-clip: text;
+  animation:shine 1s linear infinite;
+  color: #297BBE;
+}
+@keyframes shine{
+  to {
+      background-position: 200% center;
+    }
 }
