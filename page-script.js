@@ -239,4 +239,11 @@ function openCertificateImage(){
 
   $('.Hotspot').on('click',()=>{
     openStoryPopup();
-  })
+  });
+
+  $('#jersey').on('onmouseover',() => {
+    $('#jersey').removeAttribute('auto-rotate');
+  });
+  $('#jersey').on('onmouseleave',() => {
+    $('#jersey').addAttribute('auto-rotate');
+  });
