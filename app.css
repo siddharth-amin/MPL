@@ -785,4 +785,16 @@ video{
     height:40px;
     padding:5px;
   }
+  l1-img2{
+    left:90%;
+  }
+  .leaderboard .popup-inner{
+    padding:3em 1em;
+  }
+  .m-order-0{
+    order: 0;
+  }
+  .m-order-1{
+    order: 1;
+  }
 }
