@@ -810,4 +810,7 @@ video{
   .slide-inner{
    max-width: 100%; 
   }
+  .btn-custom-red{
+    padding:5px 5px 5px 15px;
+  }
 }
