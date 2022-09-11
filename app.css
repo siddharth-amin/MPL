@@ -663,6 +663,7 @@ video{
   height:100%;
   width:auto;
   max-height:50vh;
+  max-width: 100%;
   margin:auto;
   box-shadow: 0 0 10px #000;
 }
@@ -726,6 +727,9 @@ video{
   .normal-text-lb{
     font-size:24px;
   }
+  .normal-text{
+    font-size:20px;
+  }
   .popup{
     padding:0 5%;
   }
@@ -734,9 +738,6 @@ video{
   }
   .col-sm-6{
     flex: 1 0 50%;
-  }
-  .col-sm-7{
-    flex:1 0 58.33%
   }
   .left-col,.right-col{
     transform: none;
@@ -778,5 +779,10 @@ video{
   }
   .mw-50{
     max-width:100%;
+  }
+  .tab-icon{
+    width:40px;
+    height:40px;
+    padding:5px;
   }
 }
