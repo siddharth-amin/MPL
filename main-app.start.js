@@ -5,6 +5,11 @@ var app = angular.module('mainapp', ['satellizer','ngCookies'])
     clientId: 'Facebook App ID'
   });
 
+  $.LoadingOverlaySetup({
+    background      : "rgba(0, 0, 0, 0.5)",
+    imageColor      : "#297BBE"
+});
+
   // Optional: For client-side use (Implicit Grant), set responseType to 'token' (default: 'code')
   $authProvider.facebook({
     clientId: 'Facebook App ID',
@@ -132,84 +137,171 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
       var fd = new FormData();
       var files = document.getElementById('file').files[0];
       fd.append('file',files);
-      var data = {
-        "base64": base64String,
-        "prefix": "Stories",
-        "fileKey": files.name
-      };
+      var data = {};
+      if(files == null) {
+        data = { "base64": ""};
+      }else{
+        data = {
+          "base64": base64String,
+          "prefix": "Stories",
+          "fileKey": files.name
+        };
+      }
       var config = {
         headers: {
             'Content-Type': "application/json",
             'APIkey' : 'MQ7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbb6qL'
         }
       };
-      $http.post('https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/Files/uploadv2', JSON.stringify(data), config).then(function (response) 
-      {
-        if (response.data)
-            //console.log(response.data);
-            var datas = {}
-            if(referralCode == null){
-              var datas =  {
-                "email": storyCtrl.email,
-                "contactNumber": storyCtrl.contactNumber,
-                "message": storyCtrl.message,
-                "userProfileURL": response.data,
-                "storyImageURL": response.data,
-                "firstName": storyCtrl.firstName,
-                "lastName":storyCtrl.lastName,
-                "userName": storyCtrl.firstName
+      if(data.base64 == null){
+        $http.post('https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/Files/uploadv2', JSON.stringify(data), config).then(function (response) 
+        {
+          if (response.data)
+              $.LoadingOverlay("show");
+              var datas = {}
+              if(referralCode == null){
+                var datas =  {
+                  "email": storyCtrl.email,
+                  "contactNumber": storyCtrl.contactNumber,
+                  "message": storyCtrl.message,
+                  "userProfileURL": response.data,
+                  "storyImageURL": response.data,
+                  "firstName": storyCtrl.firstName,
+                  "lastName":storyCtrl.lastName,
+                  "userName": storyCtrl.firstName
+                }
+              }else{
+                var datas =  {
+                  "email": storyCtrl.email,
+                  "contactNumber": storyCtrl.contactNumber,
+                  "message": storyCtrl.message,
+                  "userProfileURL": response.data,
+                  "storyImageURL": response.data,
+                  "firstName" : storyCtrl.firstName,
+                  "lastName" : storyCtrl.lastName,
+                  "userName": storyCtrl.firstName,
+                  "ReferredBy" : referralCode
+                }
               }
-            }else{
-              var datas =  {
-                "email": storyCtrl.email,
-                "contactNumber": storyCtrl.contactNumber,
-                "message": storyCtrl.message,
-                "userProfileURL": response.data,
-                "storyImageURL": response.data,
-                "firstName" : storyCtrl.firstName,
-                "lastName" : storyCtrl.lastName,
-                "userName": storyCtrl.firstName,
-                "ReferredBy" : referralCode
-              }
-            }
+              $("#uploadFormPopup").fadeOut();
+              var url = "https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/storyflow";
+              $http.post(url, JSON.stringify(datas), config).then(function (response) 
+              {
+                if (response.data != null)
+                  $.LoadingOverlay("hide");
+                  $scope.storyUploaded = true;
+                  $scope.userStory  = response.data;
+                  console.log(response.data);
+                  setTimeout(function() {
+                    $('.Hotspot').on('click',(e)=>{
+                      $('.sp-profilepic').attr('src','' + $(e.currentTarget).data('profilepic') + '') ;
+                      $('.sp-storyimg').attr('src','' + $(e.currentTarget).data('story') + '') ;
+                      $('.sp-name').text($(e.currentTarget).data('name'));
+                      $('.sp-message').text($(e.currentTarget).data('message'));
+                      openStoryPopup();
+  
+                    });}, 100);
+                  $("#uploadFormPopup").fadeOut();
+                  var documentUrl = response.data.CertURL;
+                  $("#certificateURl").attr("src", documentUrl)
+                  openCertificateImage();
+                  $("#certificatebutton").attr("href", response.data.CertURL);
+                  let url = "https://www.facebook.com/sharer/sharer.php";
+                  let twitterUrl = "http://twitter.com/share";
+                  let whatsappUrl = "https://web.whatsapp.com/send";
+                  let referralCode = response.data.UserReferralCode;
+                  let postUrl= "https://harfankijersey.mplsports.in/";
+                  if(referralCode == null){
+                   postUrl;
+                  }else{
+                    postUrl = "https://harfankijersey.mplsports.in/?refcode="+referralCode;
+                  }
+                  let postTitle = "Hey! I just got this certificate after sharing my story on #HarFanKiJersey. Help team India get their new T20 World Cup jersey and win exciting prizes. Click here: " +postUrl;
+                  // let postImg = encodeURI(pinterestImg.src);
+                  $("#whatsShare").attr("href", whatsappUrl+'?text='+postTitle );
+                  $("#facebookShare").attr("href", url+'?u='+response.data.CertURL);
+                  $("#twitterShare").attr("href", twitterUrl+'?url='+postUrl);    
+                  $("#facebookShares").attr("href", url+'?u='+response.data.CertURL);
+                  $("#twitterShares").attr("href", twitterUrl+'?url='+postUrl);
+                  $("#whatsShares").attr("href", whatsappUrl+'?text='+postTitle );
+                }, function (response) {
+                    console.log(response);
+              });
+          }, function (response) {
+              console.log(response);
+        });
+      }else{
+        $.LoadingOverlay("show");
+        var datas = {}
+        if(referralCode == null){
+          var datas =  {
+            "email": storyCtrl.email,
+            "contactNumber": storyCtrl.contactNumber,
+            "message": storyCtrl.message,
+            "userProfileURL": "",
+            "storyImageURL": "",
+            "firstName": storyCtrl.firstName,
+            "lastName":storyCtrl.lastName,
+            "userName": storyCtrl.firstName
+          }
+        }else{
+          var datas =  {
+            "email": storyCtrl.email,
+            "contactNumber": storyCtrl.contactNumber,
+            "message": storyCtrl.message,
+            "userProfileURL": "",
+            "storyImageURL": "",
+            "firstName" : storyCtrl.firstName,
+            "lastName" : storyCtrl.lastName,
+            "userName": storyCtrl.firstName,
+            "ReferredBy" : referralCode
+          }
+        }
+        $("#uploadFormPopup").fadeOut();
+        var url = "https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/storyflow";
+        $http.post(url, JSON.stringify(datas), config).then(function (response) 
+        {
+          if (response.data != null)
+            $.LoadingOverlay("hide");
+            $scope.storyUploaded = true;
+            $scope.userStory  = response.data;
+            console.log(response.data);
+            setTimeout(function() {
+              $('.Hotspot').on('click',(e)=>{
+                $('.sp-profilepic').attr('src','' + $(e.currentTarget).data('profilepic') + '') ;
+                $('.sp-storyimg').attr('src','' + $(e.currentTarget).data('story') + '') ;
+                $('.sp-name').text($(e.currentTarget).data('name'));
+                $('.sp-message').text($(e.currentTarget).data('message'));
+                openStoryPopup();
+
+              });}, 100);
             $("#uploadFormPopup").fadeOut();
-            console.log(datas);
-            var url = "https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/storyflow";
-            $http.post(url, JSON.stringify(datas), config).then(function (response) 
-            {
-              console.log(response.data);
-              if (response.data == null)
-                $scope.storyUploaded = true;
-                $scope.userStory  = response.data;
-                setTimeout(function() {
-                  $('[data-toggle="popover"]').popover({
-                      trigger: 'focus',
-                      container: 'body',
-                      html: true,
-                      sanitize: false,
-                      content: function() {
-                          return $(this).attr("data-content");
-                        }
-                })}, 100);
-                $("#uploadFormPopup").fadeOut();
-                $("#certificatebutton").attr("href", response.data.CertURL);
-                let url = "https://www.facebook.com/sharer/sharer.php";
-                let twitterUrl = "http://twitter.com/share";
-                let whatsappUrl = "https://web.whatsapp.com/send?text=www.google.com";
-                $("#facebookShare").attr("href", url+'?u='+response.data.CertURL);
-                $("#twitterShare").attr("href", twitterUrl+'?url='+response.data.CertURL);
-                $("#whatsShare").attr("href", whatsappUrl+'?text='+response.data.CertURL);      
-                $("#facebookShares").attr("href", url+'?u='+response.data.CertURL);
-                $("#twitterShares").attr("href", twitterUrl+'?url='+response.data.CertURL);
-                $("#whatsShares").attr("href", whatsappUrl+'?text='+response.data.CertURL);
-                var documentUrl = response.data.CertURL;
-                $("#certificateURl").attr("src", documentUrl)
-              }, function (response) {
-                  console.log(response);
-            });
-        }, function (response) {
-            console.log(response);
-      });
+            var documentUrl = response.data.CertURL;
+            $("#certificateURl").attr("src", documentUrl)
+            openCertificateImage();
+            $("#certificatebutton").attr("href", response.data.CertURL);
+            let url = "https://www.facebook.com/sharer/sharer.php";
+            let twitterUrl = "http://twitter.com/share";
+            let whatsappUrl = "https://web.whatsapp.com/send";
+            let referralCode = response.data.UserReferralCode;
+            let postUrl= "https://harfankijersey.mplsports.in/";
+            if(referralCode == null){
+             postUrl;
+            }else{
+              postUrl = "https://harfankijersey.mplsports.in/?refcode="+referralCode;
+            }
+            let postTitle = "Hey! I just got this certificate after sharing my story on #HarFanKiJersey. Help team India get their new T20 World Cup jersey and win exciting prizes. Click here: " +postUrl;
+            // let postImg = encodeURI(pinterestImg.src);
+            $("#whatsShare").attr("href", whatsappUrl+'?text='+postTitle );
+            $("#facebookShare").attr("href", url+'?u='+response.data.CertURL);
+            $("#twitterShare").attr("href", twitterUrl+'?url='+postUrl);    
+            $("#facebookShares").attr("href", url+'?u='+response.data.CertURL);
+            $("#twitterShares").attr("href", twitterUrl+'?url='+postUrl);
+            $("#whatsShares").attr("href", whatsappUrl+'?text='+postTitle );
+          }, function (response) {
+              console.log(response);
+        });
+      }
     }
     $scope.register = function (registerCtrl) {
       var data= {
@@ -304,5 +396,21 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
     $scope.trycopyToClipboard = function(){
       copyToClipboard();
     }
+
+    $scope.openFbPopUp = function(){
+      console.log("hii");
+      //var fburl = "http://www.facebook.com/sharer.php?s=100&p[title]=WEB1CHANNEL&p[summary]=Web+Design+Company+in+Dubai.&p[url]=http://www.webchannel.ae&p[images][0]=http://qacode.com/test.jpg']asdfa[/a]";
+      var fburl = 'https://mplcert.s3.ap-south-1.amazonaws.com/P889.jpg';
+      var fbimgurl = 'https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png';
+      var fbtitle = 'Hey, I m a SuperFan';
+      var fbsummary = "Hey! I just got this certificate after sharing my story on #HarFanKiJersey. Help team India get their new T20 World Cup jersey and win exciting prizes. Click here: (ReferralsURL)";
+      var sharerURL = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=" + encodeURI(fburl);
+     // var sharerURL = fburl
+      window.open(
+        sharerURL,
+        'facebook-share-dialog', 
+        'width=626,height=436'); 
+      return  false;
+  }
 
 });

@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="fullPage.js-master/dist/fullpage.css">
     <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/fontawesome.min.css">
-        <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/solid.min.css">
-        <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/brands.min.css">
-        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-        <script type="module" src="https://unpkg.com/@google/model-viewer@1.12.1/dist/model-viewer.min.js"></script>
-		
-		
-
+    <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/solid.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/brands.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@1.12.1/dist/model-viewer.min.js"></script>
+    <meta property="og:title" content="Hey, I'm a SuperFan" />
+    <meta property="og:description" content="Hey! I just got this certificate after sharing my story on #HarFanKiJersey. Help team India get their new T20 World Cup jersey and win exciting prizes. Click here: (ReferralsURL)" />
+    <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
+    <meta property="og:url"  content="https://harfankijersey.mplsports.in/" />
 </head>
 <body ng-controller="mainCtrl">
     <div class="header container-fluid fixed-top">
@@ -27,6 +28,10 @@
             <div class="col col-lg-3 col-x-sm-6">
               <div class="text-end">
                 <a class="btn-custom-red">Pre-book</a>
+                <!-- <a id="whatsappsharing"><span class="fa-brands fa-whatsapp"></span></a>
+                <a href="http://twitter.com/share?url=https://harfankijersey.mplsports.in/?refcode=NIkpI60"><span class="fa-brands fa-twitter"></span></a>
+                <a class="share-icon"><span class="fa-brands fa-instagram" ng-click="openFbPopUp()"></span></a>
+                <a class="btn-custom-red">Pre-book the new jersey!</a> -->
               </div>
             </div>
             
@@ -56,8 +61,7 @@
             </button>
             
 	
-            <button class="Hotspot" id="user-story" ng-model="userStory" slot="hotspot" data-position="0.07335223837054108m -0.1922522802142988m 0.13274162067944037m" data-normal="0.4969427896203534m 0.04325288238091202m 0.8667047086580781m" data-visibility-attribute="visible" data-name="{{userStory.Message}}" data-profilepic="{{userStory.StoryURL}}" data-story="{{userStory.StoryURL}}" data-message="{{userStory.Message}}">
-                <div class="HotspotAnnotation"><img class="btn-profilepic" ng-src="{{userStory.StoryURL}}"></div>
+            <button class="Hotspot" id="user-story" ng-model="userStory" slot="hotspot-4" data-position="0.07335223837054108m -0.1922522802142988m 0.13274162067944037m" data-normal="0.4969427896203534m 0.04325288238091202m 0.8667047086580781m" data-visibility-attribute="visible" data-name="{{story.Message}}" data-profilepic="{{userStory.StoryURL}}" data-story="{{userStory.StoryURL}}" data-message="{{userStory.Message}}">
             </button>
 	
             </model-viewer>
@@ -209,9 +213,9 @@
                         <!--<button class="btn-custom text-uppercase mt-3 third_animate animate__animated animate__delay-0_3s">Share Now</button>-->
                         <div class="share-container d-flex align-items-center justify-content-end m-justify-center mt-3 third_animate animate__animated animate__delay-0_5s">
                             <p class="small-text">Share Now</p>
-                            <a class="share-icon"><span class="fa-brands fa-instagram" id="facebookShare"></span></a>
-                            <a class="share-icon"><span class="fa-brands fa-twitter" id="twitterShare"></span></a>
-                            <a class="share-icon"><span class="fa-brands fa-facebook" id="whatsShare"></span></a>
+                            <a class="share-icon" id="facebookShare" target="_blank"><span class="fa-brands fa-facebook"></span></a>
+                            <a class="share-icon" id="twitterShare" target="_blank"><span class="fa-brands fa-twitter" ></span></a>
+                            <a class="share-icon" id="whatsShare" target="_blank"><span class="fa-brands fa-whatsapp" ></span></a>
                         </div>
                         <p class="small-text text-uppercase mt-3 third_animate animate__animated animate__delay-0_7s">Invite friends and win rewards</p>
                     </div>
@@ -298,7 +302,7 @@
             </div>
             <div class="split-view">
             
-            <div ng-repeat="(key,position) in podium | limitTo:5:5"  class="row text-center rest-of-best">
+            <div ng-repeat="(key,position) in leaderBoard"  class="row text-center rest-of-best">
                 <div class="col"><p>{{key + 4}}</p></div>
                 <div class="col"><p>{{position.name}}</p></div>
                 <div class="col"><p>{{position.score}}</p></div>
@@ -316,7 +320,7 @@
             <div>
                 <h2 class="color-dblue big-text2">Upload your fan story</h2>
             </div>
-            <form ng-submit="uploadStory(storyCtrl)" class="needs-validation" novalidate  id="requirement-form">
+            <form  class="needs-validation" novalidate  id="requirement-form">
                 <div class="form-floating mb-3">
                     <input class="form-control" type="text" id="toryfirstNameInput" type="text" ng-model="storyCtrl.firstName" placeholder="First Name" required>
                     <label for="storyfirstNameInput">First Name*</label>
@@ -351,15 +355,16 @@
                 
                 <div class="mb-3">
                     <label class="form-label">Upload image</label>
-                    <input class="form-control" type="file" name='file' id='file' required>
+                    <input class="form-control" type="file" name='file' id='file' accept=".png, .jpg, .jpeg">
                     <div><p class="form-text">File details & restrictions</p></div>
-                    <div class="invalid-feedback">Please upload a valid format image</div>
+                    <!-- <div class="invalid-feedback">Please upload a valid format image</div> -->
                 </div>
                 <div>
                     <p class="form-text">Fields marked with * are mandatory</p>
                 </div>
                 <div>
-                    <button class="btn-custom" onclick="openCertificateImage()">Upload Story</button>
+                    <!-- <button class="btn-custom" onclick="openCertificateImage()">Upload Story</button> -->
+                    <button class="btn-custom" ng-click="uploadStory(storyCtrl)">Upload Story</button>
                 </div>
             </form>
         </div>
@@ -385,9 +390,9 @@
                     <div class="col col-x-sm-12">
                         <div class="share-container d-flex align-items-center justify-content-center mt-3">
                             <p class="small-text">Share Now</p>
-                            <a class="share-icon" id="whatsShares"><span class="fa-brands fa-whatsapp"></span></a>
-                            <a class="share-icon" id="twitterShares"><span class="fa-brands fa-twitter"></span></a>
-                            <a class="share-icon" id="facebookShares"><span class="fa-brands fa-facebook" data-action="share/whatsapp/share"></span></a>
+                            <a class="share-icon" id="whatsShares" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                            <a class="share-icon" id="twitterShares" target="_blank"><span class="fa-brands fa-twitter"></span></a>
+                            <a class="share-icon" id="facebookShares" target="_blank"><span class="fa-brands fa-facebook"></span></a>
                         </div>
                     </div>
                 </div>
@@ -422,6 +427,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <script src="fullPage.js-master/vendors/easings.min.js"></script>
     <script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script type="text/javascript" src="fullPage.js-master/dist/fullpage.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
@@ -430,5 +436,15 @@
     <script src="jerseyStory.js"></script>
     <script src="leaderboardCtrl.js"></script>
     <script src="socialLoginCtrl.js"></script>
+    <script>
+        $(document).ready(() => {
+            let urls =  window.location.href;
+            let url = "https://www.facebook.com/sharer/sharer.php";
+            let whatsappUrl = "https://web.whatsapp.com/send";
+            $("#facebookSharing").attr("href", url+'?u='+urls);
+            
+});
+    
+    </script>
 </body>
 </html>
