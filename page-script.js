@@ -59,7 +59,7 @@ $(document).ready(() => {
                 $('.right-col .third_animate').addClass('animate__fadeInRightShort');
                 turnJersey();
                 $('.story-popup').fadeOut();
-                $('.Hotspot').css({opacity:0});
+                $('.Hotspot').css({opacity:1});
             }
             /*if(direction == 'down'){
                 console.log(destination.index);
