@@ -193,9 +193,9 @@ openIntro = () => {
     startFlag = true;
 }
 
-if (window.innerHeight > window.innerWidth){
+/*if (window.innerHeight > window.innerWidth){
   video.src="https://thinktreemedia.in/MPL-Certificate/videos/Scroll%20down_5%20sec_vertical_without_text.mp4";
-}
+}*/
 turnJersey = (modelViewerVariants) =>{
     modelViewerVariants2 = document.querySelector("model-viewer#jersey");
     modelViewerVariants2.resetTurntableRotation(0);
