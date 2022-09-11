@@ -670,6 +670,9 @@ video{
   height:30px;
   font-size:10px;
 }
+#default-poster{
+  background-color: transparent!important;
+}
 .cert-img{
   height:100%;
   width:auto;
