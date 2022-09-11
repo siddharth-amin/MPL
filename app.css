@@ -393,7 +393,7 @@ font-size:48px;
   background:#f9f9f9;
   box-shadow: 0px 0px 5px rgba(100,100,100,0.7);
   max-height:90vh;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
 }
 .popup-inner-float{
@@ -403,7 +403,7 @@ font-size:48px;
   background:#f9f9f9;
   box-shadow: 0px 0px 5px rgba(100,100,100,0.7);
   max-height:90vh;
-  overflow: hidden;
+  overflow-x: hidden;
   max-width:400px;
   width:100%;
   margin:0 auto;
@@ -413,6 +413,7 @@ font-size:48px;
   max-height:50%;
   overflow-y: scroll;
   padding-left:20px;
+  padding-top:30px;
   box-sizing: border-box;
 }
 .leaderboard .popup-inner{
@@ -460,7 +461,7 @@ font-size:48px;
       padding:10px 5px;
       display:flex;
       align-items: center;
-      margin:0 auto 30px auto;
+      margin:0 auto 50px auto;
       justify-content: center;
       width:fit-content;
     }
@@ -756,12 +757,50 @@ video{
   height:50px;
   transform: translate(-50%,-50%);
 }
+.close-x{
+  position: absolute;
+  top:20px;
+  right:20px;
+}
+
+.close-x p{
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.story-popup .close-x p{
+  color:#000;
+}
+.footer p{
+  width:fit-content;
+  margin:auto;
+}
+.close-float{
+  position:absolute;
+  top:20px;
+  right:20px;
+}
+@media only screen and (max-width: 991.98px){
+  .left-col,.right-col{
+    transform: none;
+  }
+  .big-text{
+    font-size: 36px;
+  }
+  .normal-text-lb{
+    font-size:24px;
+  }
+  .normal-text{
+    font-size:20px;
+  } 
+}
 @media only screen and (max-width: 575.98px) { 
   .big-text{
     font-size: 30px;
   }
   .normal-text-lb{
-    font-size:24px;
+    font-size:22px;
   }
   .normal-text{
     font-size:20px;
@@ -858,30 +897,19 @@ video{
   .tab-icon img{
     margin-top:-5px;
   }
+  .podium-name,.podium-score,.podium-position{
+    font-size:12px;
+  }
 }
 
-
-.close-x{
-  position: absolute;
-  top:20px;
-  right:20px;
-}
-
-.close-x p{
-  color: white;
-  font-size: 25px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.story-popup .close-x p{
-  color:#000;
-}
-.footer p{
-  width:fit-content;
-  margin:auto;
-}
-.close-float{
-  position:absolute;
-  top:20px;
-  right:20px;
+@media only screen and (max-width: 374.98px){
+  .big-text{
+    font-size: 26px;
+  }
+  .normal-text-lb{
+    font-size:18px;
+  }
+  .normal-text{
+    font-size:16px;
+  } 
 }
