@@ -797,4 +797,13 @@ video{
   .m-order-1{
     order: 1;
   }
+  .m-text-center{
+    text-align: center!important;
+  }
+  .m-justify-center{
+    justify-content: center!important;
+  }
+  .move-center{
+    margin:auto;
+  }
 }
