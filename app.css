@@ -755,11 +755,10 @@ video{
   }
   .left-col,.right-col{
     transform: none;
-    padding:20px;
+    padding: 0 20px;
   }
   .right-col{
-    padding-top:30px;
-    padding-bottom:30px;
+    padding:0 20px 30px;
   }
   .jersey-container{
     width:80%;
