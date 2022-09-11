@@ -645,7 +645,9 @@ font-size:48px;
       background-position: 200% center;
     }
 }
-
+#user-story{
+  background-color: #FF1E46;
+}
 .video-container{
   position:absolute;
   top:0;left:0;
@@ -815,5 +817,8 @@ video{
   }
   .start-1-img,.start-2-img{
     width:115%;
+  }
+  .tab-icon img{
+    margin-top:-5px;
   }
 }
