@@ -87,7 +87,7 @@ $(document).ready(() => {
 	});
 
 	//methods
-	//$.fn.fullpage.setAllowScrolling(false);
+	$.fn.fullpage.setAllowScrolling(false);
     const modelViewerVariants = document.querySelector("model-viewer#jersey");
     $('#jersey').css({'height': $('.jersey-container').height(),'width': $('.jersey-container').width()});
     modelViewerVariants.addEventListener('load', () => {
@@ -189,7 +189,12 @@ openIntro = () => {
     $('.zero_footer').addClass('animate__fadeInUpShort');
     startFlag = true;
 }
-openIntro();
+setTimeout(() => {
+    $('.load-screen').fadeOut();
+    openIntro();
+    $.fn.fullpage.setAllowScrolling(true);
+}, 4000);
+
 /*if (window.innerHeight > window.innerWidth){
   video.src="https://thinktreemedia.in/MPL-Certificate/videos/Scroll%20down_5%20sec_vertical_without_text.mp4";
 }*/
