@@ -240,6 +240,7 @@ font-size:48px;
     border-radius:50%;
     width:50px;
     height:50px;
+    object-fit:cover;
     border:3px solid #fff;
   }
   .sp-storyimg-container{
@@ -393,6 +394,7 @@ font-size:48px;
   box-shadow: 0px 0px 5px rgba(100,100,100,0.7);
   max-height:90vh;
   overflow: hidden;
+  position: relative;
 }
 .popup-inner-float{
   border-radius:20px;
@@ -405,6 +407,7 @@ font-size:48px;
   max-width:400px;
   width:100%;
   margin:0 auto;
+  position: relative;
 }
 .needs-scroll{
   max-height:50%;
@@ -714,6 +717,7 @@ video{
   background-color: #7DA2D3;
   border-radius:50%;
   opacity:0;
+  padding:0;
 }
 .Hotspot:hover,.Hotspot:focus{
   opacity:1;
@@ -868,4 +872,16 @@ video{
   font-size: 25px;
   font-weight: bold;
   cursor: pointer;
+}
+.story-popup .close-x p{
+  color:#000;
+}
+.footer p{
+  width:fit-content;
+  margin:auto;
+}
+.close-float{
+  position:absolute;
+  top:20px;
+  right:20px;
 }

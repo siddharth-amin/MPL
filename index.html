@@ -88,7 +88,7 @@
         <div class="bottom-text-container text-center">
             <h2 class="big-text text-uppercase animate__animated animate__delay-0_7s zero_animate_bottom">calling every <span class="color-lblue"><span id="changeText">hardcore</span> cricket fan</span><br><span class="normal-text-lb">to be a part of the new team india jersey</span></h2>
         </div>
-        <div class="footer animate__animated zero_animate zero_footer"><p class="text-center text-uppercase">Scroll Down<br>&#9660</p></div>
+        <div class="footer animate__animated zero_animate zero_footer"><p class="text-center text-uppercase go-next">Scroll Down<br>&#9660</p></div>
     </div>
     <div class="section">
         <div class="container-fluid m-height-100">
@@ -152,7 +152,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer zero_animate animate__animated first_footer"><p class="text-center text-uppercase">Scroll Down<br>&#9660</p></div>
+        <div class="footer zero_animate animate__animated first_footer"><p class="text-center text-uppercase go-next">Scroll Down<br>&#9660</p></div>
     </div>
     <div class="section">
         <div class="container-fluid m-height-100">
@@ -174,7 +174,7 @@
                           </div>
                     </div>
                     <div class="progess-message-container">
-                        <p class="normal-text text-uppercase second_animate-down animate__animated animate__delay-2s">FANS HAVE SHARED THEIR MESSAGE <br>EACH MESSAGE WILL TAKE US CLOSER TO THE JERSEY REVEAL</p>
+                        <p class="normal-text text-uppercase second_animate-down animate__animated animate__delay-2s">FANS HAVE SHARED THEIR MESSAGE</p>
                     </div>
                     <div class="mt-1">
                         <h2 class="big-text text-uppercase second_hold_animate animate__animated animate__delay-3s">UPLOAD YOUR STORY & WIN</h2>
@@ -189,12 +189,13 @@
                         <div class="tab-icon" data-content="5 VIP match tickets*  " data-current="Images/icon bundle-07.png" data-alternate="Images/icon bundle-07a.png">
                             <img class="icon-tab-img" src="Images/icon bundle-07a.png">
                         </div>
-                        <div class="tab-icon" data-content="Invitation to jersey launch event*" data-current="Images/icon bundle-06.png" data-alternate="Images/icon bundle-06a.png">
-                            <img class="icon-tab-img" src="Images/icon bundle-06a.png">
-                        </div>
                         <div class="tab-icon" data-content="Discount coupons & vouchers*" data-current="Images/icon bundle-08.png" data-alternate="Images/icon bundle-08a.png">
                             <img class="icon-tab-img" src="Images/icon bundle-08a.png">
                         </div>
+                        <div class="tab-icon" data-content="Shout out on social media*" data-current="Images/icon bundle-06.png" data-alternate="Images/icon bundle-06a.png">
+                            <img class="icon-tab-img" src="Images/icon bundle-06a.png">
+                        </div>
+                        
                     </div>
                     <div class="for-tab-container second_hold_animate animate__animated animate__delay-4s">
                         <p class=" for-tab-text normal-text">Certificate of appreciation from BCCI & MPL Sports</p>
@@ -202,7 +203,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer animate__animated zero_animate second_footer"><p class="text-center text-uppercase">Scroll Down<br>&#9660</p></div>
+        <div class="footer animate__animated zero_animate second_footer"><p class="text-center text-uppercase go-next">Scroll Down<br>&#9660</p></div>
     </div>
     <div class="section">
         <div class="container-fluid m-height-100">
@@ -232,12 +233,9 @@
     </div>
 </div>
 <div class="leaderboard popup popup-wide" id="leaderboardPopup" ng-controller="leaderboardCtrl">
+    <button type="button" class="btn-close-white close-float" aria-label="Close"></button>
     <div class="container d-flex align-items-center h-100">
-
-        <div class="close-x">
-            <p>X</p>
-        </div>
-
+    
     <div class="row w-100 popup-inner align-items-center d-flex">
         <div class="col col-12 col-x-sm-12 mb-5">
             <div class="row w-100 align-items-center">
@@ -319,10 +317,7 @@
     </div>
 </div>
 <div class="form-popup popup" id="uploadFormPopup">
-    <div class="close-x">
-        <p>X</p>
-    </div>
-    
+    <button type="button" class="btn-close btn-close-white close-float" aria-label="Close"></button>
     <div class="container d-flex align-items-center h-100">
     <div class="row w-100 justify-content-center">
         <div class="col popup-inner" ng-controller="storyCtrl">
@@ -413,12 +408,16 @@
     <div class="container d-flex align-items-center h-100">
         <div class="row w-custom-100">
     <div class="col col-12 popup-inner-float">
-                <div class="d-flex align-items-center">
+        
+                <div class="d-flex align-items-center justify-content-between">
                     <div class="sp-profilepic-container">
                         <img class="sp-profilepic" src="https://valstatandlakarklinik.se/wp-content/uploads/2016/10/orionthemes-placeholder-image.png">
                     </div>
                     <div class="sp-name-container ms-3">
                         <p class="sp-name normal-text bolder-text text-uppercase">John Doe</p>
+                    </div>
+                    <div class="text-end">
+                        <button type="button" class="btn-close" aria-label="Close"></button>
                     </div>
                 </div>
                 <div class="sp-storyimg-container">

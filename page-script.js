@@ -37,7 +37,7 @@ $(document).ready(() => {
                 updateScale(1)
                 //$('.jersey-container').css({'z-index':'0'});
                 $('.story-popup').fadeOut();
-                $('.Hotspot').css({opacity:1});
+                $('.Hotspot').css({opacity:0});
                 $('.first_footer').addClass('animate__fadeInUpShort');
             }
             if(destination.index == 2){
@@ -51,6 +51,7 @@ $(document).ready(() => {
                 turnJersey();
                 increaseJerseySize();
                 updateScale(1.05);
+                $('.Hotspot').css({opacity:1});
                 $('.second_footer').addClass('animate__fadeInUpShort');
             }
             if(destination.index == 3){
@@ -277,7 +278,7 @@ function openCertificateImage(){
     'use strict'
   
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
+    var forms = document.querySelectorAll('.needs-validation');
   
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
@@ -307,3 +308,7 @@ function openCertificateImage(){
   $('#jersey').on('onmouseleave',() => {
     $('#jersey').addAttribute('auto-rotate');
   });
+
+  $('.go-next').on('click',() => {
+    fullpage_api.moveSectionDown();
+  })
