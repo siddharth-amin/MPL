@@ -733,10 +733,10 @@ video{
   .popup{
     padding:0 5%;
   }
-  .col-sm-12{
+  .col-x-sm-12{
     flex: 1 0 100%;
   }
-  .col-sm-6{
+  .col-x-sm-6{
     flex: 1 0 50%;
   }
   .left-col,.right-col{
