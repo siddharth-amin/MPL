@@ -737,7 +737,7 @@ video{
   }
   .left-col,.right-col{
     transform: none;
-    padding:0 10px;
+    padding:10px;
   }
   .jersey-container{
     width:80%;
@@ -748,5 +748,13 @@ video{
   }
   .m-align-content-end{
     align-content: flex-end;
+  }
+  .popup-faux{
+    width:100%;
+    background-color: rgba(0,0,0,0.75);
+  backdrop-filter: blur(20px);
+  }
+  .story-popup{
+    opacity:1;
   }
 }
