@@ -772,7 +772,7 @@ video{
     margin-bottom:25%;
   }
   .left-col-wide{
-    transform: translateX(15%);
+    transform: translateX(0%);
   }
   .right-col-wide{
     transform: translateX(-15%);
@@ -812,5 +812,8 @@ video{
   }
   .btn-custom-red{
     padding:10px 5px 10px 15px;
+  }
+  .start-1-img,.start-2-img{
+    width:115%;
   }
 }
