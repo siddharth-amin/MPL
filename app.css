@@ -776,4 +776,7 @@ video{
   .right-col-wide{
     transform: translateX(-15%);
   }
+  .mw-50{
+    max-width:100%;
+  }
 }
