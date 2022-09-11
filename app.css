@@ -790,6 +790,7 @@ video{
   }
   .leaderboard .popup-inner{
     padding:3em 1em;
+    background-size: auto 120%;
   }
   .m-order-0{
     order: 0;
