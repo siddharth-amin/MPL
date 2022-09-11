@@ -14,6 +14,7 @@ $(document).ready(() => {
         afterLoad : (origin, destination, direction, trigger) => {
             var origin = this;
             if(destination.index == 0){
+
                 if(startFlag){
                 $('.left-col-wide .zero_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col-wide .zero_animate').addClass('animate__fadeInRightShort');
@@ -21,6 +22,9 @@ $(document).ready(() => {
                 $('.zero_footer').addClass('animate__fadeInUpShort');
                 //$('.jersey-container').css({'z-index':'1'});
                 turnJersey();
+                }
+                else{
+                    openIntro();
                 }
             }
             if(destination.index == 1){
@@ -188,7 +192,6 @@ openIntro = () => {
     $('.zero_footer').addClass('animate__fadeInUpShort');
     startFlag = true;
 }
-openIntro();
 
 if (window.innerHeight > window.innerWidth){
   video.src="https://thinktreemedia.in/MPL-Certificate/videos/Scroll%20down_5%20sec_vertical_without_text.mp4";
