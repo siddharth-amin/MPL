@@ -755,7 +755,7 @@ video{
   }
   .left-col,.right-col{
     transform: none;
-    padding:10px 20px;
+    padding:20px;
   }
   .right-col{
     padding:0 20px 40px;
