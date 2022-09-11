@@ -37,7 +37,7 @@ $(document).ready(() => {
                 updateScale(1)
                 //$('.jersey-container').css({'z-index':'0'});
                 $('.story-popup').fadeOut();
-                $('.Hotspot').css({opacity:0});
+                $('.Hotspot').css({opacity:1});
                 $('.first_footer').addClass('animate__fadeInUpShort');
             }
             if(destination.index == 2){
