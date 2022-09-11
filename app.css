@@ -110,7 +110,7 @@ font-size:48px;
     left:50%;
     top:0%;
     transform: translate(-50%,0%);
-    height:100%;
+    height:calc(100% - 30px);
     opacity:0;
     transition:opacity 2s linear;
     z-index:1;
@@ -776,6 +776,7 @@ video{
 .footer p{
   width:fit-content;
   margin:auto;
+  cursor: pointer;
 }
 .close-float{
   position:absolute;
