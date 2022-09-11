@@ -757,4 +757,10 @@ video{
   .story-popup{
     opacity:1;
   }
+  .split-view{
+    column-count: 1;
+  }
+  .m-hide{
+    display:none;
+  }
 }
