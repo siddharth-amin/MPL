@@ -735,13 +735,17 @@ video{
   .col-sm-6{
     flex: 1 0 50%;
   }
+  .col-sm-7{
+    flex:1 0 58.33%
+  }
   .left-col,.right-col{
     transform: none;
-    padding:10px;
+    padding:20px;
   }
   .jersey-container{
     width:80%;
     height:50%;
+    margin-top:10%;
   }
   .m-height-100{
     height:100%;
@@ -762,5 +766,14 @@ video{
   }
   .m-hide{
     display:none;
+  }
+  .match-jersey{
+    margin-bottom:20%;
+  }
+  .left-col-wide{
+    transform: translateX(15%);
+  }
+  .right-col-wide{
+    transform: translateX(-15%);
   }
 }
