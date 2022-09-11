@@ -746,7 +746,7 @@ video{
   .jersey-container{
     width:80%;
     height:50%;
-    margin-top:10%;
+    margin-top:12%;
   }
   .m-height-100{
     height:100%;
@@ -769,7 +769,7 @@ video{
     display:none;
   }
   .match-jersey{
-    margin-bottom:20%;
+    margin-bottom:25%;
   }
   .left-col-wide{
     transform: translateX(15%);
@@ -785,7 +785,7 @@ video{
     height:40px;
     padding:10px;
   }
-  l1-img2{
+  .l1-img2{
     left:90%;
   }
   .leaderboard .popup-inner{
