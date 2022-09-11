@@ -732,4 +732,11 @@ video{
   .col-sm-12{
     flex: 1 0 100%;
   }
+  .col-sm-6{
+    flex: 1 0 50%;
+  }
+  .jersey-container{
+    width:80%;
+    height:50%;
+  }
 }
