@@ -23,9 +23,6 @@ $(document).ready(() => {
                 //$('.jersey-container').css({'z-index':'1'});
                 turnJersey();
                 }
-                else{
-                    openIntro();
-                }
             }
             if(destination.index == 1){
                 $('.left-col .first_animate').addClass('animate__fadeInLeftShort');
@@ -192,7 +189,7 @@ openIntro = () => {
     $('.zero_footer').addClass('animate__fadeInUpShort');
     startFlag = true;
 }
-
+openIntro();
 /*if (window.innerHeight > window.innerWidth){
   video.src="https://thinktreemedia.in/MPL-Certificate/videos/Scroll%20down_5%20sec_vertical_without_text.mp4";
 }*/
