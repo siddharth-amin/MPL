@@ -221,6 +221,7 @@ font-size:48px;
     font-size:15px;
     border:none;
     text-decoration: none;
+    display:none;
   }
   .btn-custom:hover,.btn-custom-red:hover{
     background-color: #183457;
