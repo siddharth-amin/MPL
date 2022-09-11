@@ -716,3 +716,11 @@ video{
   border-radius:50%;
   display: block;
 }
+@media only screen and (max-width: 991.98px) { 
+  .big-text{
+    font-size: 30px;
+  }
+  .popup{
+    padding:0 5%;
+  }
+}
