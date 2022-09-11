@@ -121,6 +121,10 @@ $('.popup').on('click', function(e) {
     e.stopPropagation();
 });
 
+$('.close-x p').on('click', function(e) {
+  $('.popup').fadeOut();
+});
+
 $('.slider-container').slick({
     infinite:true,
     vertical:true,

@@ -247,8 +247,8 @@ font-size:48px;
   }
   .sp-storyimg{
     width:100%;
-    max-width:350px;
-    max-height:350px;
+    object-fit: cover;
+    max-height:300px;
   }
   .sp-message-container{
     transition: all 0.3s linear;
@@ -397,7 +397,7 @@ font-size:48px;
 .popup-inner-float{
   border-radius:20px;
   margin:auto;
-  padding:3em 3em;
+  padding:1em 1em;
   background:#f9f9f9;
   box-shadow: 0px 0px 5px rgba(100,100,100,0.7);
   max-height:90vh;
@@ -435,6 +435,7 @@ font-size:48px;
   /*box-shadow: 0px 0px 5px rgba(100,100,100,0.7);*/
   width:75px;
   height:75px;
+  object-fit: cover;
   top:-32.5px;
   margin:auto;
   position:absolute;
@@ -853,4 +854,18 @@ video{
   .tab-icon img{
     margin-top:-5px;
   }
+}
+
+
+.close-x{
+  position: absolute;
+  top:20px;
+  right:20px;
+}
+
+.close-x p{
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
 }

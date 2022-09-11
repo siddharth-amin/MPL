@@ -174,7 +174,7 @@
                           </div>
                     </div>
                     <div class="progess-message-container">
-                        <p class="normal-text text-uppercase second_animate-down animate__animated animate__delay-2s">FANS HAVE SHARED THEIR STORY</p>
+                        <p class="normal-text text-uppercase second_animate-down animate__animated animate__delay-2s">FANS HAVE SHARED THEIR MESSAGE <br>EACH MESSAGE WILL TAKE US CLOSER TO THE JERSEY REVEAL</p>
                     </div>
                     <div class="mt-1">
                         <h2 class="big-text text-uppercase second_hold_animate animate__animated animate__delay-3s">UPLOAD YOUR STORY & WIN</h2>
@@ -186,7 +186,7 @@
                         <div class="tab-icon ms-0" data-content="Certificate of appreciation from BCCI & MPL Sports" data-current="Images/icon bundle-05.png" data-alternate="Images/icon bundle-05a.png">
                             <img class="icon-tab-img" src="Images/icon bundle-05a.png">
                         </div>
-                        <div class="tab-icon" data-content="2 India vs Australia match tickets*" data-current="Images/icon bundle-07.png" data-alternate="Images/icon bundle-07a.png">
+                        <div class="tab-icon" data-content="5 VIP match tickets*  " data-current="Images/icon bundle-07.png" data-alternate="Images/icon bundle-07a.png">
                             <img class="icon-tab-img" src="Images/icon bundle-07a.png">
                         </div>
                         <div class="tab-icon" data-content="Invitation to jersey launch event*" data-current="Images/icon bundle-06.png" data-alternate="Images/icon bundle-06a.png">
@@ -212,12 +212,12 @@
                         <h2 class="big-text text-uppercase third_animate animate__animated">Be A Superfan</h2>
                         <!--<button class="btn-custom text-uppercase mt-3 third_animate animate__animated animate__delay-0_3s">Share Now</button>-->
                         <div class="share-container d-flex align-items-center justify-content-end m-justify-center mt-3 third_animate animate__animated animate__delay-0_5s">
-                            <p class="small-text">Share Now</p>
+                            <p class="small-text">Share your unique URL via</p>
                             <a class="share-icon" id="facebookShare" target="_blank"><span class="fa-brands fa-facebook"></span></a>
                             <a class="share-icon" id="twitterShare" target="_blank"><span class="fa-brands fa-twitter" ></span></a>
                             <a class="share-icon" id="whatsShare" target="_blank"><span class="fa-brands fa-whatsapp" ></span></a>
                         </div>
-                        <p class="small-text text-uppercase mt-3 third_animate animate__animated animate__delay-0_7s">Invite friends and win rewards</p>
+                        <p class="small-text text-uppercase mt-3 third_animate animate__animated animate__delay-0_7s">Get more entries and win rewards</p>
                     </div>
                 </div>
                 <div class="col"></div>
@@ -233,6 +233,11 @@
 </div>
 <div class="leaderboard popup popup-wide" id="leaderboardPopup" ng-controller="leaderboardCtrl">
     <div class="container d-flex align-items-center h-100">
+
+        <div class="close-x">
+            <p>X</p>
+        </div>
+
     <div class="row w-100 popup-inner align-items-center d-flex">
         <div class="col col-12 col-x-sm-12 mb-5">
             <div class="row w-100 align-items-center">
@@ -314,6 +319,10 @@
     </div>
 </div>
 <div class="form-popup popup" id="uploadFormPopup">
+    <div class="close-x">
+        <p>X</p>
+    </div>
+    
     <div class="container d-flex align-items-center h-100">
     <div class="row w-100 justify-content-center">
         <div class="col popup-inner" ng-controller="storyCtrl">
@@ -354,7 +363,7 @@
                 </div>
                 
                 <div class="mb-3">
-                    <label class="form-label">Upload image</label>
+                    <label class="form-label">Add your image</label>
                     <input class="form-control" type="file" name='file' id='file' accept=".png, .jpg, .jpeg">
                     <div><p class="form-text">File details & restrictions</p></div>
                     <!-- <div class="invalid-feedback">Please upload a valid format image</div> -->
@@ -384,7 +393,7 @@
                 <div class="row align-items-center">
                     <div class="col col-x-sm-12">
                         <div class="text-center mt-3">
-                            <a href="#" id="certificatebutton" target="_blank"><button class="btn-custom">Download Certificate</button></a>
+                            <a href="#" id="certificatebutton" target="_blank" download><button class="btn-custom">Download Certificate</button></a>
                         </div>
                     </div>
                     <div class="col col-x-sm-12">
