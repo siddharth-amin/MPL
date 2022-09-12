@@ -189,6 +189,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
                     $scope.storyUploaded = true;
                     $scope.userStory  = response.data;
                     $('#user-story').fadeIn();
+                    $('.story-arrow-message').fadeIn();
                     setTimeout(function() {
                       $('.Hotspot').on('click',(e)=>{
                         $('.sp-profilepic').attr('src','' + $(e.currentTarget).data('profilepic') + '') ;

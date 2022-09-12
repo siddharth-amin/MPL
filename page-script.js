@@ -53,6 +53,7 @@ $(document).ready(() => {
                 updateScale(1.05);
                 $('.Hotspot').css({opacity:1});
                 $('.second_footer').addClass('animate__fadeInUpShort');
+                $('.story-arrow-message').fadeOut();
             }
             if(destination.index == 3){
                 $('.left-col .third_animate').addClass('animate__fadeInLeftShort');
