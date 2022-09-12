@@ -38,6 +38,9 @@ body{
     left:-50%;
     transform:rotate(45deg);
 }
+#user-story{
+  display: none;
+}
 .right-square{
     top:-50%;
     left:80%;

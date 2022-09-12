@@ -38,17 +38,7 @@ app.controller('jerseyStory',function($scope,$rootScope,$http){
         });
         $scope.stories = JSON.parse(angular.toJson($scope.stories));
         $scope.dots = JSON.parse(angular.toJson($scope.dots));
-        console.log($scope.stories);
         setTimeout(function() {
-            //$('[data-toggle="popover"]').popover({
-            //     trigger: 'focus',
-            //     container: 'body',
-            //     html: true,
-            //     sanitize: false,
-            //     content: function() {
-            //         return $(this).attr("data-content");
-            //       }
-            // })
             $('.Hotspot').on('click',(e)=>{
                 $('.sp-profilepic').attr('src','' + $(e.currentTarget).data('profilepic') + '') ;
                 $('.sp-storyimg').attr('src','' + $(e.currentTarget).data('story') + '') ;

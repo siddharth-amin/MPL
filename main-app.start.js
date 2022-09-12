@@ -35,7 +35,6 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
       }
     };
     const referralCode = urlParams.get('refcode');
-    console.log(referralCode);
     $rootScope.referredBy = referralCode;
     //$scope.userName = "Test";
     $scope.user = {hasuploaded: false};
@@ -69,20 +68,17 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
       $http.post('https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/Users/authenticatev2', JSON.stringify(data), config).then(function (response) 
       {
         if (response.data)
-            console.log(response);
             $scope.isAuthenticated = true;
            // $scope.storyUploaded = true;
            
             $scope.user = {firstName: response.data.FirstName, hasuploaded : false, Email: response.data.Email, lastName: response.data.LastName, Id: response.data.Id};
             let id = response.data.Id;
-            console.log(id);
             var configs = {
               headers: {
                   'Content-Type': "application/json",
                   'Authorization' : `Bearer ${response.data.JwtToken}`
               }
             };
-            // console.log(configs);
             if(id != null){
             var url = "https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/getuserstoriesv2";
             $http.get(url+'?id='+id, config).then(function (response) 
@@ -125,15 +121,12 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
           base64String = reader.result
                 .replace('data:', '')
                 .replace(/^.+,/, '');
-            //console.log(base64String);
-            // Logs wL2dvYWwgbW9yZ...
         };
         reader.readAsDataURL(file);
     });
 
    
     $scope.uploadStory = function(storyCtrl){
-      console.log(storyCtrl);
       if(storyCtrl.firstName && storyCtrl.email && storyCtrl.email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) && storyCtrl.message){
         var fd = new FormData();
         var files = document.getElementById('file').files[0];
@@ -192,7 +185,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
                     $.LoadingOverlay("hide");
                     $scope.storyUploaded = true;
                     $scope.userStory  = response.data;
-                    console.log(response.data);
+                    $('#user-story').fadeIn();
                     setTimeout(function() {
                       $('.Hotspot').on('click',(e)=>{
                         $('.sp-profilepic').attr('src','' + $(e.currentTarget).data('profilepic') + '') ;
@@ -200,7 +193,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
                         $('.sp-name').text($(e.currentTarget).data('name'));
                         $('.sp-message').text($(e.currentTarget).data('message'));
                         openStoryPopup();
-    
+                        
                       });}, 100);
                     $("#uploadFormPopup").fadeOut();
                     var documentUrl = response.data.CertURL;
@@ -265,8 +258,8 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
             if (response.data != null)
               $.LoadingOverlay("hide");
               $scope.storyUploaded = true;
+              $('#user-story').fadeIn();
               $scope.userStory  = response.data;
-              console.log(response.data);
               setTimeout(function() {
                 $('.Hotspot').on('click',(e)=>{
                   $('.sp-profilepic').attr('src','' + $(e.currentTarget).data('profilepic') + '') ;
@@ -314,14 +307,6 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
         userName : registerCtrl.registerUserName,
         reviseCode: registerCtrl.registerCode,
       };
-      //62wFK3RTSt4LsGHYEPOCtw==
-      //var payload = $crypto.encrypt(JSON.stringify(data));
-      //debugger;
-      //console.log(payload);
-     // let aes = $crypto.decrypt(payload);
-      // aes = JSON.parse(aes);
-      // aes.password = $crypto.decrypt('a3lKUrXkUsBwZ/7tiOdecQ==', 'ps098765432101267834590157493000');
-      // console.log($crypto.decrypt('kyJRRpg^q', 'ps098765432101267834590157493000'));
       var config = {
         headers: {
             'Content-Type': "application/json",
@@ -400,7 +385,6 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
     }
 
     $scope.openFbPopUp = function(){
-      console.log("hii");
       //var fburl = "http://www.facebook.com/sharer.php?s=100&p[title]=WEB1CHANNEL&p[summary]=Web+Design+Company+in+Dubai.&p[url]=http://www.webchannel.ae&p[images][0]=http://qacode.com/test.jpg']asdfa[/a]";
       var fburl = 'https://mplcert.s3.ap-south-1.amazonaws.com/P889.jpg';
       var fbimgurl = 'https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png';
