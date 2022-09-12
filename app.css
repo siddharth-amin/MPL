@@ -716,10 +716,10 @@ video{
 }
 
 .Hotspot{
-  width:15px;
-  height:15px;
-  border:none;
-  background-color: #7DA2D3;
+  width: 10px;
+  height: 10px;
+  border: none;
+  background-color: #7da2d382;  
   border-radius:50%;
   opacity:0;
   padding:0;
