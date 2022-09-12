@@ -470,8 +470,10 @@
               //let referralCode = response.data.UserReferralCode;
               let postUrl= "https://harfankijersey.mplsports.in/";
               let postTitle = "Hey! I just got this certificate after sharing my story on Har Fan Ki Jersey. Help team India get their new T20 World Cup jersey and win exciting prizes. Click here: " +postUrl;
+              let postTwitter = "Hey! I just got this certificate after sharing my story on &hashtags=HarFanKiJersey. Help team India get their new T20 World Cup jersey and win exciting prizes. Click here: " +postUrl;
+               
               $("#facebookShare").attr("href", url+'?u='+postUrl);
-              $("#twitterShare").attr("href", twitterUrl+'?text='+postTitle);
+              $("#twitterShare").attr("href", twitterUrl+'?text='+postTwitter);
               $("#whatsShare").attr("href", whatsappUrl+'?text='+postTitle);  
         });
     </script>
