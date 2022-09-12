@@ -127,8 +127,9 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
 
    
     $scope.uploadStory = function(storyCtrl){
-      $.LoadingOverlay("show");
+
       if(storyCtrl.firstName && storyCtrl.email && storyCtrl.email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) && storyCtrl.message){
+        $.LoadingOverlay("show");
         var fd = new FormData();
         var files = document.getElementById('file').files[0];
         fd.append('file',files);
