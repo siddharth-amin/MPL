@@ -166,7 +166,7 @@ $('.arrow-containers').css({'left':'' + (makeleft + 50) +'px'})
     $('.for-tab-text').text($(e.currentTarget).data('content'));
   })
 
-  var text = ["LOYAL", "PASSIONATE", "AGGRESSIVE", "HARDCORE"];
+  var text = ["LOYAL", "PASSIONATE", "HARDCORE"];
   var counter = 0;
   var elem = document.getElementById("changeText");
   var inst = setInterval(change, 2000);
