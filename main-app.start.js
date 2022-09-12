@@ -211,7 +211,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
                     }
                     let whatsappUrl = "https://web.whatsapp.com/send";
                     if (isMobile == true) {
-                      whatsappUrl = "https://wa.me/send";
+                      whatsappUrl = "https://wa.me/";
                     }
                     let referralCode = response.data.UserReferralCode;
                     let postUrl= "https://harfankijersey.mplsports.in/";
