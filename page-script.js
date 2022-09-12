@@ -1,7 +1,7 @@
 $(document).ready(() => {
   $.LoadingOverlaySetup({
     background      : "rgba(0, 0, 0, 0.5)",
-    imageColor      : "#7fb539"
+    imageColor      : "#297BBE"
 });
 
 });
