@@ -127,6 +127,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
 
    
     $scope.uploadStory = function(storyCtrl){
+      $.LoadingOverlay("show");
       if(storyCtrl.firstName && storyCtrl.email && storyCtrl.email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) && storyCtrl.message){
         var fd = new FormData();
         var files = document.getElementById('file').files[0];
@@ -261,11 +262,12 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
               "ReferredBy" : referralCode
             }
           }
-          $.LoadingOverlay("show");
+          //$.LoadingOverlay("show");
           $("#uploadFormPopup").fadeOut();
           var url = "https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/storyflow";
           $http.post(url, JSON.stringify(datas), config).then(function (response) 
           {
+            $.LoadingOverlay("show");
             if (response.data != null)
               $scope.storyUploaded = true;
               $('#user-story').fadeIn();
