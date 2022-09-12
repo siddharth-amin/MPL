@@ -183,6 +183,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
                 var url = "https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/storyflow";
                 $http.post(url, JSON.stringify(datas), config).then(function (response) 
                 {
+                  $.LoadingOverlay("hide");
                   if (response.data != null)
                     $.LoadingOverlay("hide");
                     $scope.storyUploaded = true;
@@ -267,7 +268,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
           var url = "https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/storyflow";
           $http.post(url, JSON.stringify(datas), config).then(function (response) 
           {
-            $.LoadingOverlay("show");
+            $.LoadingOverlay("hide");
             if (response.data != null)
               $scope.storyUploaded = true;
               $('#user-story').fadeIn();
