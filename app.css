@@ -241,7 +241,6 @@ height:fit-content;
   font-size:15px;
   border:none;
   text-decoration: none;
-  display:none;
 }
 .btn-custom:hover,.btn-custom-red:hover{
   background-color: #183457;
@@ -755,6 +754,21 @@ width:50px;
 width:50px;
 height: 50px;
 }
+
+
+
+.Hotspot:not([data-visible]) {
+    background-color: transparent;
+    
+  }
+
+#user-story:not([data-visible]) {
+    background-color: transparent;
+    
+  }
+  
+  
+  
 .btn-profilepic{
 width:0;
 height:0;
@@ -807,6 +821,10 @@ right:20px;
 .left-col,.right-col{
   transform: none;
 }
+
+ .l1-img1{
+        display:none!important;
+    }
 .big-text{
   font-size: 36px;
 }
@@ -818,6 +836,11 @@ right:20px;
 } 
 }
 @media only screen and (max-width: 575.98px) { 
+    
+    
+    .l1-img1{
+        display:none!important;
+    }
 .big-text{
   font-size: 24px;
 }
@@ -928,6 +951,12 @@ backdrop-filter: blur(20px);
 .big-text{
   font-size: 24px;
 }
+
+ .l1-img1{
+        display:none!important;
+    }
+    
+    
 .normal-text-lb{
   font-size:16px;
 }
