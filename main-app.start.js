@@ -212,7 +212,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
                     }
                     let whatsappUrl = "https://web.whatsapp.com/send";
                     if (isMobile == true) {
-                      whatsappUrl = "https://wa.me/send";
+                      whatsappUrl = "https://wa.me/";
                     }
                     let referralCode = response.data.UserReferralCode;
                     let postUrl= "https://harfankijersey.mplsports.in/";
@@ -221,7 +221,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
                     }else{
                       postUrl = "https://harfankijersey.mplsports.in/?refcode="+referralCode;
                     }
-                    let postTitle = "Hey! I just got this certificate after sharing my story on #HarFanKiJersey. Help team India get their new T20 World Cup jersey and win exciting prizes. Click here: " +postUrl;
+                    let postTitle = "Hey! I just got this certificate after sharing my story on Har Fan Ki Jersey. Help team India get their new T20 World Cup jersey and win exciting prizes. Click here: " +postUrl;
                     // let postImg = encodeURI(pinterestImg.src);
                     $("#whatsShare").attr("href", whatsappUrl+'?text='+postTitle );
                     $("#facebookShare").attr("href", url+'?u='+response.data.CertURL);
