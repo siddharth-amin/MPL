@@ -241,6 +241,7 @@ height:fit-content;
   font-size:15px;
   border:none;
   text-decoration: none;
+  display: none;
 }
 .btn-custom:hover,.btn-custom-red:hover{
   background-color: #183457;
@@ -836,7 +837,17 @@ right:20px;
 } 
 }
 @media only screen and (max-width: 575.98px) { 
-    
+  .mob-sm-cert{
+    font-size:16px!important;
+}
+
+.mob-small{
+    font-size:20px!important;
+}
+
+.mob-big{
+    font-size:24px!important;
+}
     
     .l1-img1{
         display:none!important;
@@ -950,6 +961,17 @@ backdrop-filter: blur(20px);
 @media only screen and (max-width: 374.98px){
 .big-text{
   font-size: 24px;
+}
+
+.mob-sm-cert{
+  font-size:16px!important;
+}
+.mob-small{
+  font-size:18px!important;
+}
+
+.mob-big{
+  font-size:22px!important;
 }
 
  .l1-img1{
