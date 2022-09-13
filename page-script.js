@@ -44,7 +44,7 @@ $(document).ready(() => {
                 $('.left-col .second_animate').addClass('animate__fadeInLeftShort');
                 $('.right-col .second_animate').addClass('animate__fadeInRightShort');
                 $('.right-col .second_animate-down').addClass('animate__fadeInDownShort');
-                $.when(progressBar(7)).then(() => {
+                $.when(progressBar(18)).then(() => {
                     $('.left-col .second_hold_animate').addClass('animate__fadeInLeftShort');
                     $('.right-col .second_hold_animate').addClass('animate__fadeInRightShort');
                 });

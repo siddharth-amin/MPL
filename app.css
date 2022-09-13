@@ -763,10 +763,10 @@ height: 50px;
     
   }
 
-#user-story:not([data-visible]) {
+/*#user-story:not([data-visible]) {
     background-color: transparent;
     
-  }
+  }*/
   
   
   
@@ -837,12 +837,16 @@ right:20px;
 } 
 }
 @media only screen and (max-width: 575.98px) { 
+    
+    .mob-s1-big{
+        font-size:34px;
+    }
   .mob-sm-cert{
-    font-size:16px!important;
+    font-size:14px!important;
 }
 
 .mob-small{
-    font-size:20px!important;
+    font-size:22px!important;
 }
 
 .mob-big{
@@ -963,11 +967,15 @@ backdrop-filter: blur(20px);
   font-size: 24px;
 }
 
+ .mob-s1-big{
+        font-size:34px;
+    }
+
 .mob-sm-cert{
-  font-size:16px!important;
+  font-size:14px!important;
 }
 .mob-small{
-  font-size:18px!important;
+  font-size:20px!important;
 }
 
 .mob-big{
