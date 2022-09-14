@@ -111,19 +111,23 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
     var base64String = "";
     const reader = new FileReader();
     imageUpload.addEventListener('change', (e) => {
-        // Get a reference to the file
-        const file = e.target.files[0];
-
-        // Encode the file using the FileReader API
-     
-        reader.onloadend = () => {
-            // Use a regex to remove data url part
-          base64String = reader.result
-                .replace('data:', '')
-                .replace(/^.+,/, '');
-        };
-        reader.readAsDataURL(file);
-    });
+      var compressor = new Compressor(e.target.files[0], {
+        size: 4, // the max size in MB, defaults to 2MB
+        quality: .25, // the quality of the image, max is 1,
+        maxWidth: 320, // the max width of the output image, defaults to 1920px
+        maxHeight: 400, // the max height of the output image, defaults to 1920px
+        resize: true, // defaults to true, set false if you do not want to resize the image width and height
+        rotate: false, // See the rotation section below
+        success(data) {
+          reader.onloadend = () => {
+            base64String = reader.result
+                  .replace('data:', '')
+                  .replace(/^.+,/, '');
+          };
+          reader.readAsDataURL(data);
+        }
+      });
+  });
 
    
     $scope.uploadStory = function(storyCtrl){
