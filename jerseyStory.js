@@ -10,10 +10,86 @@ app.controller('jerseyStory',function($scope,$rootScope,$http){
         }
       };
      
-    $http.get('https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/getscstoriesv2', configsa).then(function (response) 
-    {
-      if (response.data)
-        $scope.stories1 = response.data;
+    // $http.get('https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/UserStories/getscstoriesv2', configsa).then(function (response) 
+    // {
+    //   if (response.data)
+        $scope.stories1 = [
+          {
+            "Caption": "Harshit Yadav",
+            "Message": "I have been following cricket since i was 14, I always idolised Indian greats and grew up watching the modern legends! I wish team India best of luck for upcoming tours and WC! i believe we can win the cup!! Biggest fan of Virat Kohli sir.",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/hardikpandya93-13092022-0001.jpg"
+          },
+          {
+            "Caption": "Ajith Pravin Manukaran K N",
+            "Message": "The spirit and the process make us a successful team. Forget all the past and get the cup. We want it back very badly.",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/inbound7019652310644404292.jpg"
+          },
+          {
+            "Caption": "Naman Bawa",
+            "Message": "Our Jersey colour is sky blue that's why our Indian players made to touch the glory of sky with thier incredible performance.",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/inbound2083746363131773052.jpg"
+          },
+          {
+            "Caption": "Nitin Parchani",
+            "Message": "As a fan we're excited to cheer our team india in the T20 world cup Australia. We had bad recent multi nations tournaments but that was dubai where toss played crucial role we're confident now about our team, captain and coach. Let's go India!🫶",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/inbound95631544104747171.jpg"
+          },
+          {
+            "Caption": "Suyash Raul",
+            "Message": "We are with our Team India no matter what \n#T20Aus Is ours \nWe are the champions 🏆",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/inbound6284568839342201570.jpg"
+          },
+          {
+            "Caption": "Manish Chauhan",
+            "Message": "I started playing cricket when Team India left the world cup after 28 year and from that time everything changed for me now I am Battling and my role in team is play your fearless games and go on 4 down for team.",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/B9E76A9F-DB05-4D2E-BBF0-DC7352696D68.jpeg"
+          },
+          {
+            "Caption": "Prince Sanghvi",
+            "Message": "Pitches Don't Matter\nPerformance Does\nWinning Or Loosing Doesn't Matter\nTeam India's Presence Does\n\nAs\n\nTogether We'll Play,\nTogether We'll Cheer.\nTogether We'll Win,\nTogether We'll Celebrate",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/Photo_1582171861475.png"
+          },
+          {
+            "Caption": "Navyan Boddu",
+            "Message": "Cricket is Just Not a Sport !! It's an emotion. When It Comes To Team India The Emotion is Very Special..We Celebrate When We Win. We Cry When We Lose. I am Really Excited for The New Indian Jersey.All The Best Team India for ICC World T20 World Cup",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/inbound6604598800166924669.jpg"
+          },
+          {
+            "Caption": "Jaydeep Das",
+            "Message": "We believe in team india 🇮🇳 ! We are always there no matter whatever is the situation... It's a game and win and loss are part of it. Come on team india 🇮🇳",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/inbound6519594075649559513.jpg"
+          },
+          {
+            "Caption": "Govind Chhimpa",
+            "Message": "Do some extraordinarily......\nGo india and conquer the Melbourne 🇮🇳🇮🇳🇮🇳🇮🇳🇮🇳",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/IMG_20220913_201407_138.jpg"
+          },
+          {
+            "Caption": "Shiva Soni",
+            "Message": "I was only 4 years old when India won the 2007 world cup , and i barely remember any of that moment. So now I want to relive that moment when India will become T20 champions again , bring the cup home my favourites.",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/inbound8741134763933842873.jpg"
+          },
+          {
+            "Caption": "Sourav Panda",
+            "Message": "It all started Back in 2003 WC when I start watching cricket. and now I am such a huge cricket fan. S Gill is currently my favourite player. But my all time favourite is DADA. Dada did wonders with this indian team. Now its time for Rohit to do such magic in Australia.",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/WhatsApp%20Image%202022-09-13%20at%202.29.15%20PM.jpeg"
+          },
+          {
+            "Caption": "Jagdish C",
+            "Message": "Missing MAHI",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/IMG_20220826_205118.jpg"
+          },
+          {
+            "Caption": "Arafath A S",
+            "Message": "I get goosebumps for every sixes hit by hitman 🔥🔥",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/A9A40C50-A62B-429E-AB21-165387C89876.jpeg"
+          },
+          {
+            "Caption": "Rutwik Sawant",
+            "Message": "Yes We Expect The Cup From You, But All I'll Say Is....I Love My Team And I Want You All To Just Go And Enjoy Out There.....Please Don't Feel Any Pressure Of Expectations.....You All Guys Are Absolute Champions In My Eyes From Very First Day.💙 All The Very Best Guys🤞🏻 गणपती बाप्पा मोरया 🤗",
+            "StoryImageURL": "https://d1iazv54bx5ja3.cloudfront.net/MPLDATA/Stories/inbound7273558403497156845.jpg"
+          }
+        ];
         $scope.points = [ 
             {point: '0.05421040709118641m 0.13846178555043182m 0.11483288825679787m', norm: '0.07117410476028291m 0.3647820401904624m 0.9283686282754584m'},
 {point: '0.09850393664801473m -0.019346323175682967m 0.12054673253507989m', norm: '0.21336083531096203m -0.030998638862593127m 0.9764815606779654m'},
@@ -72,7 +148,7 @@ app.controller('jerseyStory',function($scope,$rootScope,$http){
         })
     }*/
     
-});
+//});
 
 app.controller('userStoryMode', function($scope,$http){
     /*var data = {}
