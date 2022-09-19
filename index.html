@@ -67,7 +67,7 @@
     </div>
     <div class="jersey-container" ng-controller="jerseyStory">
         <div class="jersey-wrapper">
-            <model-viewer id="jersey" class="jersey-center" src="Images/sleeve-collar.glb" poster="Images/poster.png" ar ar-modes="webxr scene-viewer quick-look" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" auto-rotate rotation-per-second="15deg">
+            <model-viewer id="jersey" class="jersey-center" src="Images/full-jersey.glb" poster="Images/poster.png" ar ar-modes="webxr scene-viewer quick-look" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" auto-rotate rotation-per-second="15deg">
                
 
                 <button ng-repeat="dot in dots" class="Hotspot" slot="hotspot-{{$index}}" data-position="{{points[$index].point}}" data-normal="{{points[$index].norm}}" data-visibility-attribute="visible" data-name="{{dot.name}}" data-profilepic="{{dot.url}}" data-story="{{dot.url}}" data-message="{{dot.message}}">
@@ -107,7 +107,7 @@
             </div>
         </div>
         <div class="bottom-text-container text-center">
-            <h2 class="big-text text-uppercase animate_animated animate_delay-0_7s zero_animate_bottom mob-s1-big">THE <span class="color-lblue">JERSEY</span> IS ALMOST READY!</span><br><span class="normal-text-lb">Come back on 18th Sept for the <span class="color-lblue">full reveal</span></h2>
+            <h2 class="big-text text-uppercase animate_animated animate_delay-0_7s zero_animate_bottom mob-s1-big">THE <span class="color-lblue">JERSEY</span> IS HERE!</span></h2>
         </div>
         <div class="footer animate__animated zero_animate zero_footer"><p class="text-center text-uppercase go-next">Scroll Down<br>&#9660</p></div>
     </div>
