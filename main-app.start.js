@@ -26,12 +26,12 @@ var app = angular.module('mainapp', ['satellizer','ngCookies'])
 app.controller('mainCtrl',function($rootScope,$scope, $http){
     $scope.isAuthenticated = false;
     $scope.storyUploaded = false;
-    $rootScope.key = "MQ7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbb6qL";
+    $rootScope.key = "MCBC7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbbMMLE";
     const urlParams = new URLSearchParams(window.location.search);
     var configsa = {
       headers: {
           'Content-Type': "application/json",
-          'APIKey' : 'MQ7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbb6qL'
+          'APIKey' : 'MCBC7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbbMMLE'
       }
     };
     const referralCode = urlParams.get('refcode');
@@ -61,7 +61,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
       var config = {
         headers: {
             'Content-Type': "application/json",
-            'APIKey' : 'MQ7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbb6qL'
+            'APIKey' : 'MCBC7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbbMMLE'
         }
       };
       
@@ -151,7 +151,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
         var config = {
           headers: {
               'Content-Type': "application/json",
-              'APIkey' : 'MQ7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbb6qL'
+              'APIkey' : 'MCBC7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbbMMLE'
           }
         };
         if(data.base64 != null){
@@ -344,7 +344,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
       var config = {
         headers: {
             'Content-Type': "application/json",
-            'APIKey' : 'MQ7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbb6qL'
+            'APIKey' : 'MCBC7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbbMMLE'
         }
       };
      // var payload = $crypto.encrypt(data);
@@ -352,7 +352,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
       //   "payload" : payload
       // };
       // console.log(JSON.stringify(payloads));
-      // $http.headers.APIKey = "MQ7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbb6qL";
+      // $http.headers.APIKey = "MCBC7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbbMMLE";
       $http.post('https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/Users/registerv2', JSON.stringify(data), config).then(function (response) 
       {
         if (response.data)
@@ -373,7 +373,7 @@ app.controller('mainCtrl',function($rootScope,$scope, $http){
       var config = {
         headers: {
             'Content-Type': "application/json",
-            'APIKey' : 'MQ7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbb6qL'
+            'APIKey' : 'MCBC7h57ty767689f43caf4x5h43wu9csfc5617uh65e7d8w10jqpbbMMLE'
         }
       };
       $http.post('https://c12xl1ybn0.execute-api.ap-south-1.amazonaws.com/Stage/Users/verify-emailv2', JSON.stringify(data), config).then(function (response) 
